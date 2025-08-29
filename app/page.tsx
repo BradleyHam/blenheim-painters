@@ -12,28 +12,34 @@ import ModalClientManager from './SiteComponents/ModalClientManager';
 import FooterBanner from './SiteComponents/FooterBanner';
 import ShortAbout from './HomeComponents/ShortAbout';
 import BookingForm from './SiteComponents/BookingForm/BookingForm';
-
-
 import projects from '../Utils/mockProjects'
 import ProjectsPreview from './HomeComponents/ProjectsPreview';
+import { LocalBusinessData, WebSiteData, OrganizationData, ServiceData } from './components/StructuredData';
 
 export default function Home() {
 
 
 
   return (
-    <main className="relative text-brand-blue pt-[var(--navbar-height-mobile)] lg:pt-[var(--navbar-height-desktop)] pt-[var(--navbar-height-mobile)] md:pt-[var(--navbar-height-desktop)]">
-          <Navbar />
-          <Hero />
-          <StatRow />
-          <ShortAbout />
-          <Services />
-          <Testimonials />
-          <ProjectsPreview projects={projects} />
-          <Faq />
-          <ProcessSection bg='white'/>
-          <FooterBanner />
-          <Footer />
-    </main>
+    <>
+      <LocalBusinessData />
+      <WebSiteData />
+      <OrganizationData />
+      <ServiceData />
+      <main className="relative text-brand-blue pt-[var(--navbar-height-mobile)] lg:pt-[var(--navbar-height-desktop)] pt-[var(--navbar-height-mobile)] md:pt-[var(--navbar-height-desktop)]">
+            <Navbar />
+            <Hero />
+            <StatRow />
+            <Testimonials />
+            <ShortAbout />
+            <Services />
+    
+            <ProjectsPreview projects={projects} />
+            <Faq />
+            <ProcessSection bg='white'/>
+            <FooterBanner />
+            <Footer />
+      </main>
+    </>
   );
 }

@@ -1,209 +1,119 @@
 'use client'
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import ButtonCta from "../SiteComponents/ButtonCta";
-import HeroTestimonials from "./HeroTestimonials";
-import BeforeAfterSlider from "../projects/BeforeAfterSlider";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image"
+import { Phone, Calendar, ArrowRight, Star, CheckCircle } from "lucide-react"
 
-const sliderData = [
-    {
-        beforeImage: '/images/BeforeAfter/BerforeAfter-1-before.jpg',
-        afterImage: '/images/BeforeAfter/BeforeAfter-1-after.jpg',
-        beforeAlt: 'Before renovation 3',
-        afterAlt: 'After renovation 3'
-    },
-    {
-        beforeImage: '/images/BeforeAfter/BeforeAfter-2-before.jpg',
-        afterImage: '/images/BeforeAfter/BeforeAfter-2-after.jpg',
-        beforeAlt: 'Before renovation 1',
-        afterAlt: 'After renovation 1'
-    },
-    {
-        beforeImage: '/images/arthurs-point/ap-featureWall-before.jpg',
-        afterImage: '/images/arthurs-point/ap-featureWall-after.jpeg',
-        beforeAlt: 'Before renovation 2',
-        afterAlt: 'After renovation 2'
-    }
-];
 
-export default function Hero() {
-    const [currentSlider, setCurrentSlider] = useState(0);
-    const [showTooltip, setShowTooltip] = useState(false);
+export default function EnhancedHero() {
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowTooltip(true);
-        }, 300);
+  return (
+    <section className="relative w-full overflow-hidden  min-h-[80vh]">
+      {/* SEO-optimized structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Blenheim Painters",
+            description: "Premium Interior & Exterior Painting Specialists in Blenheim",
+            image: "/portrait.webp",
+            priceRange: "$$",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Blenheim",
+              addressRegion: "Marlborough",
+              addressCountry: "NZ",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "-41.5131",
+              longitude: "173.9540",
+            },
+            telephone: "+6435778899",
+            areaServed: "Blenheim",
+            serviceArea: "Marlborough District",
+            sameAs: ["https://facebook.com/blenheimpainters", "https://instagram.com/blenheimpainters"],
+          }),
+        }}
+      />
 
-        return () => clearTimeout(timer);
-    }, []);
+      {/* Large background brush stroke spanning corner to corner */}
+      {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden"> */}
+        <Image
+          src="/brush-stroke.svg"
+          alt=""
+          width={800}
+          height={300}
+          className="absolute top-0 w-full h-full  opacity-40"
+          style={{
+            transform: 'scale(1.6) rotate(-15deg) translate(0, 50px) ',
+            transformOrigin: 'bottom'
+          }}
+        />
+      {/* </div> */}
 
-    const handlePrev = () => {
-        setCurrentSlider((prev) => (prev > 0 ? prev - 1 : prev));
-    };
+      {/* Content container */}
+      <div className="container relative z-10 mx-auto px-4 pb-12 sm:px-6 sm:pt-6 lg:px-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-1 gap-8 lg:gap-16 items-center min-h-[80vh] max-w-4xl">
+          {/* Main content */}
+          <div className="flex flex-col justify-center space-y-8 lg:pb-0 pb-8">
+            {/* Location tag */}
+            <h1 className="inline-flex items-center rounded-full tracking-tight text-base font-medium text-cta w-fit">
+              House Painters Wanaka
+            </h1>
 
-    const handleNext = () => {
-        setCurrentSlider((prev) => (prev < sliderData.length - 1 ? prev + 1 : prev));
-    };
-
-    const fadeVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-    };
-
-    return (
-        <section className="relative overflow-hidden bg-gradient-to-tr from-primary to-primary/90 pt-section-spacing px-side-spacing pb-[80px] ">
+            {/* Main headline */}
+            <div className="space-y-4">
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-5xl">
+                Bring New Life to Your Home
+              </h2>
+              <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+                With Expert Painting in Wanaka
+              </h2>
+            </div>
+            <p className="max-w-2xl text-lg font-medium tracking-tight">With over 15 years of family experience in painting, my partner and I treat your home like our own and back every job
+            with a <span className="font-bold italic">full workmanship warranty.</span></p>
             
-            {/* skwewd element */}
-            <div className="absolute -bottom-[24px] left-0 right-0 z-10 bg-white h-[50px] -skew-y-1   "></div>
-            {/* Brush stroke background */}
-            <div className="absolute left-12 lg:left-[300px] h-[600px] w-[1200px] -right-12  top-12  lg:-bottom-26 lg:w-[1400px] lg:h-[600px]">
-            <Image className="" src="/images/decorative/brushStroke.svg" alt="Decorative brush stroke" layout="fill" objectFit="contain" />
+            {/* Trust indicators */}
+            <div className="flex flex-wrap gap-6 text-gray-600">
+              <div className="flex items-center">
+                <CheckCircle className="mr-2 h-5 w-5" />
+                <span className="text-sm font-medium">Licensed</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="mr-2 h-5 w-5" />
+                <span className="text-sm font-medium">Insured</span>
+              </div>
+              <div className="flex items-center">
+                <Star className="mr-2 h-5 w-5 fill-current" />
+                <span className="text-sm font-medium">5 Star Rated on Google</span>
+              </div>
             </div>
-           <div className="absolute inset-20 opacity-20">
-                {/* <svg className="w-full h-full -mt-20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="centerFade" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
-                            <stop offset="0%" stopColor="white" stopOpacity="1"/>
-                            <stop offset="70%" stopColor="white" stopOpacity="1"/>
-                            <stop offset="100%" stopColor="white" stopOpacity="0"/>
-                        </radialGradient>
-                        <mask id="fadeMask">
-                            <rect width="100" height="100" fill="url(#centerFade)" />
-                        </mask>
-                    </defs>
-                    <g mask="url(#fadeMask)">
-                        <line x1="0" y1="0" x2="100" y2="100" stroke="white" strokeWidth="0.3" />
-                        <line x1="100" y1="0" x2="0" y2="100" stroke="white" strokeWidth="0.3" />
-                    </g>
-                </svg> */}
-            </div>
-            <div className="relative z-20">
-                <div className="flex flex-col lg:flex-row items-start justify-between">
-                    <motion.div 
-                        className="text-white flex flex-col items-start w-full lg:w-[45%] lg:pr-6 mb-8 lg:mb-0"
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeVariants}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        <h1 className="font-poppins tracking-tight text-lg xl:text-xl font-bold text-white leading-normal mb-4">
-                            Transform Your Space with <br></br> <span className="text-accent">Professional Painting</span>
-                        </h1>
-                        <h2 className="font-poppins text-base lg:text-base text-white/80  mb-8">
-                            Elevate Your Queenstown Property&apos;s Value and Appeal
-                        </h2>
-                        <ButtonCta text='Book a Free Consultation' type={1} className="" />
-                        <div className="mt-0">
-                            <HeroTestimonials />
-                        </div>
-                    </motion.div>
-                    <motion.div 
-                        className="w-full lg:w-[55%]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeVariants}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <div className="relative flex flex-col">
-                            {/* Slider container */}
-                            <div className="relative">
-                                <div className="rounded-lg overflow-hidden aspect-[4/3] w-full max-w-[650px] max-h-[350px]">
-                                    <AnimatePresence mode="wait" initial={false}>
-                                        <motion.div
-                                            key={currentSlider}
-                                            variants={fadeVariants}
-                                            initial="hidden"
-                                            animate="visible"
-                                            exit="hidden"
-                                            transition={{ duration: 0.5 }}
-                                            className="absolute inset-0"
-                                        >
-                                            <BeforeAfterSlider  
-                                                beforeImage={sliderData[currentSlider].beforeImage}
-                                                afterImage={sliderData[currentSlider].afterImage}
-                                                beforeAlt={sliderData[currentSlider].beforeAlt}
-                                                afterAlt={sliderData[currentSlider].afterAlt}
-                                                initialPosition={50}
-                                                hero={true}
-                                                showInitialTooltip={showTooltip}
-                                            />
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </div>
 
-                                {/* Desktop controls (left side) */}
-                                <div className="absolute -left-28 bottom-0 hidden lg:flex flex-col items-end space-y-4">
-                                    <div className="flex flex-col items-center space-y-2">
-                                        {sliderData.map((_, index) => (
-                                            <button
-                                                key={index}
-                                                onClick={() => setCurrentSlider(index)}
-                                                className={`w-3 h-3  transition-all rounded-full ${
-                                                    index === currentSlider
-                                                        ? 'bg-white scale-125'
-                                                        : 'bg-white/50 hover:bg-white/70'
-                                                }`}
-                                                aria-label={`Go to slide ${index + 1}`}
-                                            />
-                                        ))}
-                                    </div>
-                                    <div className="flex space-x-2">
-                                        <button 
-                                            onClick={handlePrev}
-                                            className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                            disabled={currentSlider === 0}
-                                        >
-                                            <ChevronLeft className="w-6 h-6 text-primary" />
-                                        </button>
-                                        <button 
-                                            onClick={handleNext}
-                                            className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                            disabled={currentSlider === sliderData.length - 1}
-                                        >
-                                            <ChevronRight className="w-6 h-6 text-primary" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Mobile controls (below slider) */}
-                            <div className="flex flex-row items-center justify-between mt-8 lg:hidden">
-                                <button 
-                                    onClick={handlePrev}
-                                    className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                    disabled={currentSlider === 0}
-                                >
-                                    <ChevronLeft className="w-6 h-6 text-primary" />
-                                </button>
-                                <div className="flex items-center space-x-2">
-                                    {sliderData.map((_, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => setCurrentSlider(index)}
-                                            className={`w-3 h-3 rounded-full transition-all ${
-                                                index === currentSlider
-                                                    ? 'bg-white scale-125'
-                                                    : 'bg-white/50 hover:bg-white/70'
-                                            }`}
-                                            aria-label={`Go to slide ${index + 1}`}
-                                        />
-                                    ))}
-                                </div>
-                                <button 
-                                    onClick={handleNext}
-                                    className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                    disabled={currentSlider === sliderData.length - 1}
-                                >
-                                    <ChevronRight className="w-6 h-6 text-primary" />
-                                </button>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
+            {/* CTA button */}
+            <div className="pt-4">
+              <a href="tel:+6435778899">
+                <button className="bg-cta hover:bg-cta/90 text-cta-foreground font-bold px-8 py-4 text-base">
+                  Book a consultation
+                </button>
+              </a>
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Portrait image - stacked below content on mobile, absolute positioned on desktop */}
+          <div className="relative lg:absolute lg:bottom-0 lg:-right-24 z-20 w-full lg:w-auto flex justify-center lg:justify-end">
+            <Image
+              src="/portrait.webp"
+              alt="Professional painter in Wanaka with crossed arms holding paint brush"
+              width={400}
+              height={400}
+              priority
+              className="object-cover object-bottom lg:w-[750px] lg:h-[750px]"
+            />
+          </div>
+        </div>
+      </div>
+
+    </section> 
+  )
 }

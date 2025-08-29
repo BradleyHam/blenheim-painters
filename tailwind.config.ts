@@ -15,15 +15,23 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'h': 'rgb(var(--color-base) / <alpha-value>)',
-        'p': 'rgb(var(--color-base) / var(--color-text-opacity))',
-        "primary": '#3D4D5C', /* Dark blue-gray */
-        "primary-dark": '#1F2831', /* Approximately 20% darker than the original primary-dark */
-        "secondary": '#8B9B8B', /* Sage green */
-        "accent": '#B8C5D0', /* Light blue-gray */
-        "backdrop": '#D2C8B5', /* Beige/tan */
-        "accent-1": '#CDC5AF', /* Beige/tan */
-        'light-bg': 'rgba(205, 197, 175, .2)',
+        // Custom color scheme
+        background: {
+          DEFAULT: "#F4F5F1", // Primary background
+          secondary: "#FFFFFF", // Secondary background
+        },
+        text: {
+          heading: "#545C67", // Heading text
+          paragraph: "#565E69", // Paragraph text
+        },
+        accent: {
+          one: "#D5CFBD", // Accent color 1
+          two: "#C7D1D3", // Accent color 2
+        },
+        cta: {
+          DEFAULT: "#5C705F", // CTA color
+          foreground: "#F4F5F1", // Using background color for contrast
+        },
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

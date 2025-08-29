@@ -30,8 +30,8 @@ const ShortAbout: React.FC = () => {
                     <div className="bg-white p-3 shadow-lg h-[300px]  lg:h-[500px]">
                     <div className=" bg-gray-200  h-full  w-full relative shadow-xl">
                         <Image 
-                            src='/images/team/portrait.png' 
-                            alt='Lakeside Painting team of expert painters in Queenstown, New Zealand, ready to transform your home or business' 
+                            src='/images/wanaka.jpg' 
+                            alt='Lakeside Painting team of expert painters in Wanaka, New Zealand, ready to transform your home or business' 
                             layout='fill' 
                             objectFit='cover'
                         /> 
@@ -45,7 +45,7 @@ const ShortAbout: React.FC = () => {
                                 <Stat number={100} title='Houses Transformed'/>
                             </div>
                         <p className='text-primary/75 text-sm mb-6'>
-                        At Lakeside Painting, we specialize in transforming homes and commercial spaces across Queenstown with high-quality painting services. With over 25 years of combined experience, our team of skilled painters is dedicated to enhancing the beauty and value of your property. From stunning exterior finishes that withstand Queenstown&apos;s weather conditions to flawless interior detailing, we offer comprehensive solutions tailored to meet your unique needs.
+                        At Lakeside Painting, we specialize in transforming homes and commercial spaces across Wanaka with high-quality painting services. With over 25 years of combined experience, our team of skilled painters is dedicated to enhancing the beauty and value of your property. From stunning exterior finishes that withstand Wanaka&apos;s weather conditions to flawless interior detailing, we offer comprehensive solutions tailored to meet your unique needs.
 
                        
                         {/* 

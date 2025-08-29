@@ -41,7 +41,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
     const isActive = (path: string) => pathname === path || (path === '/projects' && pathname.startsWith('/projects'));
 
     return (
-        <ul ref={mobileNavRef} className='mobile-nav z-40 fixed bg-primary h-screen flex flex-col justify-center w-screen items-start px-8 space-y-4 uppercase tracking-wider text-sm lg:hidden inset-0 text-white'>
+        <ul ref={mobileNavRef} className='mobile-nav z-40 fixed bg-white h-screen flex flex-col justify-center w-screen items-start px-8 space-y-4 uppercase tracking-wider text-sm lg:hidden inset-0 text-black'>
             <div className="absolute top-8 right-12 cursor-pointer">
                 <IoClose onClick={handleToggle} size={25} /> 
             </div>
@@ -69,7 +69,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
                 </li>
             ))}
             <div ref={buttonRef} className="pt-8 self-start" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-                <ButtonCta text='Book a consultation' type={1} />
+                <ButtonCta text='Book a consultation'  />
             </div>
         </ul>
     );

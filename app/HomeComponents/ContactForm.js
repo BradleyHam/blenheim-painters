@@ -62,7 +62,7 @@ function ContactForm() {
   <div className=''>
     <form className='contact-form flex flex-col items-start' onSubmit={handleSubmit}>
         <input
-          className='w-full text-white font-primary  mb-1 p-3  rounded border border-1 text-sm'
+          className='w-full text-gray-800 font-primary mb-1 p-3 rounded border border-gray-300 text-sm bg-white placeholder-gray-500 focus:border-gray-500 focus:outline-none'
           placeholder='Your Name'
           aria-label="Name"
           type="text"
@@ -73,7 +73,7 @@ function ContactForm() {
           required
         />
         <input
-          className='w-full text-white font-primary  p-3 mb-1 rounded border border-1 text-sm'
+          className='w-full text-gray-800 font-primary p-3 mb-1 rounded border border-gray-300 text-sm bg-white placeholder-gray-500 focus:border-gray-500 focus:outline-none'
           placeholder='Your Email'
           aria-label="Email"
           type="email"
@@ -84,7 +84,7 @@ function ContactForm() {
           required
         />
         <textarea
-          className=' w-full mb-5  font-primary  p-3  rounded min-h-[150px] border border-1 text-sm'
+          className='w-full mb-5 font-primary p-3 rounded min-h-[150px] border border-gray-300 text-sm bg-white text-gray-800 placeholder-gray-500 focus:border-gray-500 focus:outline-none'
           id="message"
           name="message"
           placeholder='Your Message'
@@ -93,7 +93,7 @@ function ContactForm() {
           required
         />
         <button
-          className=' bg- p-3 rounded bg-primary text-white font-primary flex space-x-2 items-center font-bold text-sm tracking-wider shadow-lg active:shadow-md active:translate-y-[2px] transition ease-in-out'
+          className='px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-800 text-white font-primary flex space-x-2 items-center font-semibold text-sm tracking-wide shadow-lg hover:shadow-xl active:shadow-md active:translate-y-[1px] transition-all duration-200 ease-in-out disabled:opacity-70 disabled:cursor-not-allowed'
           disabled={formStatus.submitting}
         >
           {formStatus.submitting ? (

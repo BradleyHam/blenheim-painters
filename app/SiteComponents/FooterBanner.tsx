@@ -27,7 +27,7 @@ function FooterBanner() {
         <h2 className='text-base lg:text-lg font-semibold text-left'>Get a free consultation from one of our experts</h2>
       </div>
     
-      <ButtonCta text='Book a consultation' type={1}/>
+      <ButtonCta text='Book a consultation' />
      </div>
  
  
