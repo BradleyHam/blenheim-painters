@@ -27,10 +27,10 @@ const ShortAbout: React.FC = () => {
          
             <div className=" relative z-20 ">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 lg:gap-10  ">
-                    <div className="bg-white p-3 shadow-lg h-[300px]  lg:h-[400px]">
+                    <div className="bg-white p-3 shadow-lg h-[300px]  lg:h-[500px]">
                     <div className=" bg-gray-200  h-full  w-full relative shadow-xl">
                         <Image 
-                            src='/images/team-photo.jpg' 
+                            src='/images/team/portrait.png' 
                             alt='Lakeside Painting team of expert painters in Queenstown, New Zealand, ready to transform your home or business' 
                             layout='fill' 
                             objectFit='cover'

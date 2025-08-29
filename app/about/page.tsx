@@ -25,7 +25,7 @@ export default function About() {
       />
       <ShortAbout />
       <Values />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <ProcessSection bg='white'/>
       <FooterBanner />
       <Footer />

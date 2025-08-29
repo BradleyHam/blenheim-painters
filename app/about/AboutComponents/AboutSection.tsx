@@ -8,11 +8,11 @@ export default function AboutSection() {
                 <div className="lg:flex lg:items-center lg:space-x-8">
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <Image 
-                            src="/images/lakeside-painting-team.jpg" 
-                            alt="Lakeside Painting&apos;s expert team of professional painters in Queenstown, NZ - Delivering quality interior and exterior painting services since 2010" 
+                            src="/images/team/portrait.png" 
+                            alt="Bradley Hamilton, founder of Lakeside Painting - Professional painter serving Queenstown, NZ with quality interior and exterior painting services since 2010" 
                             width={600} 
                             height={400} 
-                            className="rounded-lg shadow-lg"
+                            className="rounded-lg shadow-lg object-top"
                         />
                     </div>
                     <div className="lg:w-1/2">
