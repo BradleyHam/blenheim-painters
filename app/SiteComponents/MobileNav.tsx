@@ -69,7 +69,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
                 </li>
             ))}
             <div ref={buttonRef} className="pt-8 self-start" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-                <ButtonCta text='Book a consultation'  />
+                <ButtonCta text='Book a consultation' type={2} />
             </div>
         </ul>
     );
