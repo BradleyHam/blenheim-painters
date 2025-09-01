@@ -7,11 +7,11 @@ export default function TestimonialCard({name, testimonial}: {name: string, test
             <div className="testionial-card-heading flex space-x-3 mb-[12px]">
                 <div className="flex space-x-3 items-start justify-between w-full">
                     <div className="flex flex-col space-y-3">
-                        <h3 className="text-sm lg:text-sm font-semibold">{name}</h3>
+                        <h3 className="text-sm lg:text-sm font-semibold text-text-heading">{name}</h3>
                         <FiveStars />
                     </div>
-                    <div className="text-primary/30  translate-x-1">
-                         <BiSolidQuoteAltRight size={40} color='' />
+                    <div className="translate-x-1">
+                         <BiSolidQuoteAltRight size={40} className="text-text-heading" />
                     </div>    
                 </div>
             </div>

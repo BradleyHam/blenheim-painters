@@ -17,6 +17,7 @@
   --bg-secondary-rgb:210, 200, 181;
   --navbar-height-mobile: 92px;
   --navbar-height-desktop: 95px;
+  --brand-blue: #545C67;
 
   font-size: 16px;
  
@@ -115,7 +116,7 @@ li{
 }
 
 .footer-banner{
-  background: linear-gradient(rgba(var(--bg-primary-rgb), .8), rgba(var(--bg-primary-rgb), .8)),url('/images/queenstown.avif'); 
+  background: linear-gradient(rgba(var(--bg-primary-rgb), .8), rgba(var(--bg-primary-rgb), .8)),url('/images/wanaka.jpg'); 
 
   background-position: center;
   background-size: cover;;
@@ -134,4 +135,20 @@ li{
 
 button{
   font-family: var(--font-primary);
+}
+
+/* Noise texture for hero background - behind brush stroke */
+.hero-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 5;
+  background-image: url('/images/noise.jpg');
+  background-size: 300px 300px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
 }

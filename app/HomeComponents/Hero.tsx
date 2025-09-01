@@ -1,12 +1,13 @@
 'use client'
 import Image from "next/image"
 import { Phone, Calendar, ArrowRight, Star, CheckCircle } from "lucide-react"
+import ButtonCta from "../SiteComponents/ButtonCta"
 
 
 export default function EnhancedHero() {
 
   return (
-    <section className="relative w-full overflow-hidden  min-h-[80vh]">
+    <section className=" relative w-full overflow-hidden  min-h-[80vh]">
       {/* SEO-optimized structured data */}
       <script
         type="application/ld+json"
@@ -43,35 +44,37 @@ export default function EnhancedHero() {
           src="/brush-stroke.svg"
           alt=""
           width={800}
-          height={300}
-          className="absolute top-0 w-full h-full  opacity-40"
+          height={400}
+          className="absolute top-24 w-full h-full opacity-50 z-10"
           style={{
-            transform: 'scale(1.6) rotate(-15deg) translate(0, 50px) ',
+            transform: 'scale(1.8) rotate(-15deg) translate(0, 50px) ',
             transformOrigin: 'bottom'
           }}
         />
       {/* </div> */}
 
+      {/* Noise texture background */}
+      <div className="" />
+
       {/* Content container */}
-      <div className="container relative z-10 mx-auto px-4 pb-12 sm:px-6 sm:pt-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 pb-12 sm:px-6 sm:pt-12 lg:px-8">
         <div className="flex flex-col lg:grid lg:grid-cols-1 gap-8 lg:gap-16 items-center min-h-[80vh] max-w-4xl">
           {/* Main content */}
-          <div className="flex flex-col justify-center space-y-8 lg:pb-0 pb-8">
+          <div className="flex flex-col justify-center space-y-8 lg:pb-0 pb-8 pt-8 lg:pt-0">
             {/* Location tag */}
             <h1 className="inline-flex items-center rounded-full tracking-tight text-base font-medium text-cta w-fit">
               House Painters Wanaka
             </h1>
 
             {/* Main headline */}
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-5xl">
+            <div className="space-y-4 text-heading">
+              <h2 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-[#545C67] tracking-tight leading-tight">
                 Bring New Life to Your Home
-              </h2>
-              <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+       
                 With Expert Painting in Wanaka
               </h2>
             </div>
-            <p className="max-w-2xl text-lg font-medium tracking-tight">With over 15 years of family experience in painting, my partner and I treat your home like our own and back every job
+            <p className="text-[#545C67] max-w-2xl text-base font-medium tracking-tight">With over 15 years of family experience in painting, my partner and I treat your home like our own and back every job
             with a <span className="font-bold italic">full workmanship warranty.</span></p>
             
             {/* Trust indicators */}
@@ -92,11 +95,7 @@ export default function EnhancedHero() {
 
             {/* CTA button */}
             <div className="pt-4">
-              <a href="tel:+6435778899">
-                <button className="bg-cta hover:bg-cta/90 text-cta-foreground font-bold px-8 py-4 text-base">
-                  Book a consultation
-                </button>
-              </a>
+              <ButtonCta text='Book a consultation' type={2} />     
             </div>
           </div>
 
@@ -108,7 +107,7 @@ export default function EnhancedHero() {
               width={400}
               height={400}
               priority
-              className="object-cover object-bottom lg:w-[750px] lg:h-[750px]"
+              className="object-cover object-bottom w-[500px] h-[500px] lg:w-[750px] lg:h-[750px]"
             />
           </div>
         </div>

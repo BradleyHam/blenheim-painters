@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ServiceText({heading, bulletPoints}: {heading: string, bulletPoints: string[]}) {
     return (
         <>
-            <div className='lg:w-1/3 bg-light-bg  p-6 flex flex-col justify-between text-primary'>
+            <div className='lg:w-1/3 bg-white p-6 flex flex-col justify-between text-primary'>
             <div className='top-content mb-6'>
             <h3 className="text-base font-bold">{heading}</h3>
             <ul className='list-disc list-inside  list-none pt-2 space-y-1 font-lato'>

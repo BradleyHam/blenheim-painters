@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-const LogoGrid = () => {
+const StatRow = () => {
   return (
-    <div className="flex flex-col items-center container mx-auto px-side-spacing pt-[40px] pb-[80px]">
-      <h4 className='mr-10 text-primary pb-8  uppercase text-sm'>Trusted By</h4>
+    <div className="flex flex-col lg:space-y-8 items-center container mx-auto px-side-spacing pt-[40px] pb-[80px] bg-white">
+      <h4 className='mr-10 text-primary  uppercase text-sm'>Trusted By</h4>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-12 lg:gap-x-12 gap-y-8 lg:gap-y-4 items-center">
         {[
           '/images/trustedBy/harcourts.webp',
@@ -19,8 +19,8 @@ const LogoGrid = () => {
             <Image
               src={src}
               alt={`Logo ${index + 1}`}
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: 'contain' }}
               className={`transition-transform  ${
                 src.includes('harcourts') ? 'scale-[.8]' : ''
               } ${
@@ -34,4 +34,4 @@ const LogoGrid = () => {
   );
 };
 
-export default LogoGrid;
+export default StatRow;
