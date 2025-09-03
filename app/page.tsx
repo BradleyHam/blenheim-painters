@@ -11,7 +11,6 @@ import StatRow from './HomeComponents/StatRow'
 import ModalClientManager from './SiteComponents/ModalClientManager';
 import FooterBanner from './SiteComponents/FooterBanner';
 import ShortAbout from './HomeComponents/ShortAbout';
-import BookingForm from './SiteComponents/BookingForm/BookingForm';
 import projects from '../Utils/mockProjects'
 import ProjectsPreview from './HomeComponents/ProjectsPreview';
 

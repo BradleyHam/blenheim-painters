@@ -69,7 +69,7 @@ export default function ButtonCta({ text, type, className, onClick }: ButtonCtaP
 
     return (
         <Link
-            href="/bookingPage"
+            href="/contact"
             className={baseClasses}
             style={backgroundStyle}
         >
