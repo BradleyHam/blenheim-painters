@@ -8,12 +8,14 @@ import { FaChevronDown } from 'react-icons/fa'; // Import the chevron icon
 import Image from 'next/image';
 import MobileNav from './MobileNav';
 import { motion, AnimatePresence } from 'framer-motion'; // Add this import
+import { useModal } from './ModalClientManager';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
+    const { handleOpenModal } = useModal();
 
     const [isServicesOpen, setIsServicesOpen] = useState(false);
 
@@ -73,7 +75,12 @@ export default function Navbar() {
                 </Link>
                 
                 {renderMobileNav && (
-                    <MobileNav open={open} onClose={handleAnimationEnd} handleToggle={handleToggle} />
+                    <MobileNav 
+                        open={open} 
+                        onClose={handleAnimationEnd} 
+                        handleToggle={handleToggle}
+                        onBookConsultation={handleOpenModal}
+                    />
                 )}
                 
                 <ul className="flex-row space-x-6 items-center hidden xl:flex text-primary text-[13px] uppercase  tracking-wider">
@@ -125,16 +132,16 @@ export default function Navbar() {
                     <li className={pathname === '/cost-calculator' ? 'font-bold' : ''}>
                         <Link href="/cost-calculator">Cost Calculator</Link>
                     </li>
-                    <li className={pathname === '/testimonials' ? 'font-bold' : ''}>
+                    {/* <li className={pathname === '/testimonials' ? 'font-bold' : ''}>
                         <Link href="/testimonials">Testimonials</Link>
-                    </li>
+                    </li> */}
                     <li className={pathname === '/contact' ? 'font-bold' : ''}>
                         <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
                 
                 <div className="hidden xl:block">
-                        <ButtonCta text='Book a consultation' type={2} />
+                        <ButtonCta text='Book a consultation' type={2} onClick={handleOpenModal} />
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 function ContactPage() {
   return (
     <div>
-      <TopBanner headingSmall='Contact' headingLarge="Get in touch with us" />
+      {/* <TopBanner headingSmall='Contact' headingLarge="Get in touch with us" /> */}
       <Contact />
       <Footer />
     </div>

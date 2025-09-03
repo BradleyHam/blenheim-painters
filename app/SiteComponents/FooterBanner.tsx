@@ -1,23 +1,14 @@
 'use client'
-import React, {useState} from 'react'
+import React from 'react'
 import ButtonCta from './ButtonCta'
 import {COLORS} from '@/Utils/variables'
 import { LuPaintbrush } from 'react-icons/lu'
-import Modal from './Modal'
 import Image from 'next/image'
-// import { useModal } from '../SiteComponents/ModalClientManager';
+import { useModal } from './ModalClientManager';
 
 
 function FooterBanner() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const { handleOpenModal } = useModal();
 
   return (
     <div className="bg-white px-side-spacing py-16">
@@ -28,7 +19,7 @@ function FooterBanner() {
         <h2 className='text-base lg:text-lg font-semibold text-left'>Get a free consultation from one of our experts</h2>
       </div>
     
-      <ButtonCta text='Book a consultation' type={2} />
+      <ButtonCta text='Book a consultation' type={2} onClick={handleOpenModal} />
      </div>
  
  

@@ -2,9 +2,11 @@
 import Image from "next/image"
 import { Phone, Calendar, ArrowRight, Star, CheckCircle } from "lucide-react"
 import ButtonCta from "../SiteComponents/ButtonCta"
+import { useModal } from '../SiteComponents/ModalClientManager'
 
 
 export default function EnhancedHero() {
+  const { handleOpenModal } = useModal();
 
   return (
     <section className=" relative w-full overflow-hidden  min-h-[80vh]">
@@ -95,7 +97,7 @@ export default function EnhancedHero() {
 
             {/* CTA button */}
             <div className="pt-4">
-              <ButtonCta text='Book a consultation' type={2} />     
+              <ButtonCta text='Book a consultation' type={2} onClick={handleOpenModal} />     
             </div>
           </div>
 

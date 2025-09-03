@@ -10,9 +10,10 @@ interface MobileNavProps {
     open: boolean;
     onClose: () => void;
     handleToggle: () => void;
+    onBookConsultation?: () => void;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle, onBookConsultation }) => {
     const mobileNavRef = useRef<HTMLUListElement>(null);
     const listItemRefs = useRef<(HTMLLIElement | null)[]>([]);
     const buttonRef = useRef<HTMLDivElement>(null);
@@ -53,7 +54,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
                 { path: '/services/exterior', text: 'Exterior Services' },
                 { path: '/projects', text: 'Projects' },
                 { path: '/cost-calculator', text: 'Cost Calculator' },
-                { path: '/testimonials', text: 'Testimonials' },
+                // { path: '/testimonials', text: 'Testimonials' },
                 { path: '/contact', text: 'Contact' }
             ].map((item, index) => (
                 <li 
@@ -69,7 +70,14 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
                 </li>
             ))}
             <div ref={buttonRef} className="pt-8 self-start" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-                <ButtonCta text='Book a consultation' type={2} />
+                <ButtonCta 
+                    text='Book a consultation' 
+                    type={2} 
+                    onClick={onBookConsultation ? () => {
+                        handleToggle();
+                        onBookConsultation();
+                    } : undefined}
+                />
             </div>
         </ul>
     );

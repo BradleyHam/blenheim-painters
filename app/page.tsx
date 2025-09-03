@@ -20,33 +20,35 @@ export default function Home() {
 
 
   return (
-    <main className="relative text-brand-blue pt-[var(--navbar-height-mobile)] lg:pt-[var(--navbar-height-desktop)] pt-[var(--navbar-height-mobile)] md:pt-[var(--navbar-height-desktop)]">
-          <Navbar />
-          <Hero />
-          <StatRow />
-          <div className="relative bg-background py-16 overflow-hidden">
-            <div className=" opacity-30" />
-            <div className="relative z-10">
-              <Testimonials />
+    <ModalClientManager>
+      <main className="relative text-brand-blue pt-[var(--navbar-height-mobile)] lg:pt-[var(--navbar-height-desktop)] pt-[var(--navbar-height-mobile)] md:pt-[var(--navbar-height-desktop)]">
+            <Navbar />
+            <Hero />
+            <StatRow />
+            <div className="relative bg-background py-16 overflow-hidden">
+              <div className=" opacity-30" />
+              <div className="relative z-10">
+                <Testimonials />
+              </div>
             </div>
-          </div>
-          <ShortAbout />
-          <div className="relative bg-background py-16 overflow-hidden">
-            <div className="hero-noise opacity-30" />
-            <div className="relative z-10">
-          <Services />
-          </div>
-          </div>
-          <ProjectsPreview projects={projects} />
-          <div className="relative bg-background py-16 overflow-hidden">
-            <div className="hero-noise opacity-30" />
-            <div className="relative z-10">
-          <Faq />
-          </div>
-          </div>
-          <ProcessSection bg='white'/>
-          <FooterBanner />
-          <Footer />
-    </main>
+            <ShortAbout />
+            <div className="relative bg-background py-16 overflow-hidden">
+              <div className="hero-noise opacity-30" />
+              <div className="relative z-10">
+            <Services />
+            </div>
+            </div>
+            <ProjectsPreview projects={projects} />
+            <div className="relative bg-background py-16 overflow-hidden">
+              <div className="hero-noise opacity-30" />
+              <div className="relative z-10">
+            <Faq />
+            </div>
+            </div>
+            <ProcessSection bg='white'/>
+            <FooterBanner />
+            <Footer />
+      </main>
+    </ModalClientManager>
   );
 }
