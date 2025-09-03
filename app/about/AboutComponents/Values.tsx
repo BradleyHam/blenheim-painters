@@ -31,7 +31,7 @@ const values = [
 
 export default function Values() {
     return (
-        <div className="">
+        <div className=" bg-background noise">
             <div className="flex flex-col items-center px-5 container mx-auto py-[80px] ">
                 <SectionHeading 
                     subtitle='Our Values' 

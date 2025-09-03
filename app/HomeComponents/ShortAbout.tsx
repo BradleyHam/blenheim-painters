@@ -30,7 +30,7 @@ const ShortAbout: React.FC = () => {
                     <div className="bg-white p-3 shadow-lg h-[300px]  lg:h-[500px]">
                     <div className=" bg-gray-200  h-full  w-full relative shadow-xl">
                         <Image 
-                            src='/images/wanaka.jpg' 
+                            src='/images/painter.webp' 
                             alt='Lakeside Painting team of expert painters in Wanaka, New Zealand, ready to transform your home or business' 
                             layout='fill' 
                             objectFit='cover'

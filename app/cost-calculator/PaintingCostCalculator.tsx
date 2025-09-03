@@ -53,7 +53,7 @@ const PaintingCostCalculator: React.FC = () => {
         <div className="bg-light-bg/10 min-h-screen py-section-spacing px-side-spacing">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
             <div className="bg-primary text-white py-6 px-8">
-              <h1 className="text-base font-semibold">Queensotwn Painting Cost Calculator</h1>
+              <h1 className="text-base font-semibold">Wanaka Painting Cost Calculator</h1>
               
             </div>
             
