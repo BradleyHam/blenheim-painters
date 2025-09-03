@@ -1,53 +1,17 @@
-import Navbar from "./SiteComponents/Navbar";
-import Footer from "./SiteComponents/Footer";
-import Contact from "./HomeComponents/Contact";
-import Hero from "./HomeComponents/Hero";
-import ProcessSection from "./HomeComponents/ProcessSection";
-import Services from "./HomeComponents/Services";
-import Testimonials from "./HomeComponents/Testimonials";
-import Faq from "./HomeComponents/Faq";
-import Image from 'next/image'
-import StatRow from './HomeComponents/StatRow'
-import ModalClientManager from './SiteComponents/ModalClientManager';
-import FooterBanner from './SiteComponents/FooterBanner';
-import ShortAbout from './HomeComponents/ShortAbout';
-import projects from '../Utils/mockProjects'
-import ProjectsPreview from './HomeComponents/ProjectsPreview';
-
 export default function Home() {
-
-
-
   return (
-    <ModalClientManager>
-      <main className="relative text-brand-blue pt-[var(--navbar-height-mobile)] lg:pt-[var(--navbar-height-desktop)] pt-[var(--navbar-height-mobile)] md:pt-[var(--navbar-height-desktop)]">
-            <Navbar />
-            <Hero />
-            <StatRow />
-            <div className="relative bg-background py-16 overflow-hidden">
-              <div className=" opacity-30" />
-              <div className="relative z-10">
-                <Testimonials />
-              </div>
-            </div>
-            <ShortAbout />
-            <div className="relative bg-background py-16 overflow-hidden">
-              <div className="hero-noise opacity-30" />
-              <div className="relative z-10">
-            <Services />
-            </div>
-            </div>
-            <ProjectsPreview projects={projects} />
-            <div className="relative bg-background py-16 overflow-hidden">
-              <div className="hero-noise opacity-30" />
-              <div className="relative z-10">
-            <Faq />
-            </div>
-            </div>
-            <ProcessSection bg='white'/>
-            <FooterBanner />
-            <Footer />
-      </main>
-    </ModalClientManager>
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Blenheim Painters
+        </h1>
+        <p className="text-xl text-gray-600">
+          Professional Painting Services in Blenheim, New Zealand
+        </p>
+        <p className="mt-4 text-sm text-gray-500">
+          Website deployment test - v1.0
+        </p>
+      </div>
+    </div>
   );
 }
