@@ -64,7 +64,7 @@ export default function Services() {
                                 src='/images/ldd-exterior.jpg' 
                                 layout='fill' 
                                 objectFit='cover' 
-                                alt='Lakeside Painting expert exterior house painting in Wanaka, showcasing durable weatherproof finishes' 
+                                alt='Lakeside Painting expert exterior house painting in Blenheim, showcasing durable weatherproof finishes' 
                             />
                         </div>
                     </div>
@@ -77,7 +77,7 @@ export default function Services() {
                                 src='/images/ldd-interior.jpg' 
                                 layout='fill' 
                                 objectFit='cover' 
-                                alt='Lakeside Painting professional interior painting service in Wanaka, featuring stylish color schemes and flawless finishes' 
+                                alt='Lakeside Painting professional interior painting service in Blenheim, featuring stylish color schemes and flawless finishes' 
                             />
                         </div>
                     </div>

@@ -11,17 +11,17 @@ import projects from '../../Utils/mockProjects';
 import ProcessSection from "../HomeComponents/ProcessSection"
 
 export const metadata: Metadata = {
-  title: 'Lakeside Painting Portfolio | Professional House Painters in Queenstown',
-  description: 'Explore our stunning portfolio of house painting projects in Queenstown. See how Lakeside Painting transforms homes with expert craftsmanship and attention to detail.',
-  keywords: 'house painting, Queenstown painters, home renovation, painting portfolio, exterior painting, interior painting',
+  title: 'Lakeside Painting Portfolio | Professional House Painters in Blenheim',
+  description: 'Explore our stunning portfolio of house painting projects in Blenheim. See how Lakeside Painting transforms homes with expert craftsmanship and attention to detail.',
+  keywords: 'house painting, Blenheim painters, home renovation, painting portfolio, exterior painting, interior painting',
   openGraph: {
-    title: 'Lakeside Painting Portfolio | Expert House Painters in Queenstown',
-    description: 'Discover how Lakeside Painting transforms Queenstown homes. View our portfolio of stunning painting projects.',
+    title: 'Lakeside Painting Portfolio | Expert House Painters in Blenheim',
+    description: 'Discover how Lakeside Painting transforms Blenheim homes. View our portfolio of stunning painting projects.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lakeside Painting Portfolio | Expert House Painters in Queenstown',
-    description: 'Discover how Lakeside Painting transforms Queenstown homes. View our portfolio of stunning painting projects.'
+    title: 'Lakeside Painting Portfolio | Expert House Painters in Blenheim',
+    description: 'Discover how Lakeside Painting transforms Blenheim homes. View our portfolio of stunning painting projects.'
   },
 }
 
@@ -32,7 +32,7 @@ export default function Projects() {
         <Navbar />
         <TopBanner 
           headingSmall="Lakeside Painting Portfolio" 
-          headingLarge="Transforming Queenstown Homes with Expert Painting"
+          headingLarge="Transforming Blenheim Homes with Expert Painting"
         />
         <div className="projects-container ">
           <div className="projects">

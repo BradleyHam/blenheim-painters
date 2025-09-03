@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="flex justify-start items-start">
                     <Image 
                         src={'/images/logo.png'} 
-                        alt='Lakeside Painting - Professional Painters in Queenstown, NZ | Home and Commercial Painting Services' 
+                        alt='Lakeside Painting - Professional Painters in Blenheim, NZ | Home and Commercial Painting Services' 
                         width={150} 
                         height={75} 
                         className="w-auto h-auto"
@@ -41,14 +41,14 @@ export default function Footer() {
                     </nav>
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex space-x-1 mb-4">
+                    {/* <div className="flex space-x-1 mb-4">
                         <a href="#" aria-label="Instagram"><AiFillInstagram size={24} /></a>
                         <a href="#" aria-label="Facebook"><RiFacebookFill size={24} /></a>
                     </div>
                     <div className="text-sm space-y-2">
                         <p><span className="font-semibold">Phone:</span> 0226132936</p>
                         <p className="break-words"><span className="font-semibold">Email:</span> bradleyjamesham@gmail.com</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="border-t border-primary/10 py-4 px-5 lg:px-20">

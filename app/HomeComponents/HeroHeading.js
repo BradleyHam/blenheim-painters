@@ -5,7 +5,7 @@ export default function HeroHeading() {
           transform your space with <span className="text-brand-orange">little dog decorating</span>
         </h1>
         <h1 className="text-2xl text-left lg:text-center text-white font-medium capitalize leading-normal">
-          expert painting services in Wanaka
+          expert painting services in Blenheim
         </h1>
       </div>
     );

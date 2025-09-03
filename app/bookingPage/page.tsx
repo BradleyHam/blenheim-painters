@@ -10,17 +10,17 @@ const BookingForm = dynamic(() => import('../SiteComponents/BookingForm/BookingF
 })
 
 // export const metadata: Metadata = {
-//   title: 'Book Your Professional Painting Service | Lakeside Painting Queenstown',
-//   description: 'Schedule your home or business painting project with Lakeside Painting in Queenstown. Easy online booking, free quotes, and expert service guaranteed.',
-//   keywords: 'painting service, book painter, Queenstown painter, house painting, commercial painting',
+//   title: 'Book Your Professional Painting Service | Lakeside Painting Blenheim',
+//   description: 'Schedule your home or business painting project with Lakeside Painting in Blenheim. Easy online booking, free quotes, and expert service guaranteed.',
+//   keywords: 'painting service, book painter, Blenheim painter, house painting, commercial painting',
 //   openGraph: {
-//     title: 'Book Your Painting Project | Lakeside Painting Queenstown',
-//     description: 'Transform your space with Lakeside Painting. Book online for expert painting services in Queenstown. Free quotes, flexible scheduling.',
+//     title: 'Book Your Painting Project | Lakeside Painting Blenheim',
+//     description: 'Transform your space with Lakeside Painting. Book online for expert painting services in Blenheim. Free quotes, flexible scheduling.',
 //   },
 //   twitter: {
 //     card: 'summary_large_image',
-//     title: 'Book Your Painting Project | Lakeside Painting Queenstown',
-//     description: 'Transform your space with Lakeside Painting. Book online for expert painting services in Queenstown. Free quotes, flexible scheduling.'
+//     title: 'Book Your Painting Project | Lakeside Painting Blenheim',
+//     description: 'Transform your space with Lakeside Painting. Book online for expert painting services in Blenheim. Free quotes, flexible scheduling.'
 //   },
 // }
 

@@ -43,7 +43,7 @@ export default function TeamSection() {
               <div className="w-full h-[250px] relative">
                 <Image 
                   src={member.image} 
-                  alt={`team member of lakeside painting in Queenstown - ${member.name}`} 
+                  alt={`team member of lakeside painting in Blenheim - ${member.name}`} 
                   layout='fill'
                   objectFit='cover'
                 />

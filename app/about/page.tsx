@@ -10,9 +10,9 @@ import { Metadata } from 'next';
 import ShortAbout from '../HomeComponents/ShortAbout';
 
 export const metadata: Metadata = {
-  title: 'About Lakeside Painting | Professional Painters in Queenstown',
-  description: 'Learn about Lakeside Painting, Queenstown\'s trusted painting experts. Discover our values, meet our team, and see how we transform spaces with quality and care.',
-  keywords: 'Lakeside Painting, Queenstown painters, professional painting services, about us, painting experts',
+  title: 'About Lakeside Painting | Professional Painters in Blenheim',
+  description: 'Learn about Lakeside Painting, Blenheim\'s trusted painting experts. Discover our values, meet our team, and see how we transform spaces with quality and care.',
+  keywords: 'Lakeside Painting, Blenheim painters, professional painting services, about us, painting experts',
 };
 
 export default function About() {
@@ -20,7 +20,7 @@ export default function About() {
     <main className="text-brand-primary mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
       <Navbar />
       <TopBanner 
-        headingSmall="Queenstown's Trusted Painters" 
+        headingSmall="Blenheim's Trusted Painters" 
         headingLarge="Our Painting Journey"
       />
       <ShortAbout />

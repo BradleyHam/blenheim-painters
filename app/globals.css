@@ -39,7 +39,7 @@
 }
 
 .top-banner{
-  background:  var(--banner-gradient), url('../public/images/queenstown.avif');
+  background:  var(--banner-gradient), url('../public/images/wanaka.jpg');
   background-position: center;
   background-size: cover;
 }

@@ -66,11 +66,11 @@ const projects = [
             {
                 before: {
                     image: "/images/mock-exterior-1/mock-exterior-image-1--before.jpg",
-                    alt: "Weatherboard house exterior before professional repainting in Queenstown"
+                    alt: "Weatherboard house exterior before professional repainting in Blenheim"
                 },
                 after: {
                     image: "/images/mock-exterior-1/mock-exterior-image-1--after.jpg",
-                    alt: "Freshly painted weatherboard house exterior with modern color scheme in Queenstown"
+                    alt: "Freshly painted weatherboard house exterior with modern color scheme in Blenheim"
                 }
             },
             {
@@ -98,13 +98,13 @@ const projects = [
         "slug": "elle-and-riley",
         "title": "Elle and Riley",
         "categories": ["interior"],
-        "content": `We recently completed a challenging and rewarding project for Elle and Riley, Queenstown's premier luxury cashmere retailer. This high-end boutique required our expertise to refresh and elevate their retail space while maintaining the utmost care for their valuable inventory.
+        "content": `We recently completed a challenging and rewarding project for Elle and Riley, Blenheim's premier luxury cashmere retailer. This high-end boutique required our expertise to refresh and elevate their retail space while maintaining the utmost care for their valuable inventory.
         \n\n
         The project presented unique challenges that demanded our specialized skills. To minimize disruption to the store's business, we worked a night shift from 7 PM to 4 AM. Extreme caution was necessary to safeguard the expensive cashmere sweaters and other luxury items. The boutique featured high walls, requiring specialized equipment and techniques. Extensive work was needed to fill and sand numerous dings in the walls. We also had to carefully maneuver around costly, ornate light fixtures while working.
         \n\n
         Our team rose to the challenge with professionalism and dedication. We implemented strict protective measures to ensure the safety of Elle and Riley's valuable inventory. Our skilled painters navigated the high walls with precision, using bag ladders to reach every corner. We conducted thorough surface preparation, including extensive filling and sanding to create a flawless base for painting. Working efficiently with minimal breaks, we completed the project within the tight nighttime schedule. Our experienced team expertly maneuvered around the boutique's expensive fixtures, preserving their integrity while achieving a perfect finish.
         \n\n
-        The completed project transformed Elle and Riley's Queenstown boutique, enhancing the luxurious atmosphere that their discerning clientele expects. Our meticulous work provided a refined backdrop for their high-end cashmere products, aligning perfectly with their brand image. This project showcases our ability to work in high-end retail environments, adapting to unique challenges while delivering superior results. Whether it's luxury boutiques, high-end hotels, or exclusive residences in Queenstown, our team is equipped to handle the most demanding painting projects with skill and discretion.`,
+        The completed project transformed Elle and Riley's Blenheim boutique, enhancing the luxurious atmosphere that their discerning clientele expects. Our meticulous work provided a refined backdrop for their high-end cashmere products, aligning perfectly with their brand image. This project showcases our ability to work in high-end retail environments, adapting to unique challenges while delivering superior results. Whether it's luxury boutiques, high-end hotels, or exclusive residences in Blenheim, our team is equipped to handle the most demanding painting projects with skill and discretion.`,
         "shortDesc": "High-end boutique painting, delicate fixture work, and nighttime precision.",
      
         "imageUrls": '',

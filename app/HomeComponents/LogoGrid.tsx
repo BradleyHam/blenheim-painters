@@ -10,7 +10,7 @@ interface LogoItem {
 const logoItems: LogoItem[] = [
   {
     src: '/images/trustedBy/harcourts.webp',
-    alt: 'Harcourts Real Estate - Trusted client of Lakeside Painting in Wanaka',
+    alt: 'Harcourts Real Estate - Trusted client of Lakeside Painting in Blenheim',
     companyName: 'Harcourts',
     industry: 'Real Estate'
   },
@@ -28,7 +28,7 @@ const logoItems: LogoItem[] = [
   },
   {
     src: '/images/trustedBy/elleAndRiley.png',
-    alt: 'Elle & Riley - Commercial painting project by Lakeside Painting in Wanaka',
+    alt: 'Elle & Riley - Commercial painting project by Lakeside Painting in Blenheim',
     companyName: 'Elle & Riley',
     industry: 'Retail'
   },

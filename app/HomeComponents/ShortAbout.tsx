@@ -31,7 +31,7 @@ const ShortAbout: React.FC = () => {
                     <div className=" bg-gray-200  h-full  w-full relative shadow-xl">
                         <Image 
                             src='/images/painter.webp' 
-                            alt='Lakeside Painting team of expert painters in Wanaka, New Zealand, ready to transform your home or business' 
+                            alt='Lakeside Painting team of expert painters in Blenheim, New Zealand, ready to transform your home or business' 
                             layout='fill' 
                             objectFit='cover'
                         /> 
@@ -45,7 +45,7 @@ const ShortAbout: React.FC = () => {
                                 <Stat number={100} title='Houses Transformed'/>
                             </div>
                         <p className='text-primary/75 text-sm mb-6'>
-                        At Lakeside Painting, we&apos;re a Wanaka-based team offering high-quality interior and exterior painting services. I learned the trade from my father and have over 15 years of hands-on experience, while my partner brings an unmatched eye for detail and a commitment to cleanliness that ensures every project is left spotless and beautiful.
+                        At Lakeside Painting, we&apos;re a Blenheim-based team offering high-quality interior and exterior painting services. I learned the trade from my father and have over 15 years of hands-on experience, while my partner brings an unmatched eye for detail and a commitment to cleanliness that ensures every project is left spotless and beautiful.
 
 Together, we deliver a friendly, professional service you can rely on
                         </p>

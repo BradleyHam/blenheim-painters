@@ -9,12 +9,12 @@ import ProcessSection from '../HomeComponents/ProcessSection';
 import Footer from '../SiteComponents/Footer';
 
 export const metadata: Metadata = {
-  title: 'Client Testimonials | Lakeside Painting Queenstown',
-  description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Queenstown, New Zealand.',
-  keywords: 'testimonials, client reviews, Lakeside Painting, house painters, Queenstown, New Zealand',
+  title: 'Client Testimonials | Lakeside Painting Blenheim',
+  description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Blenheim, New Zealand.',
+  keywords: 'testimonials, client reviews, Lakeside Painting, house painters, Blenheim, New Zealand',
   openGraph: {
-    title: 'Client Testimonials | Lakeside Painting Queenstown',
-    description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Queenstown, New Zealand.',
+    title: 'Client Testimonials | Lakeside Painting Blenheim',
+    description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Blenheim, New Zealand.',
     url: 'https://www.lakesidepainting.co.nz/testimonials',
     type: 'website',
     locale: 'en_NZ',
@@ -76,7 +76,7 @@ export default function TestimonialPage() {
       <Navbar />
       <TopBanner 
         headingSmall='Testimonials'
-        headingLarge="Queenstown's Trusted Painters: See What Our Clients Say"
+        headingLarge="Blenheim's Trusted Painters: See What Our Clients Say"
       />
       
       <main className="mx-auto p-4 bg-light-bg/10 py-[80px] lg:pb-[120px] lg:pt-[120px]">

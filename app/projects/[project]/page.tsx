@@ -30,7 +30,7 @@ type Props = {
 //   if (!project) {
 //     return {
 //       title: 'Project Not Found | Lakeside Painting',
-//       description: 'The requested project could not be found. Explore our other painting and decorating projects in Queenstown, New Zealand.',
+//       description: 'The requested project could not be found. Explore our other painting and decorating projects in Blenheim, New Zealand.',
 //     }
 //   }
 
@@ -38,8 +38,8 @@ type Props = {
 
 //   return {
 //     title: `${title} | Lakeside Painting Projects`,
-//     description: shortDesc || `Explore our ${title} project. Professional painting and decorating services in Queenstown, NZ by Lakeside Painting.`,
-//     keywords: [...tags, 'painting', 'decorating', 'Queenstown', 'New Zealand'],
+//     description: shortDesc || `Explore our ${title} project. Professional painting and decorating services in Blenheim, NZ by Lakeside Painting.`,
+//     keywords: [...tags, 'painting', 'decorating', 'Blenheim', 'New Zealand'],
 //     openGraph: {
 //       title: `${title} - Lakeside Painting Project`,
 //       description: shortDesc,

@@ -5,12 +5,12 @@ import TopBanner from '../SiteComponents/TopBanner'
 import Footer from '../SiteComponents/Footer'
 
 export const metadata: Metadata = {
-  title: 'Contact Lakeside Painting | Professional Painters in Queenstown, NZ',
-  description: 'Get in touch with Lakeside Painting for expert house painting and decorating services in Queenstown, New Zealand. Request a free quote today!',
-  keywords: 'contact, Lakeside Painting, house painters, Queenstown, New Zealand, free quote',
+  title: 'Contact Lakeside Painting | Professional Painters in Blenheim, NZ',
+  description: 'Get in touch with Lakeside Painting for expert house painting and decorating services in Blenheim, New Zealand. Request a free quote today!',
+  keywords: 'contact, Lakeside Painting, house painters, Blenheim, New Zealand, free quote',
   openGraph: {
-    title: 'Contact Lakeside Painting | Professional Painters in Queenstown, NZ',
-    description: 'Get in touch with Lakeside Painting for expert house painting and decorating services in Queenstown, New Zealand. Request a free quote today!',
+    title: 'Contact Lakeside Painting | Professional Painters in Blenheim, NZ',
+    description: 'Get in touch with Lakeside Painting for expert house painting and decorating services in Blenheim, New Zealand. Request a free quote today!',
     url: 'https://www.lakesidepainting.co.nz/contact',
     type: 'website',
   },

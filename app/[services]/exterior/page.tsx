@@ -9,12 +9,12 @@ import HouseTypeSelector from './HouseTypeSelector'
 import SectionHeading from '@/app/SiteComponents/SectionHeading';
 
 export const metadata: Metadata = {
-  title: 'Expert Exterior Painting Services in Queenstown | Lakeside Painting',
-  description: 'Transform your Queenstown home with our professional exterior painting services. Specializing in weatherboard, timber, plaster, and Axon Panel. Get a free quote today!',
-  keywords: 'exterior painting, Queenstown, weatherboard, timber, plaster, Axon Panel, house painting',
+  title: 'Expert Exterior Painting Services in Blenheim | Lakeside Painting',
+  description: 'Transform your Blenheim home with our professional exterior painting services. Specializing in weatherboard, timber, plaster, and Axon Panel. Get a free quote today!',
+  keywords: 'exterior painting, Blenheim, weatherboard, timber, plaster, Axon Panel, house painting',
   openGraph: {
-    title: 'Expert Exterior Painting Services in Queenstown | Lakeside Painting',
-    description: 'Transform your Queenstown home with our professional exterior painting services. Specializing in weatherboard, timber, plaster, and Axon Panel.',
+    title: 'Expert Exterior Painting Services in Blenheim | Lakeside Painting',
+    description: 'Transform your Blenheim home with our professional exterior painting services. Specializing in weatherboard, timber, plaster, and Axon Panel.',
     images: [
       {
         url: '/images/services/exterior/exterior-painting-og.jpg',
@@ -32,7 +32,7 @@ const houseTypes = [
     image: '/images/services/exterior/weatherboard.jpg',
     content: (
       <>
-        <p className="mb-2">Weatherboard homes are a Queenstown classic, and we&apos;ve got the expertise to make them shine:</p>
+        <p className="mb-2">Weatherboard homes are a Blenheim classic, and we&apos;ve got the expertise to make them shine:</p>
         <ul className="list-disc list-inside mb-4">
           <li>Our team uses specialized primers designed to bond well with both old and new weatherboards</li>
           <li>We apply flexible, high-quality exterior paints that can withstand the natural expansion and contraction of the wood</li>
@@ -48,13 +48,13 @@ const houseTypes = [
     image: '/images/services/exterior/cedar.jpg',
     content: (
       <>
-        <p className="mb-2">Timber cladding requires special care to preserve its natural beauty while protecting it from Queenstown&apos;s elements:</p>
+        <p className="mb-2">Timber cladding requires special care to preserve its natural beauty while protecting it from Blenheim&apos;s elements:</p>
         <ul className="list-disc list-inside mb-4">
           <li>We begin with a gentle clean using specialized wood cleaners to remove dirt without damaging the timber</li>
           <li>For weathered timber, we use restoration techniques like sanding or chemical brightening to rejuvenate the wood</li>
           <li>We&apos;re experts in applying both stains and clear sealers, enhancing the wood&apos;s natural grain</li>
           <li>For cedar, we use products specifically formulated to handle its unique properties and natural oils</li>
-          <li>Our team applies UV-resistant finishes to protect against Queenstown&apos;s intense sunlight</li>
+          <li>Our team applies UV-resistant finishes to protect against Blenheim&apos;s intense sunlight</li>
           <li>We use breathable finishes that allow the timber to naturally regulate moisture, preventing trapped dampness</li>
           <li>For a modern look, we can apply solid color paints using techniques that maintain the texture of the wood</li>
         </ul>
@@ -93,7 +93,7 @@ const houseTypes = [
           <li>We use low-sheen or satin finishes that highlight the panel&apos;s texture without emphasizing surface imperfections</li>
           <li>For the joints, we employ careful caulking and painting techniques to maintain a seamless look</li>
           <li>We can recommend and apply bold, modern colors that complement the contemporary style of Axon Panels</li>
-          <li>Our team is experienced in applying durable finishes that stand up to Queenstown&apos;s varied climate</li>
+          <li>Our team is experienced in applying durable finishes that stand up to Blenheim&apos;s varied climate</li>
         </ul>
       </>
     ),
@@ -105,7 +105,7 @@ export default function ExteriorPage() {
     <div className="text-primary mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
       <Navbar />
       <TopBanner 
-        headingSmall='Weather-Proof Your Queenstown Home' 
+        headingSmall='Weather-Proof Your Blenheim Home' 
         headingLarge='Expert Exterior Painting Services'
       />
       
@@ -118,7 +118,7 @@ export default function ExteriorPage() {
                 title='Protecting Your Outdoor Space' 
                 type={2} 
               />
-              <p className='text-sm mb-4'>Your home&apos;s exterior is its first line of defense against Queenstown&apos;s four seasons. Before we break out the brushes, we&apos;ll make sure everything&apos;s sorted:</p>
+              <p className='text-sm mb-4'>Your home&apos;s exterior is its first line of defense against Blenheim&apos;s four seasons. Before we break out the brushes, we&apos;ll make sure everything&apos;s sorted:</p>
               <ul className="mb-4 list-disc list-inside text-sm">
                 <li>We&apos;ll shift your outdoor furniture to a safe spot</li>
                 <li>Those prized plants? We&apos;ll cover them up nice and cozy</li>
@@ -151,7 +151,7 @@ export default function ExteriorPage() {
                 title='The Crucial Bit Most Folks Forget' 
                 type={2} 
               />
-              <p className='mb-4'>Right, let&apos;s get your walls ready for their new look. Queenstown weather can be tough on exteriors, so we&apos;ll:</p>
+              <p className='mb-4'>Right, let&apos;s get your walls ready for their new look. Blenheim weather can be tough on exteriors, so we&apos;ll:</p>
               <ul className="list-disc list-inside text-sm">
                 <li>Give everything a good clean - no grime left behind</li>
                 <li>Scrape off any peeling paint - it&apos;s got to go</li>
@@ -179,7 +179,7 @@ export default function ExteriorPage() {
         <section className='application px-side-spacing py-section-spacing bg-light-bg/10'>
           <div className='mx-auto'>
             <SectionHeading 
-              subtitle='Queenstown homes' 
+              subtitle='Blenheim homes' 
               title='We know your cladding' 
               type={1} 
             />

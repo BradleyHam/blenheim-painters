@@ -45,7 +45,7 @@ export default function Contact(){
                     style={{border:0}}
 
                     allowFullScreen
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11930.6!2d169.1319!3d-44.7009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9d51d39078db2bf%3A0x500ef868479745a!2sWanaka%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1725213187000!5m2!1sen!2snz">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23652.1!2d173.9540!3d-41.5131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d1f4df5a5f5c5a5%3A0x500ef8684797a5a!2sBlenheim%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1725213187000!5m2!1sen!2snz">
                     </iframe>
                 </div>
       

@@ -56,7 +56,7 @@ const applyCoatingOptions = [
     image: '/images/services/interior/wallpaper.jpg',
     content: (
       <>
-        <p className="mb-2">When it&apos;s a good shout: Want to really make your Queenstown pad stand out? Wallpaper&apos;s your ticket to something special.</p>
+        <p className="mb-2">When it&apos;s a good shout: Want to really make your Blenheim pad stand out? Wallpaper&apos;s your ticket to something special.</p>
         <p className="font-semibold mb-1">Why you might like it:</p>
         <ul className="list-disc list-inside mb-4">
           <li>Create a feature wall that&apos;ll have your mates buzzing</li>
@@ -81,7 +81,7 @@ export default function InteriorPage() {
   return (
     <div className="text-primary mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
       <Navbar />
-      <TopBanner headingSmall='Top-Notch Interior Painting' headingLarge='Bring Your Queenstown Home to Life' />
+      <TopBanner headingSmall='Top-Notch Interior Painting' headingLarge='Bring Your Blenheim Home to Life' />
       
       <main className="">
         <section className=" px-side-spacing py-section-spacing bg-light-bg/10">
@@ -176,7 +176,7 @@ export default function InteriorPage() {
                 <li>Put all your bits and bobs back where they belong</li>
                 <li>One last look around to make sure you&apos;re happy as Larry</li>
               </ul>
-              <p className="text-sm mb-6">Ready to give your Queenstown home a fresh new look? Give us a bell and we&apos;ll sort you out with a free quote. Whether it&apos;s a quick spruce-up or a total transformation, we&apos;ve got the skills to make your place look choice.</p>
+              <p className="text-sm mb-6">Ready to give your Blenheim home a fresh new look? Give us a bell and we&apos;ll sort you out with a free quote. Whether it&apos;s a quick spruce-up or a total transformation, we&apos;ve got the skills to make your place look choice.</p>
             </div>
             <div className='order-2 lg:order-2'>
               <div className="p-3 bg-white shadow-xl">

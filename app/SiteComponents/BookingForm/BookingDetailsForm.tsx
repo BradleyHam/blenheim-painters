@@ -16,7 +16,7 @@ const BookingDetailsForm: React.FC<BookingDetailsFormProps> = ({ selectedDate, s
     email: '',
     phone: '',
     address: '',
-    city: 'Queenstown',
+    city: 'Blenheim',
     objectives: '',
     date: '',
     timeSlot: ''
@@ -153,7 +153,7 @@ const BookingDetailsForm: React.FC<BookingDetailsFormProps> = ({ selectedDate, s
         >
           <div className="bg-white shadow-lg border text-primary p-8 rounded-xl">
             <h2 className="text-2xl font-bold mb-4">Booking Details</h2>
-            <p className="text-sm mb-4 text-gray-600">Note: We currently only service the Queenstown area.</p>
+            <p className="text-sm mb-4 text-gray-600">Note: We currently only service the Blenheim area.</p>
             {['name', 'email', 'phone', 'address'].map((field) => (
               <div key={field} className="mb-4">
                 <label className="block mb-2 opacity-70 text-sm capitalize">{field} *</label>

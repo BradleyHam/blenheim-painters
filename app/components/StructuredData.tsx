@@ -27,21 +27,21 @@ export const LocalBusinessData = () => {
     ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Wanaka",
-      "addressRegion": "Otago",
+      "addressLocality": "Blenheim",
+      "addressRegion": "Marlborough",
       "addressCountry": "New Zealand"
     },
     "telephone": "+22 613 2936",
     "email": "lakesidepaintinglimited@gmail.com",
     "url": "https://lakesidepainting.co.nz",
-    "description": "Lakeside Painting offers professional interior and exterior painting services in Wanaka. Transform your home or business with our expert team.",
+    "description": "Lakeside Painting offers professional interior and exterior painting services in Blenheim. Transform your home or business with our expert team.",
     "priceRange": "$$",
     "serviceArea": {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": -44.6967,
-        "longitude": 169.1027
+        "latitude": -41.5131,
+        "longitude": 173.9540
       },
       "geoRadius": "50000"
     },
@@ -60,7 +60,7 @@ export const LocalBusinessData = () => {
               "itemOffered": {
                 "@type": "Service",
                 "name": "Weather-resistant coatings",
-                "description": "Professional exterior painting with weather-resistant coatings suitable for Wanaka's climate"
+                "description": "Professional exterior painting with weather-resistant coatings suitable for Blenheim's climate"
               }
             },
             {
@@ -175,7 +175,7 @@ export const WebSiteData = () => {
     "@type": "WebSite",
     "name": "Lakeside Painting",
     "url": "https://lakesidepainting.co.nz",
-    "description": "Professional painting services in Wanaka, New Zealand",
+    "description": "Professional painting services in Blenheim, New Zealand",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://lakesidepainting.co.nz/search?q={search_term_string}",
@@ -198,13 +198,13 @@ export const OrganizationData = () => {
       "telephone": "+22 613 2936",
       "contactType": "customer service",
       "email": "lakesidepaintinglimited@gmail.com",
-      "areaServed": "Wanaka, New Zealand",
+      "areaServed": "Blenheim, New Zealand",
       "availableLanguage": "English"
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Wanaka",
-      "addressRegion": "Otago", 
+      "addressLocality": "Blenheim",
+      "addressRegion": "Marlborough", 
       "addressCountry": "New Zealand"
     },
     "sameAs": []
@@ -218,20 +218,20 @@ export const ServiceData = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Professional Painting Services",
-    "description": "Expert interior and exterior painting services for homes and businesses in Wanaka, New Zealand",
+    "description": "Expert interior and exterior painting services for homes and businesses in Blenheim, New Zealand",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Lakeside Painting",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Wanaka",
-        "addressRegion": "Otago",
+        "addressLocality": "Blenheim",
+        "addressRegion": "Marlborough",
         "addressCountry": "New Zealand"
       }
     },
     "areaServed": {
       "@type": "City",
-      "name": "Wanaka",
+      "name": "Blenheim",
       "containedInPlace": {
         "@type": "Country",
         "name": "New Zealand"

@@ -65,7 +65,7 @@ export default function EnhancedHero() {
           <div className="flex flex-col justify-center space-y-8 lg:pb-0 pb-8 pt-8 lg:pt-0">
             {/* Location tag */}
             <h1 className="inline-flex items-center rounded-full tracking-tight text-base font-medium text-cta w-fit">
-              House Painters Wanaka
+              House Painters Blenheim
             </h1>
 
             {/* Main headline */}
@@ -73,7 +73,7 @@ export default function EnhancedHero() {
               <h2 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-[#545C67] tracking-tight leading-tight">
                 Bring New Life to Your Home
        
-                With Expert Painting in Wanaka
+                With Expert Painting in Blenheim
               </h2>
             </div>
             <p className="text-[#545C67] max-w-2xl text-base font-medium tracking-tight">With over 15 years of family experience in painting, my partner and I treat your home like our own and back every job
@@ -105,7 +105,7 @@ export default function EnhancedHero() {
           <div className="relative lg:absolute lg:bottom-0 lg:-right-24 z-20 w-full lg:w-auto flex justify-center lg:justify-end">
             <Image
               src="/portrait.webp"
-              alt="Professional painter in Wanaka with crossed arms holding paint brush"
+              alt="Professional painter in Blenheim with crossed arms holding paint brush"
               width={400}
               height={400}
               priority

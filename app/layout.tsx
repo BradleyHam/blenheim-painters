@@ -23,9 +23,9 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: 'Lakeside Painting | Expert Painters in Wanaka, NZ',
-  description: 'Lakeside Painting offers professional interior and exterior painting services in Wanaka. Transform your home or business with our expert team.',
-  keywords: 'painting services, Wanaka painters, interior painting, exterior painting, home improvement',
+  title: 'Lakeside Painting | Expert Painters in Blenheim, NZ',
+  description: 'Lakeside Painting offers professional interior and exterior painting services in Blenheim. Transform your home or business with our expert team.',
+  keywords: 'painting services, Blenheim painters, interior painting, exterior painting, home improvement',
   icons: {
     icon: '/favicon.ico',
   },
