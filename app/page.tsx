@@ -138,7 +138,7 @@ export default async function Home() {
             <Services />
             
             {/* Featured and Recent Projects Section */}
-            {projects && projects.length > 0 && (
+            {/* {projects && projects.length > 0 && (
               <ProjectSection 
                 subtitle="Our Recent Work"
                 title="Featured Projects"
@@ -146,7 +146,7 @@ export default async function Home() {
                 projects={projects}
                 className="bg-light-bg/10"
               />
-            )}
+            )} */}
             
             {/* <Process /> */}
             <Faq />

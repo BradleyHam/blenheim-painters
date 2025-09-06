@@ -3,6 +3,7 @@
 import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ContactForm from '@/components/ui/ContactForm'
+import { siteConfig } from '@/config/site-config'
 const Contact = () => {
   return (
     <section id="contact" className="py-16 md:py-32 bg-gray-50">
@@ -25,7 +26,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg tracking-tight font-semibold  text-navy">Telephone</h3>
-                  <p className="text-gray-700 text-base">+64 21 632 938</p>
+                  <p className="text-gray-700 text-base">+64{siteConfig.phoneNumber}</p>
                   <p className="text-sm text-gray-500 mt-1">Available Monday-Friday, 8am-6pm</p>
                 </div>
               </div>
@@ -36,7 +37,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg tracking-tight font-semibold  text-navy">Email</h3>
-                  <p className="text-gray-700 text-base">littledogdecorating@gmail.com</p>
+                  <p className="text-gray-700 text-base">{siteConfig.email}</p>
                   <p className="text-sm text-gray-500 mt-1">We respond to all inquiries within 24 hours</p>
                 </div>
               </div>
@@ -47,10 +48,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg tracking-tight font-semibold  text-navy">Service Area</h3>
-                  <p className="text-gray-700 text-base">Queenstown and surrounding areas</p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Including Frankton, Arrowtown, Lake Hayes, and Jacks Point
-                  </p>
+                  <p className="text-gray-700 text-base">{siteConfig.townName} and surrounding areas</p>
+               
                 </div>
               </div>
             </div>
@@ -68,7 +67,7 @@ const Contact = () => {
     </li>
     <li className="flex items-start gap-3">
       <CheckCircle className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
-      <span className="text-gray-700">9+ years of trusted service in Queenstown</span>
+      <span className="text-gray-700">{siteConfig.yearsInBusiness}+ years of trusted service in {siteConfig.townName}</span>
     </li>
     <li className="flex items-start gap-3">
       <CheckCircle className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />

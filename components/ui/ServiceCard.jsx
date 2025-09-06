@@ -25,8 +25,8 @@ export default function ServiceCard({
         />
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#333]/90 via-[#333]/80 to-transparent p-4 lg:p-8 z-20 flex flex-col items-start space-y-2">
-        <h3 className="lg:text-3xl text-2xl font-bold text-white">{title}</h3>
-        <p className="text-gray-200">{description}</p>
+        <h3 className="lg:text-2xl text-2xl font-bold text-white">{title}</h3>
+        {/* <p className="text-gray-200">{description}</p> */}
         <Link
           href={linkHref}
           className="inline-flex items-center text-gold font-medium hover:text-gold-light"

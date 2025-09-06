@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import CtaButton from '@/components/ui/CtaButton'
+import { siteConfig } from '@/config/site-config'
 export default function CtaFooter() {
   const [isLargeScreen, setIsLargeScreen] = useState(false)
 
@@ -60,7 +61,7 @@ export default function CtaFooter() {
             {/* Text + Button */}
             <div className="relative z-10 flex flex-col items-start gap-6">
               <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                Ready to Transform <br /> Your Queenstown Home?
+                Ready to Transform <br /> Your {siteConfig.townName} Home?
               </h2>
               <p className="text-gray-200 text-xl lg:leading-relaxed " style={{ maxWidth: '600px' }}>
                 Schedule your complimentary consultation today and discover how we can bring your vision to life with our expert painting services.

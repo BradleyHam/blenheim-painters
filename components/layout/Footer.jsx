@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { siteConfig } from '@/config/site-config'
 
 export default function Footer() {
   return (
@@ -9,21 +10,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/ldd-logo.png"
-                alt="Little Dog Decorating Logo"
+              {/* <Image
+                src={`/painters-${siteConfig.townNameLower}-logo.png`}
+                alt={`${siteConfig.businessName} Logo`}
                 width={100}
                 height={100}
                 className=""
               />
-      
+       */}
             </Link>
             <p className="text-gray-300 leading-relaxed">
-              Queenstown's trusted repainting specialists, transforming homes across the region with
+              {siteConfig.townName}'s trusted repainting specialists, transforming homes across the region with
               unparalleled craftsmanship.
             </p>
             <div className="flex gap-4">
-              <Link href="https://www.facebook.com/Littledogdecorating" className="text-gray-300 hover:text-gold transition-colors">
+              <Link href={siteConfig.social.facebook} className="text-gray-300 hover:text-gold transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -39,7 +40,7 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </Link>
-              <Link href="https://www.instagram.com/littledogdecorating/" className="text-gray-300 hover:text-gold transition-colors">
+              <Link href={siteConfig.social.instagram} className="text-gray-300 hover:text-gold transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -103,15 +104,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">+64 21 632 938</span>
+                <span className="text-gray-300">+64{siteConfig.phoneNumber}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">littledogdecorating@gmail.com</span>
+                <span className="text-gray-300">{siteConfig.email}</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Queenstown, New Zealand</span>
+                <span className="text-gray-300">{siteConfig.townName}, New Zealand</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
@@ -123,7 +124,7 @@ export default function Footer() {
 
         <div className="border-t border-navy-light mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} Little Dog Decorating. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0 items-center">
             <Link href="" className="text-gray-300 hover:text-gold transition-colors text-sm">

@@ -8,6 +8,8 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import ContactModal from "@/components/ui/ContactModal"
 import { useRouter } from "next/navigation"
+import { siteConfig } from "@/config/site-config"
+import { imageConfig, getImageWithAlt } from "@/config/images"
 
 export default function Header() {
   const [isLargeScreen, setIsLargeScreen] = useState(false)
@@ -77,7 +79,7 @@ export default function Header() {
     <>
       <div className="header-container">
         {/* Contact info sub-header - visible on all screens */}
-        <div className="bg-navy py-2 text-white text-xs w-full">
+        {/* <div className="bg-navy py-2 text-white text-xs w-full">
           <div className="container flex items-center justify-end gap-4 md:gap-6">
             <a href="tel:+6421632938" className="flex items-center gap-1 md:gap-2 hover:text-gold transition-colors">
               <Phone className="h-3 w-3" />
@@ -90,7 +92,7 @@ export default function Header() {
               <span className="sm:hidden">littledogdecorating@gmail.com</span>
             </a>
           </div>
-        </div>
+        </div> */}
         
         <div 
           className="w-full border-b border-gray-200 bg-white"
@@ -104,16 +106,16 @@ export default function Header() {
             className="container flex items-center justify-between h-full"
             style={{ position: 'relative', zIndex: 10 }}
           >
-            <div className="relative" style={{ 
-              height: isLargeScreen ? "120px" : "100px", 
+            <div className="relative flex items-center" style={{ 
+              height: "80px", 
               width: isLargeScreen ? "120px" : "100px"
             }}>
-              <Link href="/" className="z-20 absolute mt-6 p-1 bg-white rounded-full left-0">
+              <Link href="/" className="z-20 bg-white rounded-full">
                 <Image 
-                  src="/little-dog-decorating-logo--queenstown-painter.webp" 
-                  alt="Little Dog Decorating" 
-                  width={isLargeScreen ? 160 : 140}
-                  height={isLargeScreen ? 160 : 140}
+                  src={imageConfig.branding.logo.path} 
+                  alt={imageConfig.branding.logo.alt} 
+                  width={isLargeScreen ? 120 : 100}
+                  height={isLargeScreen ? 120 : 100}
                   className="z-[110]"
                   style={{ display: 'block' }}
                   priority
@@ -171,8 +173,8 @@ export default function Header() {
                       <div className="flex items-center justify-between p-4 border-b border-gray-100">
                         <div className="w-24">
                           <Image 
-                            src="/little-dog-decorating-logo--queenstown-painter.webp" 
-                            alt="Little Dog Decorating" 
+                            src={imageConfig.branding.logo.path} 
+                            alt={siteConfig.businessName} 
                             width={90}
                             height={90}
                             className="w-auto h-auto"

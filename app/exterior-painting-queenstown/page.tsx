@@ -11,6 +11,8 @@ import Testimonials from '@/components/layout/Testimonials'
 import ProjectSection from '@/components/layout/ProjectSection'
 import { getProjects } from '@/lib/markdown'
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { imageConfig } from '@/config/images'
+import { copyConfig } from '@/config/copy'
 
 // Add specific metadata for this page
 export const metadata: Metadata = {
@@ -39,10 +41,10 @@ export const metadata: Metadata = {
 const houseTypes = [
   {
     label: 'Weatherboard',
-    image: '/services/exterior/weatherboard.jpg',
+    image: imageConfig.process.weatherboard,
     content: (
       <>
-        <p className="mb-4">Weatherboard homes are a Queenstown classic, and we&apos;ve got the expertise to make them shine:</p>
+        <p className="mb-4">Weatherboard homes are a {siteConfig.townName} classic, and we&apos;ve got the expertise to make them shine:</p>
         <ul className="list-disc list-inside mb-4">
           <li>Our team uses specialized primers designed to bond well with both old and new weatherboards</li>
           <li>We apply flexible, high-quality exterior paints that can withstand the natural expansion and contraction of the wood</li>
@@ -55,16 +57,16 @@ const houseTypes = [
   },
   {
     label: 'Timber',
-    image: '/services/exterior/cedar.jpg',
+    image: imageConfig.process.cedar,
     content: (
       <>
-        <p className="mb-4">Timber cladding requires special care to preserve its natural beauty while protecting it from Queenstown&apos;s elements:</p>
+        <p className="mb-4">Timber cladding requires special care to preserve its natural beauty while protecting it from {siteConfig.townName}&apos;s elements:</p>
         <ul className="list-disc list-inside mb-4">
           <li>We begin with a gentle clean using specialized wood cleaners to remove dirt without damaging the timber</li>
           <li>For weathered timber, we use restoration techniques like sanding or chemical brightening to rejuvenate the wood</li>
           <li>We&apos;re experts in applying both stains and clear sealers, enhancing the wood&apos;s natural grain</li>
           <li>For cedar, we use products specifically formulated to handle its unique properties and natural oils</li>
-          <li>Our team applies UV-resistant finishes to protect against Queenstown&apos;s intense sunlight</li>
+          <li>Our team applies UV-resistant finishes to protect against {siteConfig.townName}&apos;s intense sunlight</li>
           <li>We use breathable finishes that allow the timber to naturally regulate moisture, preventing trapped dampness</li>
           <li>For a modern look, we can apply solid color paints using techniques that maintain the texture of the wood</li>
         </ul>
@@ -73,7 +75,7 @@ const houseTypes = [
   },
   {
     label: 'Plaster',
-    image: '/services/exterior/plaster.jpg',
+    image: imageConfig.process.plaster,
     content: (
       <>
         <p className="mb-4">Plaster and stucco homes require a delicate touch and specialized knowledge:</p>
@@ -91,7 +93,7 @@ const houseTypes = [
   },
   {
     label: 'Axon Panel',
-    image: '/services/exterior/axon-panel.jpg',
+    image: imageConfig.process.axonPanel,
     content: (
       <>
         <p className="mb-4">Axon Panels offer a modern look, and we know exactly how to make them pop:</p>
@@ -103,7 +105,7 @@ const houseTypes = [
           <li>We use low-sheen or satin finishes that highlight the panel&apos;s texture without emphasizing surface imperfections</li>
           <li>For the joints, we employ careful caulking and painting techniques to maintain a seamless look</li>
           <li>We can recommend and apply bold, modern colors that complement the contemporary style of Axon Panels</li>
-          <li>Our team is experienced in applying durable finishes that stand up to Queenstown&apos;s varied climate</li>
+          <li>Our team is experienced in applying durable finishes that stand up to {siteConfig.townName}&apos;s varied climate</li>
         </ul>
       </>
     ),
@@ -121,15 +123,15 @@ export default async function ExteriorPage() {
     "serviceType": "Exterior Painting",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Little Dog Decorating",
-      "image": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-      "telephone": "+64 21 632 938",
+      "name": siteConfig.businessName,
+      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
+      "telephone": `+64${siteConfig.phoneNumber}`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "31 Marston Road",
-        "addressLocality": "Queenstown",
-        "addressRegion": "Otago",
-        "postalCode": "9304",
+        "streetAddress": siteConfig.address.street,
+        "addressLocality": siteConfig.townName,
+        "addressRegion": siteConfig.region,
+        "postalCode": siteConfig.postalCode,
         "addressCountry": "New Zealand"
       }
     },
@@ -137,22 +139,22 @@ export default async function ExteriorPage() {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": -44.9847,
-        "longitude": 168.7488
+        "latitude": siteConfig.coordinates.latitude,
+        "longitude": siteConfig.coordinates.longitude
       },
-      "geoRadius": 25
+      "geoRadius": siteConfig.serviceRadius
     },
-    "url": "https://www.littledogdecorating.co.nz/exterior-painting-queenstown",
-    "description": "Professional exterior painting services in Queenstown and Arrowtown. Protect and beautify your home with our expert exterior painting solutions."
+    "url": `${siteConfig.website}exterior-painting-${siteConfig.townNameLower}`,
+    "description": `Professional exterior painting services in ${siteConfig.townName} and surrounding areas. Protect and beautify your home with our expert exterior painting solutions.`
   }
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Our Professional Exterior Painting Process in Queenstown",
+    "name": `Our Professional Exterior Painting Process in ${siteConfig.townName}`,
     "description": "Four-step method we follow to prepare and paint your home exterior for long-lasting protection and beauty.",
     "image": [
-      "https://www.littledogdecorating.co.nz/ldd-exterior.jpg"
+      `${siteConfig.website}ldd-exterior.jpg`
     ],
     "totalTime": "PT2H",
     "supply": [
@@ -204,14 +206,14 @@ export default async function ExteriorPage() {
       {/* Hero Section */}
       <div className="page-header h-[300px] lg:h-[500px] mx-5 rounded-lg relative">
         <Image 
-          src="/exteriors/exterior-painting-in-queenstown.jpg" 
+          src={imageConfig.services.exterior.path} 
           alt="Exterior Painting" 
           fill 
           priority
           className="object-cover rounded-lg" 
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#333]/90 to-transparent rounded-lg"></div>
-        <h1 className="text-white text-2xl sm:text-4xl lg:text-4xl font-semibold tracking-tight absolute bottom-0 left-0 p-6 lg:p-12 lg:pb-10">Exterior Painting in Queenstown</h1>
+        <h1 className="text-white text-2xl sm:text-4xl lg:text-4xl font-semibold tracking-tight absolute bottom-0 left-0 p-6 lg:p-12 lg:pb-10">{copyConfig.services.exterior.pageTitle}</h1>
       </div>
       
       <main className="bg-white flex flex-col">
@@ -221,7 +223,7 @@ export default async function ExteriorPage() {
           title="Protecting Your Outdoor Space"
           content={
             <>
-              <p className='mb-4'>Your home&apos;s exterior is its first line of defense against Queenstown&apos;s four seasons. Before we break out the brushes, we&apos;ll make sure everything&apos;s sorted:</p>
+              <p className='mb-4'>Your home&apos;s exterior is its first line of defense against {siteConfig.townName}&apos;s four seasons. Before we break out the brushes, we&apos;ll make sure everything&apos;s sorted:</p>
               <ul className="list-disc list-inside mb-4">
                 <li>We&apos;ll shift your outdoor furniture to a safe spot</li>
                 <li>Those prized plants? We&apos;ll cover them up nice and cozy</li>
@@ -242,7 +244,7 @@ export default async function ExteriorPage() {
           title="The Crucial Bit Most Folks Forget"
           content={
             <>
-              <p className='mb-4'>Right, let&apos;s get your walls ready for their new look. Queenstown weather can be tough on exteriors, so we&apos;ll:</p>
+              <p className='mb-4'>Right, let&apos;s get your walls ready for their new look. {siteConfig.townName} weather can be tough on exteriors, so we&apos;ll:</p>
               <ul className="list-disc list-inside mb-4">
                 <li>Give everything a good clean - no grime left behind</li>
                 <li>Scrape off any peeling paint - it&apos;s got to go</li>
@@ -263,8 +265,8 @@ export default async function ExteriorPage() {
         <section className='px-5 lg:px-[80px] py-12 lg:py-24 bg-light-bg/10'>
           <div className='max-w-7xl mx-auto'>
             <SectionHeading 
-              subtitle='Queenstown homes' 
-              title='We know your cladding' 
+              subtitle={copyConfig.services.exterior.sections.houseTypes.sectionTitle} 
+              title={copyConfig.services.exterior.sections.houseTypes.title} 
               type={2}
             />
             <div className="mt-10">
@@ -300,7 +302,7 @@ export default async function ExteriorPage() {
           <ProjectSection
             subtitle="Our Exterior Projects"
             title="Recent Exterior Transformations"
-            description="Discover how we've revitalized homes across Queenstown with our expert exterior painting services. Browse our recent projects to see our workmanship firsthand."
+            description={`Discover how we've revitalized homes across ${siteConfig.townName} with our expert exterior painting services. Browse our recent projects to see our workmanship firsthand.`}
             projects={exteriorProjects}
             className="bg-light-bg/10"
           />

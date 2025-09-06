@@ -1,30 +1,30 @@
 // Site Configuration - Update these values for each new town/business
 export const siteConfig = {
   // Business Information
-  businessName: "Little Dog Decorating",
-  businessNameAlt: "Little Dog Painting & Decorating", // Alternative/longer business name
-  ownerName: "Dan",
+  businessName: "Business Name",
+  businessNameAlt: "Business Name", // Alternative/longer business name
+  ownerName: "Owner Name",
   
   // Location Details
-  townName: "Queenstown",
-  townNameLower: "queenstown",
+  townName: "Wanaka",
+  townNameLower: "wanaka",
   region: "Otago",
   postalCode: "9304",
   country: "New Zealand",
   
   // Contact Information
-  phoneNumber: "+64 21 632 938",
-  phoneDisplay: "021 632 938", // How phone shows in UI
-  email: "littledogdecorating@gmail.com",
+  phoneNumber: "0226132936",
+  phoneDisplay: "0226132936", // How phone shows in UI
+  email: "clientemail.co.nz",
   
   // Address
   address: {
-    street: "31 Marston Road",
-    city: "Queenstown",
-    region: "Otago",
-    postalCode: "9304",
+    street: "street address",
+    city: "city",
+    region: "region",
+    postalCode: "postcode",
     country: "New Zealand",
-    full: "31 Marston Road, Queenstown, Otago 9304, New Zealand"
+    full: "full address"
   },
   
   // Service Areas - Update for each town
@@ -100,7 +100,7 @@ export const siteConfig = {
   
   // Email Configuration (for contact forms)
   emailConfig: {
-    clientEmail: "littledogdecorating@gmail.com",
+    clientEmail: "emailaddress@gmail.com",
     serviceEmail: "envisionwebforge@gmail.com", // The email service sender
     emailPassword: "ifdttctlzpyrjzzi" // Will move to env var
   }

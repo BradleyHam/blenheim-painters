@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { tailwindColors } from "./config/colors"
 
 const config = {
   darkMode: ["class"],
@@ -38,34 +39,33 @@ const config = {
         figtree: ['var(--font-figtree)'],
       },
       colors: {
+        // Centralized brand colors
+        ...tailwindColors,
+        
+        // CTA colors (mapped to gold)
         cta: {
-          DEFAULT: "#F6932C", // Gold from the logo
+          DEFAULT: tailwindColors.gold.DEFAULT,
           foreground: "#FFFFFF",
         },
+        
+        // ShadCN UI colors (keep existing)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        darkText: "#0F1A3A",
+        
+        // Primary/Secondary mapped to brand colors
         primary: {
-          DEFAULT: "#E6A817", // Gold from the logo
+          DEFAULT: tailwindColors.gold.DEFAULT, // Gold as primary for CTAs
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#0F1A3A", // Navy blue from the logo
+          DEFAULT: tailwindColors.navy.DEFAULT, // Navy as secondary
           foreground: "#FFFFFF",
         },
-        navy: {
-          DEFAULT: "#0F1A3A", // Navy blue from the logo
-          light: "#1C2B54",
-          dark: "#091228",
-        },
-        gold: {
-          DEFAULT: "#E6A817", // Gold from the logo
-          light: "#F5B93D",
-          dark: "#C48C0F",
-        },
+        
+        // ShadCN UI semantic colors (keep existing)
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

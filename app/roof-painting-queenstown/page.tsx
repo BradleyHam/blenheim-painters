@@ -8,11 +8,12 @@ import CtaFooter from "../experimental-components/CtaFooter"
 import Script from "next/script"
 import ProjectSection from "@/components/layout/ProjectSection"
 import { getProjects } from "@/lib/markdown"
+import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
 
 export const metadata: Metadata = {
-  title: "Roof Painting Queenstown | Little Dog Decorating",
-  description: "Professional roof painting services in Queenstown. Protect and enhance your roof with our expert painting solutions. Get a free quote today.",
-  keywords: "roof painting Queenstown, roof painters, roof coating, roof protection, exterior painting, Little Dog Decorating"
+  title: getSiteTitle(`Roof Painting ${siteConfig.townName}`),
+  description: `Professional roof painting services in ${siteConfig.townName}. Protect and enhance your roof with our expert painting solutions. Get a free quote today.`,
+  keywords: `roof painting ${siteConfig.townName}, roof painters, roof coating, roof protection, exterior painting, ${siteConfig.businessName}`
 }
 
 export default async function RoofPainting() {
@@ -26,15 +27,15 @@ export default async function RoofPainting() {
     "serviceType": "Roof Painting",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Little Dog Decorating",
-      "image": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-      "telephone": "+64 21 632 938",
+      "name": siteConfig.businessName,
+      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
+      "telephone": `+64${siteConfig.phoneNumber}`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "31 Marston Road",
-        "addressLocality": "Queenstown",
-        "addressRegion": "Otago",
-        "postalCode": "9304",
+        "streetAddress": siteConfig.address.street,
+        "addressLocality": siteConfig.townName,
+        "addressRegion": siteConfig.region,
+        "postalCode": siteConfig.postalCode,
         "addressCountry": "New Zealand"
       }
     },
@@ -42,22 +43,22 @@ export default async function RoofPainting() {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": -44.9847,
-        "longitude": 168.7488
+        "latitude": siteConfig.coordinates.latitude,
+        "longitude": siteConfig.coordinates.longitude
       },
-      "geoRadius": 25
+      "geoRadius": siteConfig.serviceRadius
     },
-    "url": "https://www.littledogdecorating.co.nz/roof-painting-queenstown",
-    "description": "Professional roof painting services in Queenstown. Protect and enhance your roof with our expert painting solutions."
+    "url": `${siteConfig.website}roof-painting-${siteConfig.townNameLower}`,
+    "description": `Professional roof painting services in ${siteConfig.townName}. Protect and enhance your roof with our expert painting solutions.`
   }
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Our Professional Roof Painting Process in Queenstown",
+    "name": `Our Professional Roof Painting Process in ${siteConfig.townName}`,
     "description": "Four‑step method we follow to clean, prepare and coat your roof for long‑lasting protection.",
     "image": [
-      "https://www.littledogdecorating.co.nz/roof-painting/webp/roof-painting-in-queenstown.webp"
+      `${siteConfig.website}roof-painting/webp/roof-painting-in-${siteConfig.townNameLower}.webp`
     ],
     "totalTime": "PT2H",
     "supply": [
@@ -111,16 +112,16 @@ export default async function RoofPainting() {
         {/* Hero Section */}
         <div className="page-header h-[300px] lg:h-[500px] mx-5 rounded-lg relative">
           <Image 
-            src="/roof-painting/webp/roof-painting-in-queenstown.webp" 
-            alt="Interior Painting" 
+            src={`/roof-painting/webp/roof-painting-in-${siteConfig.townNameLower}.webp`} 
+            alt="Roof Painting" 
             fill
             priority
             className="object-cover object-top rounded-lg transform -translate-y-[50px]" 
           />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#333] from-10% to-[#333]/30 z-10 rounded-lg"></div>
           <div className="absolute bottom-0 left-0 p-6 lg:p-12 lg:pb-10 z-20 text-white max-w-2xl flex flex-col items-start gap-4">
-            <h1 className="text-2xl sm:text-4xl lg:text-4xl font-semibold tracking-tight">Roof Painting in Queenstown</h1>
-            <p>Let's give your roof a fresh start—no rust, no leaks, just solid protection against whatever Queenstown weather can dish out.</p>
+            <h1 className="text-2xl sm:text-4xl lg:text-4xl font-semibold tracking-tight">Roof Painting in {siteConfig.townName}</h1>
+            <p>Let's give your roof a fresh start—no rust, no leaks, just solid protection against whatever {siteConfig.townName} weather can dish out.</p>
             {/* <CtaButton text="Book Your Free Roof Inspection" /> */}
           </div>
         </div>
@@ -215,7 +216,7 @@ export default async function RoofPainting() {
           <ProjectSection
             subtitle="Our Roof Projects"
             title="Recent Roof Transformations"
-            description="Browse our recent roof painting projects in Queenstown and Arrowtown. See how our premium coatings enhance and protect roofs from harsh alpine conditions."
+            description={`Browse our recent roof painting projects in ${siteConfig.townName} and surrounding areas. See how our premium coatings enhance and protect roofs from harsh alpine conditions.`}
             projects={roofProjects}
             className="bg-light-bg/10"
             showMoreMessage={roofProjects.length < 3 ? "More roofing projects coming soon..." : ""}

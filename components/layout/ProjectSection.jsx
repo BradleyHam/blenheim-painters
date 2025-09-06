@@ -11,13 +11,13 @@ export default function ProjectSection({
   title, 
   subtitle, 
   description, 
-  projects = [], 
+  projects, 
   linkToAll = true,
   textColor = 'text-darkText',
   className = '',
   showMoreMessage = ''
 }) {
-  if (!projects || projects.length === 0) return null
+  if (!projects?.length) return null
 
   return (
     <section className={`py-16 bg-gray-50 lg:py-[128px] ${className}`}>
@@ -41,7 +41,7 @@ export default function ProjectSection({
             )} */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project._id} project={project} index={index} />
             ))}

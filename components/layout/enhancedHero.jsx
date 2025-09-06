@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Phone, Calendar, ArrowRight, Star, CheckCircle, Loader } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { siteConfig } from "@/config/site-config"
 
 export default function EnhancedHero() {
   const [form, setForm] = useState({
@@ -10,7 +11,6 @@ export default function EnhancedHero() {
     phone: "",
     email: "",
     service: "",
-    consent: false,
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
@@ -38,7 +38,7 @@ export default function EnhancedHero() {
       const data = await res.json();
       if (res.ok) {
         setSuccess("Thank you! Your request has been sent.");
-        setForm({ name: "", phone: "", email: "", service: "", consent: false });
+        setForm({ name: "", phone: "", email: "", service: "" });
       } else {
         setError(data.error || "Something went wrong. Please try again.");
       }
@@ -58,25 +58,24 @@ export default function EnhancedHero() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            name: "Little Dog Decorating",
-            description: "Premium Interior & Exterior Painting Specialists in Queenstown",
+            name: siteConfig.businessName,
+            description: `Premium Interior & Exterior Painting Specialists in ${siteConfig.townName}`,
             image: "/images/hero-painting.jpg",
             priceRange: "$$",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Queenstown",
-              addressRegion: "Otago",
+              addressLocality: siteConfig.townName,
+              addressRegion: siteConfig.region,
               addressCountry: "NZ",
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: "-45.031162",
-              longitude: "168.662643",
+              latitude: siteConfig.coordinates.latitude.toString(),
+              longitude: siteConfig.coordinates.longitude.toString(),
             },
-            telephone: "+6434425678",
-            areaServed: "Queenstown",
-            serviceArea: "Queenstown Lakes District",
-            sameAs: ["https://facebook.com/littledogdecorating", "https://instagram.com/littledogdecorating"],
+            telephone: `+64${siteConfig.phoneNumber}`,
+            areaServed: siteConfig.townName,
+            serviceArea: `${siteConfig.townName}`,
           }),
         }}
       />
@@ -102,19 +101,19 @@ export default function EnhancedHero() {
           <div className="flex flex-col justify-center space-y-6">
             {/* Location tag for SEO */}
             <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm w-fit">
-              <span className="mr-1 text-gold-dark">★</span> Queenstown's Trusted Painting Specialists
+              <span className="mr-1 text-gold-dark">★</span> {siteConfig.townName}'s Trusted Painting Specialists
             </div>
 
             {/* Main headline - SEO optimized */}
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               <span className="block">Premium Interior &</span>
               <span className="block text-gold">Exterior Painting</span>
-              <span className="block">in Queenstown</span>
+              <span className="block">in {siteConfig.townName}</span>
             </h1>
 
             {/* Subheading with keywords */}
             <p className="max-w-xl text-lg text-gray-200 sm:text-xl">
-              Transform your Queenstown property with our expert painting services. Meticulous attention to detail,
+              Transform your {siteConfig.townName} property with our expert painting services. Meticulous attention to detail,
               premium materials, and flawless finishes guaranteed.
             </p>
 
@@ -134,13 +133,13 @@ export default function EnhancedHero() {
               </div>
               <div className="flex items-center">
                 <CheckCircle className="mr-2 h-4 w-4 text-yellow-400" />
-                <span className="text-sm">10+ Years in Queenstown</span>
+                <span className="text-sm">{siteConfig.yearsInBusiness}+ Years in {siteConfig.townName}</span>
               </div>
             </div>
 
             {/* CTA buttons */}
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <a href="tel:+6434425678">
+              <a href={`tel:+64${siteConfig.phoneNumber}`}>
                 <Button size="lg" className="bg-gold-dark text-white font-bold hover:bg-gold">
                   <Phone className="mr-2 h-4 w-4" />
                   Call For a Quote
@@ -219,20 +218,6 @@ export default function EnhancedHero() {
                     {/* <option value="residential">French Wash</option> */}
                     <option value="other">Other Services</option>
                   </select>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    id="consent"
-                    name="consent"
-                    type="checkbox"
-                    required
-                    checked={form.consent}
-                    onChange={handleChange}
-                    className="mr-2"
-                  />
-                  <label htmlFor="consent" className="text-sm text-gray-200">
-                    I consent to being contacted by Little Dog Decorating
-                  </label>
                 </div>
                 <Button type="submit" className="w-full bg-gold-dark text-white font-bold hover:bg-gold-dark" disabled={loading}>
                   {loading ? (

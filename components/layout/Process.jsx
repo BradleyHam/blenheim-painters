@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import CtaButton from "../ui/CtaButton"
+import { imageConfig } from '@/config/images'
 
 export default function Process() {
   return (
@@ -90,7 +91,7 @@ export default function Process() {
 
           <div className="relative h-[350px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="/painter-color-consultation-illustration.png"
+              src={imageConfig.decorative.painterIllustration}
               alt="Little Dog Decorating painting process"
               fill
               className="object-cover"

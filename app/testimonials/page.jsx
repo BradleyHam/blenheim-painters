@@ -7,6 +7,7 @@ import Image from 'next/image'
 import CtaFooter from '../experimental-components/CtaFooter'
 import { testimonials } from '@/data/testimonials'
 import Script from 'next/script'
+import { imageConfig } from '@/config/images'
 
 const TestimonialsPage = () => {
   // Calculate average rating (assuming all testimonials have 5 stars based on the UI rendering)
@@ -81,7 +82,7 @@ const TestimonialsPage = () => {
       <section id="testimonials" className="bg-white">
         <div className="page-header h-[300px] lg:h-[500px] mx-5 rounded-lg relative">
           <Image 
-            src="/queenstown.jpg" 
+            src={imageConfig.hero.townscape.path} 
             alt="Exterior Painting" 
             fill 
             priority

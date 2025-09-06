@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './hero.module.css'
 import Header from '../../components/layout/Header'
 import CtaButton from '../../components/ui/CtaButton'
+import { imageConfig } from '@/config/images'
+import { contentImageConfig } from '@/config/content-images'
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,7 +24,7 @@ const Hero = () => {
         {/* Image with Parallax Effect */}
         <div className={`${styles.imageWrapper} ${styles.image1}`}>
           <Image
-            src="/Interior-repaint-in-queenstown-with-views-of-lake-wakatipu.jpg"
+            src={contentImageConfig.serviceCategories.interior.hero}
             alt="Interior design showcase"
             fill
             className={`${styles.fadeImage} transition-opacity duration-700 transform -translate-y-40 lg:translate-y-0 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}

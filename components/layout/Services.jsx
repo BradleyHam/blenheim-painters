@@ -120,10 +120,10 @@ export default function Services() {
   return (
     <section id="services" className="py-16 md:py-32 bg-white">
       <div className="px-4 lg:px-8 container">
-        <div className="text-start lg:text-center max-w-3xl mx-auto mb-10 lg:mb-20 flex flex-col items-start lg:items-center space-y-6">
+        <div className="text-start lg:text-center max-w-4xl mx-auto mb-10 lg:mb-20 flex flex-col items-start lg:items-center space-y-6">
           <HeadingTag>Our Services</HeadingTag>  
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-loose text-navy leading-tight lg:leading-tight" >
-               Premium Interior & Exterior Repaints, <span className="text-gold italic"> Done Right</span>
+                Interior & Exterior Repaints, <span className="text-gold italic"> Done Right</span>
           </h2>
           <div className="h-1 w-24 bg-gold lg:mx-auto "></div>
           {/* <p className="text-gray-600 text-lg leading-relaxed">
@@ -132,7 +132,7 @@ export default function Services() {
           </p> */}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           <ServiceCard 
             image="/interior-painting-queenstown-french-wash-feature-wall--arthurs-point.jpeg"
             alt="Luxury Interior Painting"
@@ -149,20 +149,17 @@ export default function Services() {
             linkHref="/exterior"
           />
         
-          {/* Full-width Roof Painting Card */}
-          <div className="lg:col-span-2">
-            <ServiceCard 
-              image="/roof-painting/webp/roof-painting-in-queenstown.webp"
-              alt="Premium Roof Painting"
-              title="Roof Painting & Restoration"
-              description="Protecting and beautifying your roof with specialized treatments and premium finishes"
-              linkHref="/roof-painting-queenstown"
-              imagePosition="object-[center_10%]"
-            />
-          </div>
+          <ServiceCard 
+            image="/roof-painting/webp/roof-painting-in-queenstown.webp"
+            alt="Premium Roof Painting"
+            title="Roof Painting & Restoration"
+            description="Protecting and beautifying your roof with specialized treatments and premium finishes"
+            linkHref="/roof-painting-queenstown"
+            imagePosition="object-[center_10%]"
+          />
         </div>
 
-        <div id="interior-services" className="mb-24 scroll-mt-24">
+        {/* <div id="interior-services" className="mb-24 scroll-mt-24">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px bg-gray-200 flex-grow"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-navy flex-shrink-0">
@@ -204,7 +201,7 @@ export default function Services() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className="text-center mt-12">
           <CtaButton />

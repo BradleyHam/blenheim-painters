@@ -2,17 +2,18 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { siteConfig } from '@/config/site-config'
 
 const faqData = [
   {
-    question: 'Why should I choose a Master Painter for my home painting project in Queenstown?',
+    question: `Why should I choose a Master Painter for my home painting project in ${siteConfig.townName}?`,
     answer:
-      'Choosing a Master Painter ensures your painting project is completed to the highest professional standards. As members of Master Painters NZ, Little Dog Decorating provides exceptional workmanship, extensive industry training (BCITO-qualified), and guaranteed customer satisfaction.',
+      `Choosing a Master Painter ensures your painting project is completed to the highest professional standards. As members of Master Painters NZ, ${siteConfig.businessName} provides exceptional workmanship, extensive industry training (BCITO-qualified), and guaranteed customer satisfaction.`,
   },
   {
-    question: 'What residential painting services do you offer in Queenstown?',
+    question: `What residential painting services do you offer in ${siteConfig.townName}?`,
     answer:
-      'Little Dog Decorating specializes in interior and exterior painting services for residential re-paints, renovations, and new builds in Queenstown. Our comprehensive service includes detailed preparation, premium painting products, and meticulous finishes tailored to your home.',
+      `${siteConfig.businessName} specializes in interior and exterior painting services for residential re-paints, renovations, and new builds in ${siteConfig.townName}. Our comprehensive service includes detailed preparation, premium painting products, and meticulous finishes tailored to your home.`,
   },
   {
     question: 'Do you use environmentally friendly paints for residential projects?',
@@ -22,12 +23,12 @@ const faqData = [
   {
     question: 'Are your painting services guaranteed?',
     answer:
-      'Absolutely. Little Dog Decorating is fully licensed, insured, and offers a 5-year warranty on our painting services. We guarantee against peeling, cracking, and fading, providing you peace of mind and protecting your investment.',
+      `Absolutely. ${siteConfig.businessName} is fully licensed, insured, and offers a 5-year warranty on our painting services. We guarantee against peeling, cracking, and fading, providing you peace of mind and protecting your investment.`,
   },
   {
-    question: 'Can you help me choose the right colours for my Queenstown home?',
+    question: `Can you help me choose the right colours for my ${siteConfig.townName} home?`,
     answer:
-      'Certainly! We offer personalized colour consultation services to complement your existing décor, architectural features, and the stunning natural environment of Queenstown. We also collaborate closely with your interior designer or architect if required.',
+      `Certainly! We offer personalized colour consultation services to complement your existing décor, architectural features, and the stunning natural environment of ${siteConfig.townName}. We also collaborate closely with your interior designer or architect if required.`,
   },
   {
     question: 'What measures do you take to protect my home during painting?',
@@ -35,14 +36,14 @@ const faqData = [
       'We employ meticulous protection protocols, including furniture coverings, specialized floor protection, precision masking, and dust-free equipment. Your valuable furnishings, flooring, and fixtures are treated with utmost care and respect throughout our painting process.',
   },
   {
-    question: 'How long will it take to repaint the exterior of my house in Queenstown?',
+    question: `How long will it take to repaint the exterior of my house in ${siteConfig.townName}?`,
     answer:
       'Exterior repaint timelines typically range from one to three weeks, depending on house size, condition, and weather conditions. We provide detailed timelines at the outset and ensure minimal disruption to your routine.',
   },
   {
-    question: "How often should I repaint my home's exterior in Queenstown?",
+    question: `How often should I repaint my home's exterior in ${siteConfig.townName}?`,
     answer:
-      "Due to Queenstown's alpine climate, we recommend repainting your home's exterior every 7-10 years. Regular maintenance protects your property from harsh weather conditions, maintains aesthetics, and preserves home value.",
+      `Due to ${siteConfig.townName}'s alpine climate, we recommend repainting your home's exterior every 7-10 years. Regular maintenance protects your property from harsh weather conditions, maintains aesthetics, and preserves home value.`,
   },
 ];
 
@@ -99,7 +100,7 @@ const Faq = () => {
           </h2>
           <div className="h-1 w-24 bg-gold lg:mx-auto mb-8"></div>
           <p className="text-navy/80 text-lg leading-snug">
-            Common questions about our interior and exterior painting services for Queenstown homes, from our Master Painter qualifications to climate-specific recommendations.
+            {`Common questions about our interior and exterior painting services for ${siteConfig.townName} homes, from our Master Painter qualifications to climate-specific recommendations.`}
           </p>
         </div>
 
