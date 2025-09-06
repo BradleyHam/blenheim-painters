@@ -14,45 +14,46 @@ import Contact from "@/components/layout/Contact"
 import Footer from "@/components/layout/Footer"
 import CtaFooter from "@/app/experimental-components/CtaFooter"
 import ProjectSection from "@/components/layout/ProjectSection"
-import { getFeaturedAndRecentProjects } from "@/sanity/lib/api"
+import { getFeaturedAndRecentProjects } from "@/lib/markdown"
 import Script from "next/script"
 import EnhancedHero from "@/components/layout/enhancedHero"
+import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
 export default async function Home() {
-  // Fetch featured and recent projects, with featured project first
+  // Fetch featured and recent projects from markdown
   const projects = await getFeaturedAndRecentProjects();
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Little Dog Decorating",
-    "alternateName": "Little Dog Painting & Decorating",
-    "url": "https://www.littledogdecorating.co.nz/",
-    "logo": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-    "image": "https://www.littledogdecorating.co.nz/ldd-exterior.jpg",
-    "description": "Professional painting and decorating services in Queenstown and Arrowtown. We specialize in interior, exterior, and roof painting for residential properties.",
-    "telephone": "+64 21 632 938",
-    "email": "littledogdecorating@gmail.com",
+    "name": siteConfig.businessName,
+    "alternateName": siteConfig.businessNameAlt,
+    "url": siteConfig.website,
+    "logo": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
+    "image": `${siteConfig.website}ldd-exterior.jpg`,
+    "description": `Professional painting and decorating services in ${siteConfig.townName} and ${getServiceAreasText()}. We specialize in interior, exterior, and roof painting for residential properties.`,
+    "telephone": siteConfig.phoneNumber,
+    "email": siteConfig.email,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "31 Marston Road",
-      "addressLocality": "Queenstown",
-      "addressRegion": "Otago",
-      "postalCode": "9304",
-      "addressCountry": "New Zealand"
+      "streetAddress": siteConfig.address.street,
+      "addressLocality": siteConfig.address.city,
+      "addressRegion": siteConfig.address.region,
+      "postalCode": siteConfig.address.postalCode,
+      "addressCountry": siteConfig.address.country
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -44.9847,
-      "longitude": 168.7488
+      "latitude": siteConfig.coordinates.latitude,
+      "longitude": siteConfig.coordinates.longitude
     },
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": -44.9847,
-        "longitude": 168.7488
+        "latitude": siteConfig.coordinates.latitude,
+        "longitude": siteConfig.coordinates.longitude
       },
-      "geoRadius": 25
+      "geoRadius": siteConfig.serviceRadius
     },
     "openingHoursSpecification": [
       {
@@ -62,10 +63,7 @@ export default async function Home() {
         "closes": "17:00"
       }
     ],
-    "sameAs": [
-      "https://www.facebook.com/littledogdecorating",
-      "https://www.instagram.com/littledogdecorating"
-    ],
+    "sameAs": Object.values(siteConfig.social).filter(Boolean),
     "priceRange": "$$",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -76,7 +74,7 @@ export default async function Home() {
           "itemOffered": {
             "@type": "Service",
             "name": "Interior Painting",
-            "url": "https://www.littledogdecorating.co.nz/interior-painting-queenstown"
+            "url": `${siteConfig.website}interior-painting-${siteConfig.townNameLower}`
           }
         },
         {
@@ -84,7 +82,7 @@ export default async function Home() {
           "itemOffered": {
             "@type": "Service",
             "name": "Exterior Painting",
-            "url": "https://www.littledogdecorating.co.nz/exterior-painting-queenstown"
+            "url": `${siteConfig.website}exterior-painting-${siteConfig.townNameLower}`
           }
         },
         {
@@ -92,7 +90,7 @@ export default async function Home() {
           "itemOffered": {
             "@type": "Service",
             "name": "Roof Painting",
-            "url": "https://www.littledogdecorating.co.nz/roof-painting-queenstown"
+            "url": `${siteConfig.website}roof-painting-${siteConfig.townNameLower}`
           }
         }
       ]
@@ -102,12 +100,12 @@ export default async function Home() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Little Dog Decorating",
-    "url": "https://www.littledogdecorating.co.nz/",
-    "description": "Professional painters in Queenstown and Arrowtown, offering interior, exterior, and roof painting services.",
+    "name": siteConfig.businessName,
+    "url": siteConfig.website,
+    "description": `Professional painters in ${siteConfig.townName} and ${getServiceAreasText()}, offering interior, exterior, and roof painting services.`,
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.littledogdecorating.co.nz/search?q={search_term_string}",
+      "target": `${siteConfig.website}search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   }

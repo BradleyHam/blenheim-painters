@@ -1,7 +1,8 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "nz-painter-template",
+  "version": "1.0.0",
   "private": true,
+  "description": "Customizable Next.js template for painting companies in New Zealand",
   "packageManager": "pnpm@8.15.5",
   "engines": {
     "node": "20.x"
@@ -14,7 +15,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@portabletext/react": "^3.2.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.1",
@@ -40,10 +40,8 @@
     "@radix-ui/react-tabs": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.4",
     "@radix-ui/react-toggle": "^1.1.1",
-        "@radix-ui/react-toggle-group": "^1.1.1",
+    "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
-    "@sanity/image-url": "^1.1.0",
-
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -54,9 +52,8 @@
     "framer-motion": "^12.6.3",
     "gray-matter": "^4.0.3",
     "input-otp": "1.4.1",
-        "lucide-react": "^0.454.0",
+    "lucide-react": "^0.454.0",
     "next": "15.2.4",
-    "next-sanity": "^9.12.0",
     "next-themes": "^0.4.4",
     "nodemailer": "^6.10.0",
     "react": "^18.3.1",
@@ -67,9 +64,8 @@
     "reading-time": "^1.5.0",
     "recharts": "2.15.0",
     "remark": "^15.0.1",
-        "remark-gfm": "^4.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
-
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",

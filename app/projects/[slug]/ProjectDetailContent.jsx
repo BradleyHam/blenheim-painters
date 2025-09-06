@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, MapPin, ArrowRight, ArrowLeft } from "lucide-react"
 import CtaFooter from "@/app/experimental-components/CtaFooter"
 import { useState, useEffect } from "react"
-import PortableText from "@/components/portable-text/PortableText"
+// PortableText component removed - using raw HTML content from markdown now
 import Cta from "../../../components/ui/CtaButton"
 
 export default function ProjectDetailContent({ project }) {

@@ -9,31 +9,30 @@ import SectionHeading from '@/components/layout/SectionHeading'
 import ContentSection from './ContentSection'
 import Testimonials from '@/components/layout/Testimonials'
 import ProjectSection from '@/components/layout/ProjectSection'
-import { getExteriorProjects } from '@/sanity/lib/api'
+import { getProjects } from '@/lib/markdown'
+import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
 
 // Add specific metadata for this page
 export const metadata: Metadata = {
-  title: 'Exterior Painting Services Queenstown & Arrowtown',
-  description: 'Protect and beautify your home exterior with Little Dog Decorating. Professional exterior painters serving Queenstown and Arrowtown. Durable finishes, weather protection.',
+  title: getSiteTitle(`Exterior Painting Services ${siteConfig.townName} & ${getServiceAreasText()}`),
+  description: `Protect and beautify your home exterior with ${siteConfig.businessName}. Professional exterior painters serving ${siteConfig.townName} and surrounding areas. Durable finishes, weather protection.`,
   keywords: [
-    'exterior painting Queenstown',
-    'exterior painter Arrowtown',
+    `exterior painting ${siteConfig.townName}`,
+    `exterior painter ${siteConfig.serviceAreas[1] || siteConfig.townName}`,
     'house painting exterior NZ',
-    'weatherboard painting Queenstown',
+    `weatherboard painting ${siteConfig.townName}`,
     'fence painting',
     'deck staining',
     'exterior house painters',
-    'Little Dog Decorating',
+    siteConfig.businessName,
   ],
   openGraph: {
-    title: 'Exterior Painting Services Queenstown & Arrowtown | Little Dog Decorating',
-    description: 'Durable and beautiful exterior painting for homes in Queenstown & Arrowtown.',
-    // images: ['/og-exterior.jpg'],
+    title: `Exterior Painting Services ${siteConfig.townName} | ${siteConfig.businessName}`,
+    description: `Durable and beautiful exterior painting for homes in ${siteConfig.townName} and surrounding areas.`,
   },
   twitter: {
-    title: 'Exterior Painting Services Queenstown & Arrowtown | Little Dog Decorating',
-    description: 'Protect your home with expert exterior painting in Queenstown & Arrowtown.',
-    // images: ['/twitter-exterior.jpg'],
+    title: `Exterior Painting Services ${siteConfig.townName} | ${siteConfig.businessName}`,
+    description: `Protect your home with expert exterior painting in ${siteConfig.townName} and surrounding areas.`,
   },
 }
 
@@ -113,7 +112,8 @@ const houseTypes = [
 
 export default async function ExteriorPage() {
   // Fetch exterior projects
-  const exteriorProjects = await getExteriorProjects();
+  const allProjects = await getProjects();
+  const exteriorProjects = allProjects.filter(p => p.services.includes("Exterior Painting"));
 
   const serviceSchema = {
     "@context": "https://schema.org",

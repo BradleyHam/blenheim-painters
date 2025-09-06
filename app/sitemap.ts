@@ -1,11 +1,11 @@
 import { MetadataRoute } from 'next'
-import { createClient } from 'next-sanity'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { siteConfig } from '@/config/site-config'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.littledogdecorating.co.nz'
+  const baseUrl = siteConfig.website.replace(/\/$/, '') // Remove trailing slash
   const currentDate = new Date()
 
   // Static pages
@@ -17,19 +17,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/interior-painting-queenstown`,
+      url: `${baseUrl}/interior-painting-${siteConfig.townNameLower}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/exterior-painting-queenstown`,
+      url: `${baseUrl}/exterior-painting-${siteConfig.townNameLower}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/roof-painting-queenstown`,
+      url: `${baseUrl}/roof-painting-${siteConfig.townNameLower}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
@@ -63,15 +63,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get blog posts
   let blogPages: MetadataRoute.Sitemap = []
   try {
-    const contentDir = path.join(process.cwd(), 'content')
-    if (fs.existsSync(contentDir)) {
-      const files = fs.readdirSync(contentDir)
+    const blogDir = path.join(process.cwd(), 'content/blog')
+    if (fs.existsSync(blogDir)) {
+      const files = fs.readdirSync(blogDir)
       
       blogPages = files
         .filter((f) => f.endsWith('.md') || f.endsWith('.mdx'))
         .map((filename) => {
           try {
-            const filePath = path.join(contentDir, filename)
+            const filePath = path.join(blogDir, filename)
             const md = fs.readFileSync(filePath, 'utf-8')
             const { data } = matter(md)
             
@@ -98,30 +98,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get project pages
   let projectPages: MetadataRoute.Sitemap = []
   try {
-    const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-    const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
-    const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-05-03'
-    
-    if (projectId) {
-      const client = createClient({
-        projectId,
-        dataset,
-        apiVersion,
-        useCdn: false,
-      })
+    const projectsDir = path.join(process.cwd(), 'content/projects')
+    if (fs.existsSync(projectsDir)) {
+      const files = fs.readdirSync(projectsDir)
       
-      const projects = await client.fetch(`*[_type == "project" && defined(slug.current)]{
-        "slug": slug.current,
-        "date": date,
-        "_updatedAt": _updatedAt
-      }`)
-      
-      projectPages = projects.map((project: any) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
-        lastModified: project.date ? new Date(project.date) : new Date(project._updatedAt) || currentDate,
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-      }))
+      projectPages = files
+        .filter((f) => f.endsWith('.md') || f.endsWith('.mdx'))
+        .map((filename) => {
+          try {
+            const filePath = path.join(projectsDir, filename)
+            const md = fs.readFileSync(filePath, 'utf-8')
+            const { data } = matter(md)
+            
+            const slug = data.slug ?? filename.replace(/\.(md|mdx)$/, '')
+            const projectDate = data.completionDate ? new Date(data.completionDate) : currentDate
+            
+            return {
+              url: `${baseUrl}/projects/${slug}`,
+              lastModified: projectDate,
+              changeFrequency: 'weekly' as const,
+              priority: 0.8,
+            }
+          } catch (error) {
+            console.error(`Error processing project ${filename}:`, error)
+            return null
+          }
+        })
+        .filter((page): page is NonNullable<typeof page> => page !== null)
     }
   } catch (error) {
     console.error('Failed to fetch project pages for sitemap:', error)

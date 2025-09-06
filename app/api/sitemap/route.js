@@ -1,12 +1,11 @@
-// Import the Sanity client directly to avoid dependency issues
-import { createClient } from 'next-sanity';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { siteConfig } from '@/config/site-config';
 
 export async function GET() {
   // Base URL for your website
-  const baseUrl = 'https://www.littledogdecorating.co.nz';
+  const baseUrl = siteConfig.website.replace(/\/$/, ''); // Remove trailing slash
   
   // Get current date for lastModified
   const currentDate = new Date().toISOString();
@@ -14,9 +13,9 @@ export async function GET() {
   // Static routes - updated with correct service page URLs
   const staticPages = [
     { url: '/', lastModified: currentDate, priority: "1.0" },
-    { url: '/interior-painting-queenstown', lastModified: currentDate, priority: "0.9" },
-    { url: '/exterior-painting-queenstown', lastModified: currentDate, priority: "0.9" },
-    { url: '/roof-painting-queenstown', lastModified: currentDate, priority: "0.9" },
+    { url: `/interior-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: "0.9" },
+    { url: `/exterior-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: "0.9" },
+    { url: `/roof-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: "0.9" },
     { url: '/projects', lastModified: currentDate, priority: "0.8" },
     { url: '/blog', lastModified: currentDate, priority: "0.8" },
     { url: '/testimonials', lastModified: currentDate, priority: "0.7" },

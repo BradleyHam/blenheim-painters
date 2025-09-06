@@ -7,7 +7,7 @@ import RoofPaintingFaq from "./RoofPaintingFAQ"
 import CtaFooter from "../experimental-components/CtaFooter"
 import Script from "next/script"
 import ProjectSection from "@/components/layout/ProjectSection"
-import { getRoofProjects } from "@/sanity/lib/api"
+import { getProjects } from "@/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Roof Painting Queenstown | Little Dog Decorating",
@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 
 export default async function RoofPainting() {
   // Fetch roof painting projects
-  const roofProjects = await getRoofProjects();
+  const allProjects = await getProjects();
+  const roofProjects = allProjects.filter(p => p.services.includes("Roof Painting"));
 
   const serviceSchema = {
     "@context": "https://schema.org",

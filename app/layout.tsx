@@ -9,6 +9,7 @@ import { Toaster } from 'sonner'
 import GlobalCta from '@/components/ui/GlobalCta'
 import { cn } from "@/lib/utils"
 import PerformanceOptimizerLoader from '@/components/performance/PerformanceOptimizerLoader'
+import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
 
 const figtree = Figtree({ 
   subsets: ["latin"],
@@ -22,44 +23,31 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.littledogdecorating.co.nz'), // Replace with your actual domain
-  title: 'Little Dog Decorating | Premium Painters in Queenstown & Arrowtown',
-  description: 'Queenstown\'s premier painting specialists serving Queenstown, Arrowtown, and surrounding areas. Expert interior and exterior painting with 15+ years experience.',
-  keywords: [
-    'Queenstown painter',
-    'Arrowtown painter',
-    'luxury painting services',
-    'interior painting NZ',
-    'exterior painting Queenstown',
-    'residential painting',
-    'professional decorating',
-    'Little Dog Decorating',
-    'painting contractor Queenstown',
-    'house painters NZ',
-    'luxury home painting'
-  ],
-  authors: [{ name: 'Little Dog Decorating', url: 'https://www.littledogdecorating.co.nz' }],
-  creator: 'Little Dog Decorating',
-  publisher: 'Little Dog Decorating',
+  metadataBase: new URL(siteConfig.website),
+  title: getSiteTitle(),
+  description: siteConfig.seoDefaults.description,
+  keywords: siteConfig.seoDefaults.keywords.split(', '),
+  authors: [{ name: siteConfig.businessName, url: siteConfig.website }],
+  creator: siteConfig.businessName,
+  publisher: siteConfig.businessName,
   openGraph: {
-    title: 'Little Dog Decorating | Premium Painter Queenstown & Arrowtown',
-    description:
-      'Luxury residential painting services in Queenstown & Arrowtown. Quality workmanship and premium finishes.',
-    url: 'https://www.littledogdecorating.co.nz', 
-    siteName: 'Little Dog Decorating',
+    title: getSiteTitle(),
+    description: siteConfig.seoDefaults.description,
+    url: siteConfig.website, 
+    siteName: siteConfig.businessName,
     images: [
       {
-        url: '/interior-queenstown.jpeg', 
+        url: siteConfig.seoDefaults.ogImage, 
         width: 1200,
         height: 630,
-        alt: 'Little Dog Decorating - Premium Painting Services',
+        alt: `${siteConfig.businessName} - Premium Painting Services`,
       },
     ],
     locale: 'en_NZ',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.littledogdecorating.co.nz',
+    canonical: siteConfig.website,
   },
   icons: {
     icon: '/favicon.ico',

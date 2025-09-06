@@ -7,7 +7,7 @@ import ContentSection from './ContentSection'
 import InteractiveSection from './InteractiveSection'
 import Testimonials from '@/components/layout/Testimonials'
 import ProjectSection from '@/components/layout/ProjectSection'
-import { getInteriorProjects } from '@/sanity/lib/api'
+import { getProjects } from '@/lib/markdown'
 import { Metadata } from 'next'
 import Script from "next/script"
 
@@ -109,7 +109,8 @@ export const metadata: Metadata = {
 
 export default async function InteriorPage() {
   // Fetch interior projects
-  const interiorProjects = await getInteriorProjects();
+  const allProjects = await getProjects();
+  const interiorProjects = allProjects.filter(p => p.services.includes("Interior Painting"));
 
   const serviceSchema = {
     "@context": "https://schema.org",

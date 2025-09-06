@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, MapPin, ArrowRight, ArrowLeft } from "lucide-react"
 import CtaFooter from "@/app/experimental-components/CtaFooter"
-import { getProjectBySlug, getAllProjectPaths } from "@/sanity/lib/api"
+import { getProjectBySlug, getProjectSlugs } from "@/lib/markdown"
+import { siteConfig } from "@/config/site-config"
 import { notFound } from "next/navigation"
 import ProjectDetailContent from "./ProjectDetailContent"
 import Script from "next/script"
@@ -13,8 +14,8 @@ export const revalidate = 60 // revalidate this page every 60 seconds
 
 // Generate static params for all projects
 export async function generateStaticParams() {
-  const paths = await getAllProjectPaths()
-  return paths
+  const slugs = getProjectSlugs()
+  return slugs.map(slug => ({ slug }))
 }
 
 export default async function ProjectDetailPage({ params }) {

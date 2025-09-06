@@ -1,34 +1,35 @@
-import { getAllProjects, getFeaturedProject } from "@/sanity/lib/api"
+import { getFeaturedProjects, getProjects } from "@/lib/markdown"
+import { siteConfig } from "@/config/site-config"
 import ProjectsContent from "./ProjectsContent"
 import Script from "next/script"
 
 export const revalidate = 60 // revalidate this page every 60 seconds
 
 export default async function ProjectsPage() {
-  const featuredProject = await getFeaturedProject()
-  const projects = await getAllProjects()
+  const allProjects = await getProjects()
+  const featuredProject = allProjects.find(p => p.featured) || null
   
   // Filter out the featured project if it exists
   const recentProjects = featuredProject 
-    ? projects.filter(project => project._id !== featuredProject._id)
-    : projects
+    ? allProjects.filter(project => project.slug !== featuredProject.slug)
+    : allProjects
 
   // Prepare structured data
   const projectListItems = [...(featuredProject ? [featuredProject] : []), ...recentProjects].map(project => ({
     "@type": "CreativeWork",
     "name": project.title,
     "description": project.description,
-    "image": project.mainImage || "https://www.littledogdecorating.co.nz/placeholder.svg",
-    "datePublished": project.date,
-    "url": `https://www.littledogdecorating.co.nz/projects/${project.slug}`
+    "image": project.images?.[0] || `${siteConfig.website}placeholder.svg`,
+    "datePublished": project.completionDate,
+    "url": `${siteConfig.website}projects/${project.slug}`
   }));
 
   const projectsSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Little Dog Decorating - Painting Projects Portfolio",
-    "description": "Browse our collection of painting and decorating projects in Queenstown and Arrowtown, showcasing our professional workmanship and attention to detail.",
-    "url": "https://www.littledogdecorating.co.nz/projects",
+    "name": `${siteConfig.businessName} - Painting Projects Portfolio`,
+    "description": `Browse our collection of painting and decorating projects in ${siteConfig.townName} and surrounding areas, showcasing our professional workmanship and attention to detail.`,
+    "url": `${siteConfig.website}projects`,
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": projectListItems.map((item, index) => ({
@@ -40,16 +41,16 @@ export default async function ProjectsPage() {
     },
     "about": {
       "@type": "LocalBusiness",
-      "name": "Little Dog Decorating",
-      "image": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-      "telephone": "+64 21 632 938",
+      "name": siteConfig.businessName,
+      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
+      "telephone": siteConfig.phoneNumber,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "31 Marston Road",
-        "addressLocality": "Queenstown",
-        "addressRegion": "Otago",
-        "postalCode": "9304",
-        "addressCountry": "New Zealand"
+        "streetAddress": siteConfig.address.street,
+        "addressLocality": siteConfig.address.city,
+        "addressRegion": siteConfig.address.region,
+        "postalCode": siteConfig.address.postalCode,
+        "addressCountry": siteConfig.address.country
       }
     }
   };
