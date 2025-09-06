@@ -1,0 +1,19 @@
+# Exclude nested Next.js project from Vercel builds
+app/testimonials/let-it-rain/
+
+# Node modules and build artifacts
+node_modules/
+.next/
+out/
+build/
+
+# Environment files
+.env*.local
+
+# Logs
+*.log
+
+.git
+package-lock.json
+README.md
+.DS_Store 
