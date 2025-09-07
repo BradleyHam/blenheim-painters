@@ -18,109 +18,47 @@ import { getFeaturedAndRecentProjects } from "@/lib/markdown"
 import Script from "next/script"
 import EnhancedHero from "@/components/layout/enhancedHero"
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { getWebsiteSchema, getFAQPageSchema } from '@/config/structured-data'
 export default async function Home() {
   // Fetch featured and recent projects from markdown
   const projects = await getFeaturedAndRecentProjects();
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": siteConfig.businessName,
-    "alternateName": siteConfig.businessNameAlt,
-    "url": siteConfig.website,
-    "logo": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
-    "image": `${siteConfig.website}ldd-exterior.jpg`,
-    "description": `Professional painting and decorating services in ${siteConfig.townName} and ${getServiceAreasText()}. We specialize in interior, exterior, and roof painting for residential properties.`,
-    "telephone": siteConfig.phoneNumber,
-    "email": siteConfig.email,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": siteConfig.address.street,
-      "addressLocality": siteConfig.address.city,
-      "addressRegion": siteConfig.address.region,
-      "postalCode": siteConfig.address.postalCode,
-      "addressCountry": siteConfig.address.country
+  // Use dynamic schemas from config
+  const websiteSchema = getWebsiteSchema()
+  
+  // FAQ data for structured markup (matching the FAQ component)
+  const homepageFaqs = [
+    {
+      question: `Why should I choose a Master Painter for my home painting project in ${siteConfig.townName}?`,
+      answer: `Choosing a Master Painter ensures your painting project is completed to the highest professional standards. As members of Master Painters NZ, ${siteConfig.businessName} provides exceptional workmanship, extensive industry training (BCITO-qualified), and guaranteed customer satisfaction.`
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": siteConfig.coordinates.latitude,
-      "longitude": siteConfig.coordinates.longitude
+    {
+      question: `What residential painting services do you offer in ${siteConfig.townName}?`,
+      answer: `${siteConfig.businessName} specializes in interior and exterior painting services for residential re-paints, renovations, and new builds in ${siteConfig.townName}. Our comprehensive service includes detailed preparation, premium painting products, and meticulous finishes tailored to your home.`
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": siteConfig.coordinates.latitude,
-        "longitude": siteConfig.coordinates.longitude
-      },
-      "geoRadius": siteConfig.serviceRadius
+    {
+      question: 'Do you use environmentally friendly paints for residential projects?',
+      answer: 'Yes, we proudly offer eco-friendly, low-VOC paints from top-quality brands such as Dulux and Resene. These paints provide superior finish quality, durability, and are safer for your family and the environment.'
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "sameAs": Object.values(siteConfig.social).filter(Boolean),
-    "priceRange": "$$",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Painting Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Interior Painting",
-            "url": `${siteConfig.website}interior-painting-${siteConfig.townNameLower}`
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Exterior Painting",
-            "url": `${siteConfig.website}exterior-painting-${siteConfig.townNameLower}`
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Roof Painting",
-            "url": `${siteConfig.website}roof-painting-${siteConfig.townNameLower}`
-          }
-        }
-      ]
+    {
+      question: 'Are your painting services guaranteed?',
+      answer: `Absolutely. ${siteConfig.businessName} is fully licensed, insured, and offers a 5-year warranty on our painting services. We guarantee against peeling, cracking, and fading, providing you peace of mind and protecting your investment.`
     }
-  }
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": siteConfig.businessName,
-    "url": siteConfig.website,
-    "description": `Professional painters in ${siteConfig.townName} and ${getServiceAreasText()}, offering interior, exterior, and roof painting services.`,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${siteConfig.website}search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
-  }
+  ]
+  
+  const faqSchema = getFAQPageSchema(homepageFaqs)
 
   return (
     <>
       <Script
-        id="structured-data-organization"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <Script
         id="structured-data-website"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <Script
+        id="structured-data-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
       <div className="flex flex-col bg-white overflow-hidden max-w-full">

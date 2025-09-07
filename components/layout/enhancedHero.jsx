@@ -4,6 +4,7 @@ import { Phone, Calendar, ArrowRight, Star, CheckCircle, Loader } from "lucide-r
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { siteConfig } from "@/config/site-config"
+import { imageConfig } from "@/config/images"
 
 export default function EnhancedHero() {
   const [form, setForm] = useState({
@@ -85,8 +86,8 @@ export default function EnhancedHero() {
       {/* Background with parallax effect */}
       <div className="absolute inset-0 z-0 rounded-lg">
         <Image
-          src="/Interior-repaint-in-queenstown-with-views-of-lake-wakatipu.jpg"
-          alt="Premium painting services in Queenstown - beautifully finished interior with mountain views"
+          src={imageConfig.hero.background.path}
+          alt={imageConfig.hero.background.alt}
           fill
           priority
           className="object-cover opacity-30"

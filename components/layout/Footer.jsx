@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-navy-light mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-navy-light/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
             © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
           </p>

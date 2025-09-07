@@ -39,7 +39,7 @@ export const imageConfig = {
   // ===========================================
   hero: {
     background: {
-      path: "/hero-bg.jpg", 
+      path: "/interior-repaint.jpg", 
       description: "Main homepage hero background",
       dimensions: "1920x1080px minimum",
       usage: "Homepage hero section background",
@@ -91,7 +91,7 @@ export const imageConfig = {
   // ===========================================
   services: {
     interior: {
-      path: "/interior-painting.jpg",
+      path: "/interior-repaint.jpg",
       description: "Interior painting showcase",
       dimensions: "1200x800px",
       usage: "Interior service page hero",

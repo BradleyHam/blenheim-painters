@@ -10,6 +10,7 @@ import GlobalCta from '@/components/ui/GlobalCta'
 import { cn } from "@/lib/utils"
 import PerformanceOptimizerLoader from '@/components/performance/PerformanceOptimizerLoader'
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { getLocalBusinessSchema } from '@/config/structured-data'
 
 const figtree = Figtree({ 
   subsets: ["latin"],
@@ -83,88 +84,20 @@ export default function RootLayout({
     <html lang="en" className={cn(figtree.variable)} suppressHydrationWarning>
       <head>
         {/* Resource Hints - Preconnect to reduce connection time */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+      
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://cdn.sanity.io" />
-        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+       
         
         {/* Remove preload for missing font file */}
         
-        <script
-          defer
-          src={`https://www.googletagmanager.com/gtag/js?id=G-YJ82QQKJ32`}
-        ></script>
-        <script
+        <script 
+          type="application/ld+json" 
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YJ82QQKJ32', { 'send_page_view': false });
-              window.addEventListener('load', function() {
-                gtag('event', 'page_view');
-              });
-            `,
+            __html: JSON.stringify(getLocalBusinessSchema())
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function (c, s, q, u, a, r, e) {
-                c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
-                c._hjSettings = { hjid: a };
-                r = s.getElementsByTagName('head')[0];
-                e = s.createElement('script');
-                e.async = true;
-                e.src = q + c._hjSettings.hjid + u;
-                r.appendChild(e);
-              })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js', 6413538);
-            `,
-          }}
-        />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            'name': 'Little Dog Decorating',
-            'image': 'https://www.littledogdecorating.co.nz/interior-queenstown.jpeg',
-            'url': 'https://www.littledogdecorating.co.nz',
-            'telephone': '+64 21 632 938', 
-            'address': {
-              '@type': 'PostalAddress',
-              'streetAddress': ' 31 Marston Road', 
-              'addressLocality': 'Queenstown',
-              'addressRegion': 'Otago',
-              'postalCode': '9304', 
-              'addressCountry': ' New Zealand'
-            },
-           'geo': {
-              '@type': 'GeoCoordinates',
-              'latitude': -45.0053199,
-              'longitude': 168.7705183
-            },
-            'openingHoursSpecification': {
-              '@type': 'OpeningHoursSpecification',
-              'dayOfWeek': [
-                'Monday',
-                'Tuesday',
-                'Wednesday',
-                'Thursday',
-                'Friday'
-              ],
-              'opens': '08:00',
-              'closes': '17:00'
-            },
-            'sameAs': [
-              'https://www.facebook.com/littledogdecorating', // Add your actual social links
-              'https://www.instagram.com/littledogdecorating'
-            ],
-            'priceRange': '$$',
-            'description': 'Queenstown\'s premier painting specialists serving Queenstown, Arrowtown, and surrounding areas. Expert interior and exterior painting with 15+ years experience.'
-          })
-        }}/>
+        
       </head>
       <body className="font-figtree">
         <ThemeProvider

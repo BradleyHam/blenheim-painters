@@ -79,20 +79,20 @@ export default function Header() {
     <>
       <div className="header-container">
         {/* Contact info sub-header - visible on all screens */}
-        {/* <div className="bg-navy py-2 text-white text-xs w-full">
+        <div className="bg-navy py-2 text-white text-xs w-full">
           <div className="container flex items-center justify-end gap-4 md:gap-6">
-            <a href="tel:+6421632938" className="flex items-center gap-1 md:gap-2 hover:text-gold transition-colors">
+            <a href={`tel:+64${siteConfig.phoneNumber}`} className="flex items-center gap-1 md:gap-2 hover:text-gold transition-colors">
               <Phone className="h-3 w-3" />
-              <span className="hidden sm:inline">+64 21 632 938</span>
-              <span className="sm:hidden">+64 21 632 938</span>
+              <span className="hidden sm:inline">+64{siteConfig.phoneDisplay}</span>
+              <span className="sm:hidden">+64{siteConfig.phoneDisplay}</span>
             </a>
-            <a href="mailto:littledogdecorating@gmail.com" className="flex items-center gap-1 md:gap-2 hover:text-gold transition-colors">
+            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-1 md:gap-2 hover:text-gold transition-colors">
               <Mail className="h-3 w-3" />
-              <span className="hidden sm:inline">littledogdecorating@gmail.com</span>
-              <span className="sm:hidden">littledogdecorating@gmail.com</span>
+              <span className="hidden sm:inline">{siteConfig.email}</span>
+              <span className="sm:hidden">{siteConfig.email}</span>
             </a>
           </div>
-        </div> */}
+        </div>
         
         <div 
           className="w-full border-b border-gray-200 bg-white"
@@ -137,12 +137,6 @@ export default function Header() {
               </Link>
               <Link href="/testimonials" className="text-sm font-medium text-navy hover:text-gold">
                 Testimonials
-              </Link>
-              <Link href="/projects" className="text-sm font-medium text-navy hover:text-gold">
-                Projects
-              </Link>
-              <Link href="/blog" className="text-sm font-medium text-navy hover:text-gold">
-                Blog
               </Link>
               <Link href="/contact" className="text-sm font-medium text-navy hover:text-gold">
                 Contact
@@ -202,12 +196,6 @@ export default function Header() {
                         <Link href="/testimonials" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Testimonials
                         </Link>
-                        <Link href="/projects" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
-                          Projects
-                        </Link>
-                        <Link href="/blog" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
-                          Blog
-                        </Link>
                         <Link href="/contact" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Contact
                         </Link>
@@ -226,14 +214,14 @@ export default function Header() {
                         <div className="border-t border-gray-100 pt-6">
                     
                           <div className="space-y-3">
-                            <a href="tel:+6421632938" className="flex items-center text-navy hover:text-gold transition-colors text-sm">
+                            <a href={`tel:+64${siteConfig.phoneNumber}`} className="flex items-center text-navy hover:text-gold transition-colors text-sm">
                               <Phone className="h-3.5 w-3.5 mr-3 text-navy/70" />
-                              +64 21 632 938
+                              +64{siteConfig.phoneDisplay}
                             </a>
                             
-                            <a href="mailto:littledogdecorating@gmail.com" className="flex items-center text-navy hover:text-gold transition-colors text-sm">
+                            <a href={`mailto:${siteConfig.email}`} className="flex items-center text-navy hover:text-gold transition-colors text-sm">
                               <Mail className="h-3.5 w-3.5 mr-3 text-navy/70" />
-                              littledogdecorating@gmail.com
+                              {siteConfig.email}
                             </a>
                           </div>
                         </div>

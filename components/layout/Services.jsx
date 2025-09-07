@@ -4,6 +4,7 @@ import HeadingTag from "../ui/HeadingTag"
 import ServiceCard from "../ui/ServiceCard"
 import ServiceDetailCard from "../ui/ServiceDetailCard"
 import Image from "next/image"
+import { imageConfig } from "@/config/images"
 
 export default function Services() {
   // Interior service details data
@@ -134,24 +135,24 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           <ServiceCard 
-            image="/interior-painting-queenstown-french-wash-feature-wall--arthurs-point.jpeg"
-            alt="Luxury Interior Painting"
+            image={imageConfig.services.interior.path}
+            alt={imageConfig.services.interior.alt}
             title="Interior Repainting"
             description="Crisp lines. Perfect coverage. A fresh feel throughout your space."
             linkHref="/interior"
           />
 
           <ServiceCard 
-            image="/exteriors/exterior-painting-in-queenstown.jpg"
-            alt="Luxury Exterior Painting"
+            image={imageConfig.services.exterior.path}
+            alt={imageConfig.services.exterior.alt}
             title="Exterior Repainting"
             description="Boost curb appeal and shield your home from the elements."
             linkHref="/exterior"
           />
         
           <ServiceCard 
-            image="/roof-painting/webp/roof-painting-in-queenstown.webp"
-            alt="Premium Roof Painting"
+            image={imageConfig.services.roof.path}
+            alt={imageConfig.services.roof.alt}
             title="Roof Painting & Restoration"
             description="Protecting and beautifying your roof with specialized treatments and premium finishes"
             linkHref="/roof-painting-queenstown"

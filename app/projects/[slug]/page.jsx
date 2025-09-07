@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site-config"
 import { notFound } from "next/navigation"
 import ProjectDetailContent from "./ProjectDetailContent"
 import Script from "next/script"
+import { getProjectSchema } from "@/config/structured-data"
 
 export const revalidate = 60 // revalidate this page every 60 seconds
 
@@ -26,56 +27,8 @@ export default async function ProjectDetailPage({ params }) {
     notFound()
   }
 
-  // Create structured data for the project
-  const projectSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": project.title,
-    "image": project.mainImage,
-    "datePublished": project.date,
-    "author": {
-      "@type": "Organization",
-      "name": "Little Dog Decorating"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Little Dog Decorating",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp"
-      }
-    },
-    "description": project.description,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://www.littledogdecorating.co.nz/projects/${params.slug}`
-    },
-    "about": {
-      "@type": "Service",
-      "serviceType": project.categories?.map(cat => cat.title).join(', ') || "Painting Service",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Little Dog Decorating",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "31 Marston Road",
-          "addressLocality": "Queenstown",
-          "addressRegion": "Otago",
-          "postalCode": "9304",
-          "addressCountry": "New Zealand"
-        },
-        "telephone": "+64 21 632 938"
-      }
-    }
-  };
-
-  // If the project has before/after images, add them to the schema
-  if (project.images?.before?.length > 0 && project.images?.after?.length > 0) {
-    projectSchema.image = [
-      ...project.images.before.map(img => img.src),
-      ...project.images.after.map(img => img.src)
-    ];
-  }
+  // Generate dynamic structured data from config
+  const projectSchema = getProjectSchema(project, params.slug)
 
   return (
     <>

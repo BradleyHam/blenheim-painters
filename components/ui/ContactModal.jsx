@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { X, Phone, Mail, MapPin } from 'lucide-react'
 import ContactForm from '@/components/ui/ContactForm'
+import { siteConfig } from '@/config/site-config'
 
 export default function ContactModal({ isOpen, onClose }) {
   const modalRef = useRef(null)
@@ -111,7 +112,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 </div>
                 <div>
                   <h4 className="font-medium text-navy">Telephone</h4>
-                  <p className="text-gray-700">+64 21 632 938</p>
+                  <p className="text-gray-700">+64{siteConfig.phoneDisplay}</p>
                 </div>
               </div>
               
@@ -121,7 +122,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 </div>
                 <div>
                   <h4 className="font-medium text-navy">Email</h4>
-                  <p className="text-gray-700">littledogdecorating@gmail.com</p>
+                  <p className="text-gray-700">{siteConfig.email}</p>
                 </div>
               </div>
               
@@ -131,17 +132,17 @@ export default function ContactModal({ isOpen, onClose }) {
                 </div>
                 <div>
                   <h4 className="font-medium text-navy">Service Area</h4>
-                  <p className="text-gray-700">Queenstown and surrounding areas</p>
+                  <p className="text-gray-700">{siteConfig.townName} and surrounding areas</p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-lg bg-gold/5 p-5 border border-gold/20">
-  <h4 className="font-semibold text-navy mb-2">Why Choose Little Dog Decorating?</h4>
+  <h4 className="font-semibold text-navy mb-2">Why Choose {siteConfig.businessName}?</h4>
   <ul className="text-gray-600 text-sm list-disc list-inside space-y-1">
     <li>BCITO-certified Master Painter</li>
     <li>Fully insured for peace of mind</li>
-    <li>9+ years serving Queenstown</li>
+    <li>{siteConfig.yearsInBusiness}+ years serving {siteConfig.townName}</li>
     <li>Perfect 5-star Google rating</li>
     <li>Trusted for quality, detail & service</li>
   </ul>

@@ -12,6 +12,7 @@ import { Metadata } from 'next'
 import Script from "next/script"
 import { imageConfig } from '@/config/images'
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { getServiceSchema, getHowToSchema, getBreadcrumbSchema } from '@/config/structured-data'
 import { copyConfig } from '@/config/copy'
 
 // Generate coating options from copy config
@@ -81,77 +82,16 @@ export default async function InteriorPage() {
   const allProjects = await getProjects();
   const interiorProjects = allProjects.filter(p => p.services.includes("Interior Painting"));
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Interior Painting",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
-      "telephone": `+64${siteConfig.phoneNumber}`,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address.street,
-        "addressLocality": siteConfig.townName,
-        "addressRegion": siteConfig.region,
-        "postalCode": siteConfig.postalCode,
-        "addressCountry": "New Zealand"
-      }
-    },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": siteConfig.coordinates.latitude,
-        "longitude": siteConfig.coordinates.longitude
-      },
-      "geoRadius": siteConfig.serviceRadius
-    },
-    "url": `${siteConfig.website}interior-painting-${siteConfig.townNameLower}`,
-    "description": `Premium interior painting services in ${siteConfig.townName} and surrounding areas. Transform your home with our expert interior painting solutions.`
-  }
-
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": `Our Professional Interior Painting Process in ${siteConfig.townName}`,
-    "description": "Four-step method we follow to prepare and paint your interior for a flawless finish.",
-    "image": [
-      `${siteConfig.website}interior-${siteConfig.townNameLower}.jpeg`
-    ],
-    "totalTime": "PT2H",
-    "supply": [
-      { "@type": "HowToSupply", "name": "Premium interior paint" },
-      { "@type": "HowToSupply", "name": "Wall fillers and primers" }
-    ],
-    "tool": [
-      { "@type": "HowToTool", "name": "Professional paint rollers and brushes" },
-      { "@type": "HowToTool", "name": "Spray equipment" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Furniture and Floor Protection",
-        "text": "We carefully move and cover all furniture and floors to protect your belongings during the painting process."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Surface Preparation",
-        "text": "We fill cracks, smooth surfaces, scrape off old paint, apply primer if needed, and sand everything for a perfect finish."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Paint Application",
-        "text": "We apply premium paints using your choice of brush and roll or spray techniques to achieve a flawless finish."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Cleanup and Finishing",
-        "text": "We remove all protective coverings, dust and vacuum the area, and return all furniture to its original position."
-      }
-    ]
-  };
+  // Generate schemas dynamically from config
+  const serviceSchema = getServiceSchema("Interior Painting")
+  const howToSchema = getHowToSchema("Interior Painting")
+  
+  // Breadcrumb schema for navigation
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Interior Painting", url: `/interior-painting-${siteConfig.townNameLower}` }
+  ]
+  const breadcrumbSchema = getBreadcrumbSchema(breadcrumbs)
 
   return (
     <>
@@ -164,6 +104,11 @@ export default async function InteriorPage() {
         id="structured-data-howto"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <Script
+        id="structured-data-breadcrumbs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
     <div className="text-darkText mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">

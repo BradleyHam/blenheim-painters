@@ -9,6 +9,8 @@ import Script from "next/script"
 import ProjectSection from "@/components/layout/ProjectSection"
 import { getProjects } from "@/lib/markdown"
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { imageConfig } from '@/config/images'
+import { getServiceSchema, getHowToSchema } from '@/config/structured-data'
 
 export const metadata: Metadata = {
   title: getSiteTitle(`Roof Painting ${siteConfig.townName}`),
@@ -21,77 +23,9 @@ export default async function RoofPainting() {
   const allProjects = await getProjects();
   const roofProjects = allProjects.filter(p => p.services.includes("Roof Painting"));
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Roof Painting",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
-      "telephone": `+64${siteConfig.phoneNumber}`,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address.street,
-        "addressLocality": siteConfig.townName,
-        "addressRegion": siteConfig.region,
-        "postalCode": siteConfig.postalCode,
-        "addressCountry": "New Zealand"
-      }
-    },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": siteConfig.coordinates.latitude,
-        "longitude": siteConfig.coordinates.longitude
-      },
-      "geoRadius": siteConfig.serviceRadius
-    },
-    "url": `${siteConfig.website}roof-painting-${siteConfig.townNameLower}`,
-    "description": `Professional roof painting services in ${siteConfig.townName}. Protect and enhance your roof with our expert painting solutions.`
-  }
-
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": `Our Professional Roof Painting Process in ${siteConfig.townName}`,
-    "description": "Four‑step method we follow to clean, prepare and coat your roof for long‑lasting protection.",
-    "image": [
-      `${siteConfig.website}roof-painting/webp/roof-painting-in-${siteConfig.townNameLower}.webp`
-    ],
-    "totalTime": "PT2H",
-    "supply": [
-      { "@type": "HowToSupply", "name": "Premium roof coating" },
-      { "@type": "HowToSupply", "name": "Rust conversion primer" }
-    ],
-    "tool": [
-      { "@type": "HowToTool", "name": "Airless spray gun" },
-      { "@type": "HowToTool", "name": "Safety harness" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Safety‑First Infrastructure",
-        "text": "We install professional‑grade scaffolding and fall‑arrest systems so our technicians can work safely on every section of your roof."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Advanced Surface Preparation",
-        "text": "We pressure‑wash, treat biological growth, and mechanically abrade the surface to ensure maximum coating adhesion."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Targeted Remediation",
-        "text": "Rust‑conversion primers and elastomeric fillers are used to fix localised deterioration before coating."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Precision Application System",
-        "text": "Computer‑controlled spraying equipment lays down the coating at calibrated thickness for complete coverage."
-      }
-    ]
-  };
+  // Generate schemas dynamically from config
+  const serviceSchema = getServiceSchema("Roof Painting")
+  const howToSchema = getHowToSchema("Roof Painting")
 
   return (
     <>
@@ -112,8 +46,8 @@ export default async function RoofPainting() {
         {/* Hero Section */}
         <div className="page-header h-[300px] lg:h-[500px] mx-5 rounded-lg relative">
           <Image 
-            src={`/roof-painting/webp/roof-painting-in-${siteConfig.townNameLower}.webp`} 
-            alt="Roof Painting" 
+            src={imageConfig.services.roof.path} 
+            alt={imageConfig.services.roof.alt} 
             fill
             priority
             className="object-cover object-top rounded-lg transform -translate-y-[50px]" 

@@ -8,68 +8,20 @@ import CtaFooter from '../experimental-components/CtaFooter'
 import { testimonials } from '@/data/testimonials'
 import Script from 'next/script'
 import { imageConfig } from '@/config/images'
+import { getAggregateRatingSchema, getReviewSchema } from '@/config/structured-data'
+import { siteConfig } from '@/config/site-config'
 
 const TestimonialsPage = () => {
-  // Calculate average rating (assuming all testimonials have 5 stars based on the UI rendering)
-  const totalReviews = testimonials.length
-  const averageRating = 5 // All testimonials show 5 stars in the UI
-
-  // Prepare review schema for each testimonial
-  const reviewsSchema = testimonials.map(testimonial => ({
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": testimonial.author
-    },
-    "datePublished": testimonial.date,
-    "reviewBody": testimonial.text,
-    "itemReviewed": {
-      "@type": "LocalBusiness",
-      "name": "Little Dog Decorating",
-      "image": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "31 Marston Road",
-        "addressLocality": "Queenstown",
-        "addressRegion": "Otago",
-        "postalCode": "9304",
-        "addressCountry": "New Zealand"
-      },
-      "telephone": "+64 21 632 938",
-      "url": "https://www.littledogdecorating.co.nz/"
-    }
+  // Transform testimonials data to include ratings for schema generation
+  const testimonialsWithRatings = testimonials.map(testimonial => ({
+    ...testimonial,
+    rating: 5, // All testimonials show 5 stars in the UI
+    content: testimonial.text,
+    name: testimonial.author
   }))
 
-  // Create the overall testimonials schema
-  const testimonialSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Little Dog Decorating",
-    "url": "https://www.littledogdecorating.co.nz/",
-    "image": "https://www.littledogdecorating.co.nz/little-dog-decorating-logo--queenstown-painter.webp",
-    "telephone": "+64 21 632 938",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "31 Marston Road",
-      "addressLocality": "Queenstown",
-      "addressRegion": "Otago",
-      "postalCode": "9304",
-      "addressCountry": "New Zealand"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": averageRating.toString(),
-      "reviewCount": totalReviews.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": reviewsSchema
-  }
+  // Generate dynamic schemas from config
+  const testimonialSchema = getAggregateRatingSchema(testimonialsWithRatings)
 
   return (
     <>

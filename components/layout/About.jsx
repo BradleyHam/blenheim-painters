@@ -51,6 +51,7 @@ export default function About() {
                   <span className="text-navy text-sm sm:text-base">{credential}</span>
                 </div>
               ))}
+
             </div>
           </div>
         </div>

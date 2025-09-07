@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { createClient } from 'next-sanity'
+import { siteConfig } from '@/config/site-config'
 
 export interface SitemapEntry {
   url: string
@@ -11,15 +12,14 @@ export interface SitemapEntry {
 }
 
 export async function getAllPages(): Promise<SitemapEntry[]> {
-  const baseUrl = 'https://www.littledogdecorating.co.nz'
   const currentDate = new Date().toISOString()
   
-  // Static pages
+  // Static pages using dynamic URLs from siteConfig
   const staticPages: SitemapEntry[] = [
     { url: '/', lastModified: currentDate, priority: '1.0', changeFreq: 'weekly' },
-    { url: '/interior-painting-queenstown', lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
-    { url: '/exterior-painting-queenstown', lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
-    { url: '/roof-painting-queenstown', lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
+    { url: `/interior-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
+    { url: `/exterior-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
+    { url: `/roof-painting-${siteConfig.townNameLower}`, lastModified: currentDate, priority: '0.9', changeFreq: 'weekly' },
     { url: '/projects', lastModified: currentDate, priority: '0.8', changeFreq: 'weekly' },
     { url: '/blog', lastModified: currentDate, priority: '0.8', changeFreq: 'weekly' },
     { url: '/testimonials', lastModified: currentDate, priority: '0.7', changeFreq: 'weekly' },
@@ -120,13 +120,12 @@ export async function getProjectPages(): Promise<SitemapEntry[]> {
 }
 
 export function generateSitemapXml(pages: SitemapEntry[]): string {
-  const baseUrl = 'https://www.littledogdecorating.co.nz'
   
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${pages.map(page => `
   <url>
-    <loc>${baseUrl}${page.url}</loc>
+    <loc>${siteConfig.website}${page.url}</loc>
     <lastmod>${page.lastModified}</lastmod>
     <changefreq>${page.changeFreq}</changefreq>
     <priority>${page.priority}</priority>

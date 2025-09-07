@@ -13,6 +13,7 @@ import { notFound } from 'next/navigation';
 import { mdToHtml } from '@/lib/markdown';
 import BlogCtaButton from '@/components/ui/BlogCtaButton';
 import RoofCostCalculator from '@/components/roof-cost-calculator';
+import { getArticleSchema } from '@/config/structured-data';
 
 
 type Frontmatter = {
@@ -57,52 +58,18 @@ async function getPost(slug: string) {
   return { frontmatter: data as Frontmatter, content };
 }
 
-// Generate structured data for SEO
+// Generate structured data for SEO using dynamic config
 function generateStructuredData(post: Frontmatter, url: string) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.excerpt,
-    "image": post.cover ? post.cover : null,
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "author": {
-      "@type": "Person",
-      "name": post.author.name,
-      "jobTitle": post.author.title
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Little Dog Decorating",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.littledogdecorating.co.nz/ldd-logo.png"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "31 Marston Road",
-        "addressLocality": "Queenstown",
-        "addressRegion": "Otago",
-        "postalCode": "9304",
-        "addressCountry": "New Zealand"
-      },
-      "telephone": "+64 21 632 938",
-      "email": "hello@littledogdecorating.co.nz",
-      "url": "https://www.littledogdecorating.co.nz",
-      "sameAs": [
-        "https://www.facebook.com/littledogdecorating",
-        "https://www.instagram.com/littledogdecorating"
-      ]
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url
-    },
-    "keywords": post.tags.join(', ')
-  };
-
-  return JSON.stringify(structuredData);
+  return JSON.stringify(getArticleSchema(
+    post.title,
+    post.excerpt,
+    post.slug,
+    post.date,
+    post.date,
+    post.author.name,
+    post.tags,
+    post.cover || null
+  ));
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {

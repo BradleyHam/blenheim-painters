@@ -9,8 +9,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    message: '',
-    consent: false
+    message: ''
   })
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -47,10 +46,6 @@ export default function ContactForm() {
       newErrors.phone = 'Please enter a valid phone number'
     }
     
-    // Consent validation
-    if (!formData.consent) {
-      newErrors.consent = 'You must agree to the privacy policy'
-    }
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -107,8 +102,7 @@ export default function ContactForm() {
         name: '',
         email: '',
         phone: '',
-        message: '',
-        consent: false
+        message: ''
       })
       setErrors({})
       setFormStatus('success')
@@ -206,22 +200,8 @@ export default function ContactForm() {
           />
         </div>
 
-        <div className="flex items-start gap-3">
-          <input 
-            type="checkbox" 
-            id="consent"
-            checked={formData.consent}
-            onChange={handleChange}
-            onClick={handleInputClick}
-            className={`mt-1 ${errors.consent ? 'ring-2 ring-red-500' : ''}`}
-          />
-          <div>
-            <label htmlFor="consent" className={`text-sm ${errors.consent ? 'text-red-500' : 'text-gray-500'}`}>
-              I consent to Little Dog Decorating collecting my details through this form. <span className="text-red-500">*</span>
-            </label>
-            {errors.consent && <p className="text-red-500 text-xs mt-1">{errors.consent}</p>}
-            <p className="text-xs text-gray-500 mt-1">Fields marked with <span className="text-red-500">*</span> are required</p>
-          </div>
+        <div className="text-xs text-gray-500 mt-1">
+          <p>Fields marked with <span className="text-red-500">*</span> are required</p>
         </div>
 
         <Button type="submit" className="w-full bg-gold hover:bg-gold-dark text-white py-4 text-base mt-2" disabled={isSubmitting}>

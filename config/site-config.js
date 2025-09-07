@@ -15,7 +15,7 @@ export const siteConfig = {
   // Contact Information
   phoneNumber: "0226132936",
   phoneDisplay: "0226132936", // How phone shows in UI
-  email: "clientemail.co.nz",
+  email: "info@rankhigher.co.nz",
   
   // Address
   address: {
@@ -61,9 +61,25 @@ export const siteConfig = {
     youtube: null
   },
   
-  // Business Registration
+  // Business Registration & Details
   gstNumber: "GST123456789", // Update with actual GST number
   abnNumber: null, // For Australian businesses
+  
+  // Business Hours for structured data
+  businessHours: {
+    monday: { open: "08:00", close: "17:00" },
+    tuesday: { open: "08:00", close: "17:00" },
+    wednesday: { open: "08:00", close: "17:00" },
+    thursday: { open: "08:00", close: "17:00" },
+    friday: { open: "08:00", close: "17:00" },
+    saturday: { open: "09:00", close: "15:00" },
+    sunday: null // Closed
+  },
+  
+  // Pricing and ratings for structured data
+  priceRange: "$$", // $, $$, $$$, $$$$
+  averageRating: 4.9,
+  reviewCount: 47,
   
   // SEO and Meta
   seoDefaults: {
@@ -88,6 +104,13 @@ export const siteConfig = {
   
   // Service radius in km
   serviceRadius: 50,
+  
+  // Service-specific descriptions for structured data
+  serviceDescriptions: {
+    "Interior Painting": "Transform your home interior with premium painting services using high-quality materials and expert techniques.",
+    "Exterior Painting": "Protect and beautify your home's exterior with weather-resistant paints and professional application methods.", 
+    "Roof Painting": "Extend your roof's life and improve your home's appearance with specialized roof painting and coating services."
+  },
   
   // Years in business
   yearsInBusiness: 8,

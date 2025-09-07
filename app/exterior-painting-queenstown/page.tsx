@@ -11,6 +11,7 @@ import Testimonials from '@/components/layout/Testimonials'
 import ProjectSection from '@/components/layout/ProjectSection'
 import { getProjects } from '@/lib/markdown'
 import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+import { getServiceSchema, getHowToSchema } from '@/config/structured-data'
 import { imageConfig } from '@/config/images'
 import { copyConfig } from '@/config/copy'
 
@@ -117,77 +118,9 @@ export default async function ExteriorPage() {
   const allProjects = await getProjects();
   const exteriorProjects = allProjects.filter(p => p.services.includes("Exterior Painting"));
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Exterior Painting",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "image": `${siteConfig.website}${siteConfig.seoDefaults.ogImage}`,
-      "telephone": `+64${siteConfig.phoneNumber}`,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address.street,
-        "addressLocality": siteConfig.townName,
-        "addressRegion": siteConfig.region,
-        "postalCode": siteConfig.postalCode,
-        "addressCountry": "New Zealand"
-      }
-    },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": siteConfig.coordinates.latitude,
-        "longitude": siteConfig.coordinates.longitude
-      },
-      "geoRadius": siteConfig.serviceRadius
-    },
-    "url": `${siteConfig.website}exterior-painting-${siteConfig.townNameLower}`,
-    "description": `Professional exterior painting services in ${siteConfig.townName} and surrounding areas. Protect and beautify your home with our expert exterior painting solutions.`
-  }
-
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": `Our Professional Exterior Painting Process in ${siteConfig.townName}`,
-    "description": "Four-step method we follow to prepare and paint your home exterior for long-lasting protection and beauty.",
-    "image": [
-      `${siteConfig.website}ldd-exterior.jpg`
-    ],
-    "totalTime": "PT2H",
-    "supply": [
-      { "@type": "HowToSupply", "name": "Premium exterior paints" },
-      { "@type": "HowToSupply", "name": "Weather-resistant primers" }
-    ],
-    "tool": [
-      { "@type": "HowToTool", "name": "Professional spray equipment" },
-      { "@type": "HowToTool", "name": "Scaffolding and safety gear" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Outdoor Space Protection",
-        "text": "We carefully move outdoor furniture, cover plants, and protect wall fixtures to safeguard your property during the painting process."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Surface Preparation",
-        "text": "We clean surfaces, scrape peeling paint, replace rotted wood, fill cracks and gaps, sand surfaces, and apply primer to ensure the best foundation."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Paint Application",
-        "text": "We apply premium exterior paints using techniques appropriate for your specific home cladding type, ensuring excellent coverage and durability."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Cleanup and Final Inspection",
-        "text": "We pack up equipment, sweep and tidy your outdoor area, return all items to their original positions, and conduct a final walkthrough."
-      }
-    ]
-  };
+  // Generate schemas dynamically from config
+  const serviceSchema = getServiceSchema("Exterior Painting")
+  const howToSchema = getHowToSchema("Exterior Painting")
 
   return (
     <>
@@ -298,7 +231,7 @@ export default async function ExteriorPage() {
         <Testimonials />
         
         {/* Exterior Projects Section - Added for SEO and CRO benefits */}
-        {exteriorProjects && exteriorProjects.length > 0 && (
+        {/* {exteriorProjects && exteriorProjects.length > 0 && (
           <ProjectSection
             subtitle="Our Exterior Projects"
             title="Recent Exterior Transformations"
@@ -306,7 +239,7 @@ export default async function ExteriorPage() {
             projects={exteriorProjects}
             className="bg-light-bg/10"
           />
-        )}
+        )} */}
       </main>
 
       <FooterBanner />
