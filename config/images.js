@@ -91,7 +91,7 @@ export const imageConfig = {
   // ===========================================
   services: {
     interior: {
-      path: "/interiors/interior-hero.jpeg",
+      path: "/interiors/interior-hero.webp",
       description: "Interior painting showcase",
       dimensions: "1200x800px",
       usage: "Interior service page hero",
