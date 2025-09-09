@@ -1,134 +1,139 @@
-// Site Configuration - Update these values for each new town/business
+// Site Configuration for Blenheim Painters
 export const siteConfig = {
   // Business Information
-  businessName: "Business Name",
-  businessNameAlt: "Business Name", // Alternative/longer business name
-  ownerName: "Owner Name",
+  businessName: "Blenheim Painters",
+  businessNameAlt: "Professional Painters Blenheim - Marlborough", 
+  ownerName: "Bradley Hamilton",
+  ownerNameCasual: "Brad",
   
   // Location Details
-  townName: "Wanaka",
-  townNameLower: "wanaka",
-  region: "Otago",
-  postalCode: "9304",
+  townName: "Blenheim",
+  townNameLower: "blenheim",
+  region: "Marlborough",
+  postalCode: "7201",
   country: "New Zealand",
   
   // Contact Information
-  phoneNumber: "0226132936",
-  phoneDisplay: "0226132936", // How phone shows in UI
+  phoneNumber: "0226132936", // Your CallHippo number
+  phoneDisplay: "022 613 2936",
   email: "info@rankhigher.co.nz",
   
   // Address
   address: {
-    street: "street address",
-    city: "city",
-    region: "region",
-    postalCode: "postcode",
+    street: "Serving all of Marlborough",
+    city: "Blenheim",
+    region: "Marlborough",
+    postalCode: "7201",
     country: "New Zealand",
-    full: "full address"
+    full: "Blenheim, Marlborough 7201, New Zealand"
   },
   
-  // Service Areas - Update for each town
+  // Service Areas - Blenheim and Marlborough region
   serviceAreas: [
-    "Queenstown",
-    "Arrowtown",
-    "Frankton",
-    "Kelvin Heights",
-    "Arthur's Point",
-    "Fernhill",
-    "Millbrook",
-    "Lake Hayes Estate",
-    "Shotover Country",
-    "Wakatipu Heights",
-    "Lower Shotover"
+    "Blenheim Central",
+    "Springlands",
+    "Redwoodtown",
+    "Witherlea",
+    "Riversdale",
+    "Mayfield",
+    "Renwick",
+    "Seddon",
+    "Ward",
+    "Picton",
+    "Havelock",
+    "Rapaura",
+    "Fairhall",
+    "Blenheim Airport",
+    "Cloudy Bay"
   ],
   
   // Geographic coordinates for maps and local SEO
   coordinates: {
-    latitude: -44.9847,
-    longitude: 168.7488
+    latitude: -41.5144,
+    longitude: 173.9613
   },
   
   // URLs and Online Presence
-  website: "https://www.littledogdecorating.co.nz/",
-  googleMapsUrl: "https://maps.google.com/?q=31+Marston+Road+Queenstown+9304+New+Zealand",
-  gmbReviewUrl: "https://g.page/r/YOUR_GMB_PLACE_ID/review", // Replace with actual GMB review link
+  website: "https://www.blenheimpainters.co.nz/",
+  googleMapsUrl: "https://maps.google.com/?q=Blenheim+Marlborough+New+Zealand",
+  gmbReviewUrl: "#", // Update when GMB created
   
   // Social Media
   social: {
-    facebook: "https://facebook.com/littledogdecorating",
-    instagram: "https://instagram.com/littledogdecorating",
+    facebook: null,
+    instagram: null,
     linkedin: null,
     youtube: null
   },
   
   // Business Registration & Details
-  gstNumber: "GST123456789", // Update with actual GST number
-  abnNumber: null, // For Australian businesses
+  gstNumber: "TBC",
+  abnNumber: null,
   
   // Business Hours for structured data
   businessHours: {
-    monday: { open: "08:00", close: "17:00" },
-    tuesday: { open: "08:00", close: "17:00" },
-    wednesday: { open: "08:00", close: "17:00" },
-    thursday: { open: "08:00", close: "17:00" },
-    friday: { open: "08:00", close: "17:00" },
-    saturday: { open: "09:00", close: "15:00" },
+    monday: { open: "07:00", close: "17:30" },
+    tuesday: { open: "07:00", close: "17:30" },
+    wednesday: { open: "07:00", close: "17:30" },
+    thursday: { open: "07:00", close: "17:30" },
+    friday: { open: "07:00", close: "17:00" },
+    saturday: { open: "08:00", close: "14:00" },
     sunday: null // Closed
   },
   
   // Pricing and ratings for structured data
-  priceRange: "$$", // $, $$, $$$, $$$$
+  priceRange: "$$",
   averageRating: 4.9,
-  reviewCount: 47,
+  reviewCount: 38,
   
   // SEO and Meta
   seoDefaults: {
-    titleSuffix: " | Little Dog Decorating - Queenstown Painters",
-    description: `Professional painting and decorating services in Queenstown and Arrowtown. We specialize in interior, exterior, and roof painting for residential properties.`,
-    keywords: "painters queenstown, painting contractors, interior painting, exterior painting, roof painting, decorating services, arrowtown painters",
-    ogImage: "/little-dog-decorating-logo--queenstown-painter.webp"
+    titleSuffix: " | Blenheim Painters - Marlborough's Trusted Painting Service",
+    description: `Professional painters in Blenheim and Marlborough. Specializing in vineyard properties, residential, and commercial painting. Free quotes, fully insured.`,
+    keywords: "painters blenheim, blenheim painters, marlborough painters, house painters blenheim, painting contractors marlborough, vineyard painting, interior painting blenheim, exterior painting blenheim",
+    ogImage: "/blenheim-painters-logo.webp"
   },
   
   // Business Details
   services: {
-    primary: ["Interior Painting", "Exterior Painting", "Roof Painting"],
-    secondary: ["Decorating", "Cedar Restoration", "Deck Staining", "Surface Preparation", "Color Consultation"]
+    primary: ["Interior Painting", "Exterior Painting", "Commercial Painting"],
+    secondary: ["Roof Painting", "Vineyard Building Painting", "Deck & Fence Staining", "Industrial Painting", "New Build Painting"]
   },
   
-  // Theme/Branding (if easily configurable)
+  // Theme/Branding
   theme: {
-    primaryColor: "#2563eb", // Blue
-    secondaryColor: "#7c3aed", // Purple
-    accentColor: "#f59e0b" // Amber
+    primaryColor: "#059669", // Green (vineyard theme)
+    secondaryColor: "#1e40af", // Blue
+    accentColor: "#fbbf24" // Yellow
   },
   
   // Service radius in km
-  serviceRadius: 50,
+  serviceRadius: 60,
   
   // Service-specific descriptions for structured data
   serviceDescriptions: {
-    "Interior Painting": "Transform your home interior with premium painting services using high-quality materials and expert techniques.",
-    "Exterior Painting": "Protect and beautify your home's exterior with weather-resistant paints and professional application methods.", 
-    "Roof Painting": "Extend your roof's life and improve your home's appearance with specialized roof painting and coating services."
+    "Interior Painting": "Professional interior painting services for Blenheim homes and businesses. Quality finishes with premium paints.",
+    "Exterior Painting": "Weather-resistant exterior painting for Marlborough's sunny, dry climate. Protect and beautify your property.",
+    "Commercial Painting": "Commercial and industrial painting services for Blenheim businesses, wineries, and vineyard facilities."
   },
   
   // Years in business
-  yearsInBusiness: 8,
+  yearsInBusiness: 7,
   
   // Certifications
   certifications: [
-    "Master Painters Association",
-    "BCITO Certified"
+    "Fully Insured",
+    "Site Safe Certified",
+    "Dulux Accredited"
   ],
   
-  // Email Configuration (for contact forms)
+  // Email Configuration
   emailConfig: {
-    clientEmail: "emailaddress@gmail.com",
-    serviceEmail: "envisionwebforge@gmail.com", // The email service sender
-    emailPassword: "ifdttctlzpyrjzzi" // Will move to env var
+    clientEmail: "info@rankhigher.co.nz",
+    serviceEmail: "info@rankhigher.co.nz",
+    emailPassword: "USE_ENV_VAR"
   }
 }
-
 // Helper functions for dynamic content
 export const getSiteTitle = (pageTitle = "") => {
   return pageTitle 

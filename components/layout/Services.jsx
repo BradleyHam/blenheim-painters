@@ -139,7 +139,7 @@ export default function Services() {
             alt={imageConfig.services.interior.alt}
             title="Interior Repainting"
             description="Crisp lines. Perfect coverage. A fresh feel throughout your space."
-            linkHref="/interior"
+            linkHref="/interior-painting-blenheim"
           />
 
           <ServiceCard 
@@ -147,7 +147,7 @@ export default function Services() {
             alt={imageConfig.services.exterior.alt}
             title="Exterior Repainting"
             description="Boost curb appeal and shield your home from the elements."
-            linkHref="/exterior"
+            linkHref="/exterior-painting-blenheim"
           />
         
           <ServiceCard 
@@ -155,7 +155,7 @@ export default function Services() {
             alt={imageConfig.services.roof.alt}
             title="Roof Painting & Restoration"
             description="Protecting and beautifying your roof with specialized treatments and premium finishes"
-            linkHref="/roof-painting-queenstown"
+            linkHref="/roof-painting-blenheim"
             imagePosition="object-[center_10%]"
           />
         </div>

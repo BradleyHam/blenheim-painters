@@ -116,7 +116,7 @@ export default function Header() {
                   alt={imageConfig.branding.logo.alt} 
                   width={isLargeScreen ? 120 : 100}
                   height={isLargeScreen ? 120 : 100}
-                  className="z-[110]"
+                  className="z-[110] scale-[0.9]"
                   style={{ display: 'block' }}
                   priority
                 />
@@ -126,13 +126,13 @@ export default function Header() {
               <Link href="/" className="text-sm font-medium text-navy hover:text-gold">
                 Home
               </Link>
-              <Link href="/interior-painting-queenstown" className="text-sm font-medium text-navy hover:text-gold">
+              <Link href={`/interior-painting-${siteConfig.townNameLower}`} className="text-sm font-medium text-navy hover:text-gold">
                 Interiors
               </Link>
-              <Link href="/exterior-painting-queenstown" className="text-sm font-medium text-navy hover:text-gold">
+              <Link href={`/exterior-painting-${siteConfig.townNameLower}`} className="text-sm font-medium text-navy hover:text-gold">
                 Exteriors
               </Link>
-              <Link href="/roof-painting-queenstown" className="text-sm font-medium text-navy hover:text-gold">
+              <Link href={`/roof-painting-${siteConfig.townNameLower}`} className="text-sm font-medium text-navy hover:text-gold">
                 Roofs
               </Link>
               <Link href="/testimonials" className="text-sm font-medium text-navy hover:text-gold">
@@ -184,13 +184,13 @@ export default function Header() {
                         <Link href="/" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Home
                         </Link>
-                        <Link href="/interior-painting-queenstown" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
+                        <Link href={`/interior-painting-${siteConfig.townNameLower}`} className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Interiors
                         </Link>
-                        <Link href="/exterior-painting-queenstown" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
+                        <Link href={`/exterior-painting-${siteConfig.townNameLower}`} className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Exteriors
                         </Link>
-                        <Link href="/roof-painting-queenstown" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
+                        <Link href={`/roof-painting-${siteConfig.townNameLower}`} className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>
                           Roofs
                         </Link>
                         <Link href="/testimonials" className="px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-colors" onClick={handleLinkClick}>

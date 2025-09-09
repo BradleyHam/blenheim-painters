@@ -132,10 +132,10 @@ export default function EnhancedHero() {
                 <CheckCircle className="mr-2 h-4 w-4 text-yellow-400" />
                 <span className="text-sm">Licensed & Insured</span>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <CheckCircle className="mr-2 h-4 w-4 text-yellow-400" />
-                <span className="text-sm">{siteConfig.yearsInBusiness}+ Years in {siteConfig.townName}</span>
-              </div>
+                <span className="text-sm">{siteConfig.yearsInBusiness}+ Years Painting</span>
+              </div> */}
             </div>
 
             {/* CTA buttons */}
@@ -220,6 +220,20 @@ export default function EnhancedHero() {
                     <option value="other">Other Services</option>
                   </select>
                 </div>
+                {success && (
+                  <div className="mb-4 p-3 bg-green-50/90 border border-green-200 rounded-md backdrop-blur-sm">
+                    <h3 className="text-green-800 font-medium text-sm">Success!</h3>
+                    <p className="text-green-700 text-xs">{success}</p>
+                  </div>
+                )}
+                
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50/90 border border-red-200 rounded-md backdrop-blur-sm">
+                    <h3 className="text-red-800 font-medium text-sm">Error</h3>
+                    <p className="text-red-700 text-xs">{error}</p>
+                  </div>
+                )}
+
                 <Button type="submit" className="w-full bg-gold-dark text-white font-bold hover:bg-gold-dark" disabled={loading}>
                   {loading ? (
                     <span className="flex items-center justify-center">
@@ -233,8 +247,6 @@ export default function EnhancedHero() {
                     </>
                   )}
                 </Button>
-                {success && <p className="text-green-300 text-center text-sm mt-2">{success}</p>}
-                {error && <p className="text-red-300 text-center text-sm mt-2">{error}</p>}
               </form>
               <p className="mt-4 text-center text-sm text-gray-200">
               No obligation. Get clear, competitive pricing.

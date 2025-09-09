@@ -1,6 +1,4 @@
-// Content Copy Configuration - Centralized text content for easy customization
-// This file contains all the marketing copy, service descriptions, and dynamic content
-
+// Copy Configuration for Blenheim Painters - Optimized for Wine Country
 import { siteConfig } from './site-config'
 
 export const copyConfig = {
@@ -9,377 +7,371 @@ export const copyConfig = {
   // ===========================================
   hero: {
     title: {
-      line1: "Interior & Exterior Painting",
-      line2: `Specialists in ${siteConfig.townName}`
+      line1: "Professional Painting Services",
+      line2: "Throughout Marlborough"
     },
-    subtitle: "Quality Work from a Friendly Team (and Their Little Dog!)",
+    subtitle: "Residential • Commercial • Vineyard Properties",
     credentials: [
       {
-        text: "5-star on Google",
-        icon: "stars"
+        text: "Marlborough's trusted painters",
+        icon: "shield"
       },
       {
-        text: "BCITO-certified", 
-        icon: "shield"
+        text: "Free quotes, fixed prices", 
+        icon: "stars"
       }
     ]
   },
 
   // ===========================================
-  // ABOUT SECTION CONTENT
+  // ABOUT SECTION CONTENT - Marlborough Focus
   // ===========================================
   about: {
-    tagline: `Premium Interior & Exterior Painting in ${siteConfig.townName}`,
+    tagline: "Quality Painting Services for Sunny Marlborough",
     title: {
-      main: "Your Home,",
-      accent: "Crafted by Local Experts"
+      main: "Your Property,",
+      accent: "Protected & Beautiful"
     },
-    description: `From lakefront properties to alpine retreats, we understand what ${siteConfig.townName} homes need to withstand our unique climate. We don't just paint surfaces — we protect your investment with premium products and meticulous preparation that ensures stunning, long-lasting results.\n\nOur team combines old-school craftsmanship with modern techniques, delivering flawless finishes that enhance your property's value and your daily enjoyment of it.`,
+    description: `Blenheim's unique climate - with over 2,400 sunshine hours annually and low rainfall - creates specific challenges for property maintenance. Our team understands how Marlborough's intense UV, dry conditions, and occasional frosts affect different surfaces and paint types.
+
+From suburban homes in Springlands to vineyard buildings in Rapaura, we've painted it all. We know which products work in our climate and which techniques ensure longevity. Whether it's a villa in central Blenheim, a modern home in Witherlea, or a commercial building in the industrial area, we deliver quality results that last.
+
+Our approach combines professional expertise with local knowledge, using premium paints and proven methods to protect your investment against Marlborough's unique weather conditions.`,
     credentials: [
-      `Specialists in ${siteConfig.townName}'s Climate Conditions`,
-      "Premium Products & 5-Year Workmanship Guarantee",
-      "Fixed Quotes with No Hidden Surprises"
+      "Specialists in Marlborough's Sunny, Dry Climate",
+      "Vineyard & Agricultural Building Experience",
+      "Fixed Quotes with No Hidden Costs"
     ]
   },
 
   // ===========================================
-  // PROCESS SECTION CONTENT
-  // ===========================================
-  process: {
-    title: "Our Refined Process",
-    subtitle: "We've perfected our approach to ensure your interior repainting project is seamless, efficient, and exceeds your expectations.",
-    steps: [
-      {
-        number: 1,
-        title: "Personalized Consultation",
-        description: "We start with a relaxed, in-depth chat to understand your vision, assess your space, and offer expert advice on colors, finishes, and techniques tailored to your style."
-      },
-      {
-        number: 2,
-        title: "Comprehensive Proposal", 
-        description: "You'll get a clear quote with premium material options, timelines, and a full breakdown of what to expect — no surprises, just clarity and confidence."
-      },
-      {
-        number: 3,
-        title: "Flawless Execution",
-        description: "Our experienced team shows up on time, protects your space, applies every coat with precision, and leaves your home spotless. We treat your home like our own."
-      }
-    ]
-  },
-
-  // ===========================================
-  // SERVICE PAGE CONTENT
+  // BLENHEIM-SPECIFIC SERVICE CONTENT
   // ===========================================
   services: {
     interior: {
-      pageTitle: `Interior Painting in ${siteConfig.townName}`,
+      pageTitle: "Interior Painting Blenheim - Homes & Commercial",
       sections: {
         protection: {
-          subtitle: "First Things First",
-          title: "Keeping Your Stuff Safe",
-          content: `Look, we know your home isn't just a bunch of walls - it's where you live! That's why before we even think about cracking open a paint tin, we make sure everything's ship-shape:
+          subtitle: "Professional Preparation",
+          title: "Protecting Your Property",
+          content: `Whether it's a character villa in central Blenheim or a modern home in Springlands, we treat every property with care:
 
-• We'll carefully shift the small stuff out of the way
-• Big furniture? We'll pop it in the middle and wrap it up snug
-• Anything that might take a tumble gets secured
+• Full furniture protection and shifting as needed
+• Drop sheets on all floors and surfaces
+• Careful masking of fixtures and fittings
+• Dust control measures for occupied properties
 
-It's all about making sure your place is as tidy when we leave as it was when we arrived. No stress, no mess - that's our promise.`
+We understand that many Blenheim homes are also workplaces - home offices, Airbnbs, or vineyard accommodation - so we work around your schedule to minimize disruption.`
         },
         preparation: {
-          subtitle: "Getting Your Walls Ready",
-          title: "The Not-So-Glamorous (But Super Important) Bit",
-          content: `Alright, this is where the magic starts to happen. Before we make your walls look mint, we need to sort out any issues:
+          subtitle: "The Foundation of Quality",
+          title: "Proper Prep for Marlborough Conditions",
+          content: `Blenheim's dry climate and temperature variations require specific preparation:
 
-• Filling in those pesky cracks? You bet.
-• Smoothing out dings and dents? Absolutely.
-• Scraping off old, flaky paint? Consider it done.
-• Slapping on some primer if needed? No worries.
-• Sanding everything down? Smooth as a baby's bum, mate.`
+• Dealing with settlement cracks (common in Marlborough's dry soil)
+• Proper sealing against dust - a constant battle here
+• Treating sun-damaged surfaces before painting
+• Using flexible fillers for movement in wooden homes
+• Addressing moisture issues in bathrooms (crucial in our dry climate)
+• Quality primers for different surface types
+
+This thorough preparation ensures your paint job looks great and lasts for years, not months.`
         },
-        cleanup: {
-          subtitle: "Cleaning Up",
-          title: "We'll Leave Your Place Spick and Span",
-          content: `We reckon a job's not done until everything's back to normal - or better! Here's what we do before we head off:
-
-• Peel off all that protective gear
-• Give everything a good dust and vac
-• Put all your bits and bobs back where they belong
-• One last look around to make sure you're happy as Larry
-
-Ready to give your ${siteConfig.townName} home a fresh new look? Give us a bell and we'll sort you out with a free quote. Whether it's a quick spruce-up or a total transformation, we've got the skills to make your place look choice.`
-        },
-        coatingMethods: {
-          title: "Choose Your Coating Method",
-          options: [
+        propertyTypes: {
+          sectionTitle: "Blenheim Property Specialists",
+          title: "We Paint All Property Types",
+          intro: "From residential to rural, we've got Marlborough covered:",
+          types: [
             {
-              label: 'Brush and Roll',
-              whenToUse: "If you're still living in the house or have lots of fiddly bits to work around.",
-              pros: [
-                "Easy to touch up later if the kids decide to play cricket inside",
-                "We don't waste much paint",
-                "Less time spent covering everything in sight"
-              ],
-              cons: [
-                "Might see a few brush marks here and there",
-                "Takes a bit longer to dry evenly", 
-                "Can sometimes leave darker edges (we call it \"picture framing\")"
+              label: "Suburban Homes",
+              description: "Blenheim's neighborhoods each have their character:",
+              areas: [
+                "Springlands - Modern family homes",
+                "Witherlea - Established properties",
+                "Redwoodtown - Character homes",
+                "Riversdale - New developments",
+                "Mayfield - Growing suburb"
               ]
             },
             {
-              label: 'Spray Painting',
-              whenToUse: "Perfect for new builds or big open spaces.",
-              pros: [
-                "We'll be in and out before you know it",
-                "Dries nice and even",
-                "Looks smooth as"
-              ],
-              cons: [
-                "We'll need to cover more stuff up",
-                "Touching up later might be a bit trickier",
-                "Paint hangs about in the air a bit longer"
+              label: "Vineyard Properties",
+              description: "Specialized painting for the wine industry:",
+              services: [
+                "Winery buildings and tasting rooms",
+                "Vineyard accommodation and cottages",
+                "Agricultural sheds and storage",
+                "Office and administration buildings",
+                "Worker accommodation"
               ]
             },
             {
-              label: 'Wallpaper',
-              whenToUse: `Want to really make your ${siteConfig.townName} pad stand out? Wallpaper's your ticket to something special.`,
-              pros: [
-                "Create a feature wall that'll have your mates buzzing",
-                "So many choices - from subtle textures to wild patterns",
-                "Adds a bit of depth to your rooms",
-                "Lasts yonks if you treat it right",
-                "Great for hiding those not-so-perfect walls"
-              ],
-              whyTrustUs: [
-                "We've got access to some choice wallpaper collections",
-                "We know how to line up those patterns just right",
-                "We'll help you pick something that suits your style and your life",
-                "Fancy a mix of paint and wallpaper? We've got you covered"
+              label: "Commercial Properties",
+              description: "We handle Blenheim's business properties:",
+              services: [
+                "Retail shops in the CBD",
+                "Office buildings",
+                "Industrial warehouses",
+                "Hospitality venues",
+                "Healthcare facilities"
               ]
             }
           ]
+        },
+        climateConsiderations: {
+          subtitle: "Local Knowledge Matters",
+          title: "Painting for Marlborough's Climate",
+          content: `Our region's weather is unique in New Zealand - very dry, very sunny, with hot summers and cool winters. This affects paint choices:
+
+• UV-resistant paints are essential (we get more sun than Auckland!)
+• Flexible paints for temperature variations
+• Dust-resistant finishes for our dry, windy conditions
+• Proper ventilation planning for our low humidity
+• Color selection considering intense sunlight
+
+We recommend specific products proven to work in Marlborough conditions, not just what's cheapest or most common.`
+        },
+        coatingMethods: {
+          title: "Interior Application Methods",
+          options: [
+            {
+              label: "Premium Brush & Roll",
+              whenToUse: "Most interior walls and ceilings - gives the smoothest, most professional finish",
+              pros: [
+                "Superior coverage and finish quality",
+                "Perfect for detailed trim work",
+                "Better paint penetration and adhesion",
+                "Ideal for textured surfaces"
+              ],
+              cons: [
+                "Takes longer than spraying",
+                "Requires skilled technique for best results"
+              ]
+            },
+            {
+              label: "Airless Spray System",
+              whenToUse: "Large open areas, new builds, or when speed is essential",
+              pros: [
+                "Fastest application method",
+                "Excellent for large areas",
+                "Even coverage on smooth surfaces",
+                "Great for ceiling work"
+              ],
+              cons: [
+                "Requires extensive masking",
+                "Not ideal for occupied spaces",
+                "Can waste more paint"
+              ]
+            },
+            {
+              label: "Specialty Finishes",
+              whenToUse: "Feature walls, decorative work, or when you want something truly unique",
+              pros: [
+                "Creates unique textures and effects",
+                "Perfect for accent walls",
+                "Adds character to spaces",
+                "Can hide surface imperfections"
+              ],
+              whyTrustUs: [
+                "Years of experience with decorative techniques",
+                "Knowledge of Marlborough's dry climate effects on specialty finishes",
+                "Portfolio of successful feature wall projects"
+              ]
+            }
+          ]
+        },
+        cleanup: {
+          subtitle: "Finishing Touches",
+          title: "Clean-up & Restoration", 
+          content: `Professional clean-up is part of our service - we leave your home exactly as we found it, just beautifully painted.`
         }
       }
     },
     
     exterior: {
-      pageTitle: `Exterior Painting in ${siteConfig.townName}`,
+      pageTitle: "Exterior Painting Blenheim - Weather Protection",
       sections: {
         protection: {
-          subtitle: "First Up",
-          title: "Protecting Your Outdoor Space",
-          content: `Your home's exterior is its first line of defense against ${siteConfig.townName}'s four seasons. Before we break out the brushes, we'll make sure everything's sorted:
+          subtitle: "Marlborough's Weather Challenges",
+          title: "Protection Against Sun & Wind",
+          content: `Blenheim properties face unique challenges - intense UV radiation, hot dry summers, cold winters, and those notorious nor'west winds. Your paint needs to handle it all.
 
-• We'll shift your outdoor furniture to a safe spot
-• Those prized plants? We'll cover them up nice and cozy
-• Anything attached to the walls gets a protective wrap
+Protection strategies for Marlborough:
 
-It's all about keeping your outdoor area as pristine as those lake views. No worries, no hassles - that's how we roll.`
+• Premium UV-stable paints (essential at our sunshine levels)
+• Heat-reflective coatings for west-facing walls
+• Flexible paints for thermal movement
+• Wind-resistant application techniques
+• Proper surface sealing against dust
+
+We've learned through years of local experience which products actually deliver on their promises in Marlborough's demanding conditions.`
         },
         preparation: {
-          subtitle: "Prepping Your Walls",
-          title: "The Crucial Bit Most Folks Forget",
-          content: `Right, let's get your walls ready for their new look. ${siteConfig.townName} weather can be tough on exteriors, so we'll:
+          subtitle: "Critical for Longevity",
+          title: "Prep Work That Makes the Difference",
+          content: `Proper preparation in Blenheim's climate is non-negotiable:
 
-• Give everything a good clean - no grime left behind
-• Scrape off any peeling paint - it's got to go
-• Replace any rotted wood - can't paint over problems
-• Fill up those cracks and gaps - smooth as
-• Sand it all down - for that perfect finish
-• Chuck on some quality primer - it's the key to long-lasting color`
+• Thorough cleaning to remove dust and pollen buildup
+• Checking for heat damage and UV degradation
+• Scraping and sanding weathered surfaces
+• Treating any mold (despite low rainfall, it still occurs)
+• Priming all bare surfaces with appropriate products
+• Caulking and sealing against dust infiltration
+
+Skip the prep, and you'll be repainting in two years. Do it right, and your paint job will last 7-10 years even in our harsh sun.`
+        },
+        localAreas: {
+          title: "Servicing All of Marlborough",
+          description: "From Picton to Ward, we cover the region:",
+          areas: [
+            "Blenheim Central - Quick response times",
+            "Springlands & Witherlea - Suburban specialists",
+            "Redwoodtown & Riversdale - Established areas",
+            "Renwick - Wine village properties",
+            "Picton - Coastal properties with salt exposure",
+            "Havelock - Marine environment challenges",
+            "Seddon & Ward - Rural and farming properties",
+            "Rapaura & Fairhall - Vineyard region",
+            "Cloudy Bay - Industrial and commercial"
+          ]
+        },
+        vineyardSpecialty: {
+          subtitle: "Wine Industry Focus",
+          title: "Vineyard & Winery Painting",
+          content: `Marlborough's wine industry has specific painting needs, and we understand them:
+
+• Winery Buildings: Food-safe paints for production areas, attractive finishes for cellar doors
+• Accommodation: Quick turnarounds between vintage and tourist seasons
+• Agricultural Buildings: Durable coatings for sheds and equipment storage
+• Brand Compliance: Matching corporate colors exactly
+• Minimal Disruption: Working around harvest and vintage schedules
+
+We can provide references from several Marlborough wineries. They trust us because we understand their business needs, not just painting.`
         },
         houseTypes: {
-          sectionTitle: `${siteConfig.townName} homes`,
-          title: 'We know your cladding',
-          types: [
-            {
-              label: 'Weatherboard',
-              description: `Weatherboard homes are a ${siteConfig.townName} classic, and we've got the expertise to make them shine:`,
-              techniques: [
-                "Our team uses specialized primers designed to bond well with both old and new weatherboards",
-                "We apply flexible, high-quality exterior paints that can withstand the natural expansion and contraction of the wood",
-                "Extra attention is given to end-grain sealing and caulking joints to prevent moisture ingress",
-                "For uneven surfaces, we employ techniques like 'wet-edge' painting to ensure a smooth, consistent finish",
-                "We're skilled in both brush and spray application, choosing the best method for your specific weatherboards"
-              ]
-            },
-            {
-              label: 'Timber',
-              description: `Timber cladding requires special care to preserve its natural beauty while protecting it from ${siteConfig.townName}'s elements:`,
-              techniques: [
-                "We begin with a gentle clean using specialized wood cleaners to remove dirt without damaging the timber",
-                "For weathered timber, we use restoration techniques like sanding or chemical brightening to rejuvenate the wood",
-                "We're experts in applying both stains and clear sealers, enhancing the wood's natural grain",
-                "For cedar, we use products specifically formulated to handle its unique properties and natural oils",
-                `Our team applies UV-resistant finishes to protect against ${siteConfig.townName}'s intense sunlight`,
-                "We use breathable finishes that allow the timber to naturally regulate moisture, preventing trapped dampness",
-                "For a modern look, we can apply solid color paints using techniques that maintain the texture of the wood"
-              ]
-            },
-            {
-              label: 'Plaster',
-              description: `Rendered and plastered exteriors are popular in ${siteConfig.townName}, and we know exactly how to handle them:`,
-              techniques: [
-                "We start with a thorough inspection to identify any cracks or areas of concern",
-                "Our team repairs small cracks using flexible fillers designed for exterior use",
-                "We apply high-quality sealers before painting to prevent moisture penetration",
-                "We use premium masonry paints that are specifically formulated for New Zealand conditions",
-                "Our spray application techniques ensure even coverage on textured surfaces",
-                "We're experienced in color matching and blending for seamless repairs"
-              ]
-            },
-            {
-              label: 'Modern Panels',
-              description: `Fiber cement panels like Axon require specific expertise, and we're well-versed in their requirements:`,
-              techniques: [
-                "We begin with a thorough clean, ensuring all surfaces are free from construction dust and debris",
-                "Our team uses specialized masking techniques to protect the crisp lines of the vertical grooves",
-                "We apply high-adhesion primers designed specifically for pre-primed fiber cement panels",
-                "Our painters are skilled in both brush and roller techniques to achieve a smooth, even finish on large flat surfaces",
-                "We use low-sheen or satin finishes that highlight the panel's texture without emphasizing surface imperfections",
-                "For the joints, we employ careful caulking and painting techniques to maintain a seamless look",
-                "We can recommend and apply bold, modern colors that complement the contemporary style of modern panels",
-                `Our team is experienced in applying durable finishes that stand up to ${siteConfig.townName}'s varied climate`
-              ]
-            }
-          ]
+          sectionTitle: "Marlborough Home Specialists",
+          title: "We Paint Every Type of Home"
         }
       }
     }
   },
 
   // ===========================================
-  // CTA (Call to Action) CONTENT
-  // ===========================================
-  cta: {
-    primary: "Get Your Free Consultation",
-    secondary: "Get A Free Consultation",
-    shortForm: "Get Quote"
-  },
-
-  // ===========================================
-  // TESTIMONIAL SECTION HEADERS
-  // ===========================================
-  testimonials: {
-    sectionTitle: "What Our Customers Say",
-    subtitle: "Real feedback from real customers",
-    trustIndicators: [
-      "5-star Google rating",
-      "Fully insured",
-      "Local references available"
-    ]
-  },
-
-  // ===========================================
-  // PROJECT SHOWCASE CONTENT
+  // PROJECTS SECTION CONTENT
   // ===========================================
   projects: {
     sections: {
       interior: {
-        subtitle: "Our Interior Projects",
-        title: "Recent Interior Transformations",
-        description: `Explore our latest interior painting projects, showcasing our attention to detail and commitment to quality. See how we've transformed homes across ${siteConfig.townName}.`
-      },
-      exterior: {
-        subtitle: "Our Exterior Projects", 
-        title: "Recent Exterior Transformations",
-        description: `Discover how we've revitalized homes across ${siteConfig.townName} with our expert exterior painting services. Browse our recent projects to see our workmanship firsthand.`
+        subtitle: "Interior Projects",
+        title: "Recent Interior Transformations", 
+        description: `See how we've enhanced Marlborough homes with professional interior painting. From character villas to modern builds, our work speaks for itself.`
       }
     }
   },
 
   // ===========================================
-  // CONVERSATIONAL TONE ELEMENTS
+  // LOCAL CONTENT OPTIMIZATION
   // ===========================================
-  tone: {
-    // Kiwi expressions to use throughout
-    expressions: [
-      "choice", "mint", "sweet as", "she'll be right", "good as gold", 
-      "happy as Larry", "smooth as a baby's bum", "yonks", "chur bro"
-    ],
+  localContent: {
+    whyChooseUs: {
+      title: "Why Blenheim Residents Choose Us",
+      reasons: [
+        "Understanding of Marlborough's unique climate challenges",
+        "Experience with vineyard and agricultural properties",
+        "Knowledge of which paints survive our intense UV",
+        "Relationships with local suppliers (Dulux, Resene Blenheim)",
+        "Flexible scheduling around vintage and harvest",
+        "Fixed quotes - no surprises"
+      ]
+    },
     
-    // Call-to-action variations
-    ctaVariations: [
-      "Give us a bell",
-      "Drop us a line", 
-      "Get in touch",
-      "Flick us a message",
-      "Give us a buzz"
-    ]
-  }
-}
+    commonProjects: {
+      title: "Common Blenheim Painting Projects",
+      projects: [
+        "Weatherboard homes in established suburbs",
+        "Modern homes in new subdivisions",
+        "Vineyard accommodation and cottages",
+        "Winery buildings and cellar doors",
+        "Commercial buildings in the CBD",
+        "Rural sheds and farm buildings",
+        "Rental property refreshes"
+      ]
+    },
 
-// ===========================================
-// HELPER FUNCTIONS
-// ===========================================
+    seasonalConsiderations: {
+      title: "Best Times to Paint in Marlborough",
+      content: `Our dry climate means we can paint almost year-round, but timing matters:
 
-/**
- * Get formatted content with bullet points
- * @param {string} content - Raw content with bullet points
- * @returns {object} - Formatted content for React components
- */
-export function formatContentWithBullets(content) {
-  const lines = content.split('\n')
-  const paragraphs = []
-  const bullets = []
-  
-  lines.forEach(line => {
-    const trimmed = line.trim()
-    if (trimmed.startsWith('•')) {
-      bullets.push(trimmed.substring(1).trim())
-    } else if (trimmed.length > 0) {
-      if (bullets.length > 0) {
-        paragraphs.push({ type: 'bullets', items: [...bullets] })
-        bullets.length = 0
-      }
-      paragraphs.push({ type: 'paragraph', text: trimmed })
+• Spring (Sept-Nov): Ideal for exterior work before summer heat
+• Summer (Dec-Feb): Great for quick-dry projects, early morning starts
+• Autumn (Mar-May): Perfect conditions, less wind
+• Winter (Jun-Aug): Interior painting, selected exterior days
+
+We work with Marlborough's weather, not against it, scheduling your project for optimal conditions.`
     }
-  })
-  
-  if (bullets.length > 0) {
-    paragraphs.push({ type: 'bullets', items: bullets })
-  }
-  
-  return paragraphs
-}
+  },
 
-/**
- * Get location-specific copy with dynamic replacements
- * @param {string} template - Template string with placeholders
- * @param {object} replacements - Key-value pairs for replacements
- * @returns {string} - Processed copy
- */
-export function getLocationSpecificCopy(template, replacements = {}) {
-  let processed = template
-  
-  // Default replacements from site config
-  const defaults = {
-    townName: siteConfig.townName,
-    businessName: siteConfig.businessName,
-    ownerName: siteConfig.ownerName
-  }
-  
-  const allReplacements = { ...defaults, ...replacements }
-  
-  Object.entries(allReplacements).forEach(([key, value]) => {
-    const regex = new RegExp(`{${key}}`, 'g')
-    processed = processed.replace(regex, value)
-  })
-  
-  return processed
-}
+  // ===========================================
+  // CTA CONTENT
+  // ===========================================
+  cta: {
+    primary: "Get Your Free Blenheim Quote",
+    secondary: "Free Quote - Marlborough Wide",
+    shortForm: "Get Quote",
+    phone: "Call Now: 022 613 2936"
+  },
 
-/**
- * Get service area text for dynamic content
- * @returns {string} - Formatted service areas
- */
-export function getServiceAreasText() {
-  const areas = siteConfig.serviceAreas
-  if (areas.length <= 2) {
-    return areas.join(" and ")
-  }
-  const lastArea = areas[areas.length - 1]
-  const otherAreas = areas.slice(0, -1)
-  return `${otherAreas.join(", ")} and ${lastArea}`
-}
+  // ===========================================
+  // TESTIMONIAL HEADERS
+  // ===========================================
+  testimonials: {
+    sectionTitle: "What Marlborough Locals Say",
+    subtitle: "Trusted throughout the region",
+    trustIndicators: [
+      "Blenheim based",
+      "Fully insured",
+      "Fixed price quotes"
+    ]
+  },
 
-export default copyConfig
+  // ===========================================
+  // FAQ CONTENT - Blenheim Specific
+  // ===========================================
+  faq: {
+    questions: [
+      {
+        question: "Do you paint vineyard buildings and wineries?",
+        answer: "Yes, we specialize in vineyard properties including winery buildings, tasting rooms, accommodation, and agricultural structures. We understand the wine industry's scheduling needs and work around vintage times."
+      },
+      {
+        question: "How does Marlborough's climate affect paint choices?",
+        answer: "Marlborough's intense UV (2,400+ sunshine hours) and dry conditions require specific paints. We use UV-stable products with heat-reflective properties and flexibility for temperature variations. Standard paints often fail within 2-3 years here."
+      },
+      {
+        question: "What areas of Marlborough do you cover?",
+        answer: "All of Marlborough - from Picton to Ward, including Blenheim, Renwick, Havelock, Seddon, and all rural areas. We regularly work throughout the wine regions of Rapaura and the Wairau Valley."
+      },
+      {
+        question: "Best time of year to paint in Blenheim?",
+        answer: "Our dry climate allows painting most of the year. Spring and autumn are ideal for exterior work. Summer is good with early starts to avoid heat. Winter has many suitable days for both interior and exterior painting."
+      },
+      {
+        question: "Do you offer fixed quotes?",
+        answer: "Yes, all our quotes are fixed price. No surprises, no hidden costs. We quote thoroughly upfront so you know exactly what you're paying."
+      },
+      {
+        question: "Can you work around grape harvest?",
+        answer: "Absolutely. We understand the wine industry calendar and can schedule work outside of vintage (March-April) or work quietly during harvest. Many vineyards prefer painting during winter when it's quieter."
+      }
+    ]
+  },
+
+  // ===========================================
+  // META DESCRIPTIONS
+  // ===========================================
+  metaDescriptions: {
+    home: "Professional painters in Blenheim, Marlborough. Residential, commercial, and vineyard painting specialists. Free quotes, fixed prices, fully insured. Call 022 613 2936",
+    interior: "Interior painters Blenheim - Professional painting for homes, offices, and wineries throughout Marlborough. Quality finishes, fixed quotes. Call today.",
+    exterior: "Exterior painting Blenheim - UV-resistant paints for Marlborough's sunny climate. Weatherboard, plaster, and commercial painting. Free quotes: 022 613 2936",
+    contact: "Contact Blenheim Painters for free quotes throughout Marlborough. Residential, commercial, and vineyard painting specialists. Call 022 613 2936."
+  }
+}

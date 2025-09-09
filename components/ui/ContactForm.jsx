@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
+import { Loader } from 'lucide-react'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -205,7 +206,14 @@ export default function ContactForm() {
         </div>
 
         <Button type="submit" className="w-full bg-gold hover:bg-gold-dark text-white py-4 text-base mt-2" disabled={isSubmitting}>
-          {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+          {isSubmitting ? (
+            <span className="flex items-center justify-center">
+              <Loader className="animate-spin mr-2 h-5 w-5" />
+              Sending...
+            </span>
+          ) : (
+            'Submit Inquiry'
+          )}
         </Button>
       </form>
     </div>

@@ -65,10 +65,10 @@ const Contact = () => {
       <CheckCircle className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
       <span className="text-gray-700">Fully insured with a workmanship guarantee</span>
     </li>
-    <li className="flex items-start gap-3">
+    {/* <li className="flex items-start gap-3">
       <CheckCircle className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
       <span className="text-gray-700">{siteConfig.yearsInBusiness}+ years of trusted service in {siteConfig.townName}</span>
-    </li>
+    </li> */}
     <li className="flex items-start gap-3">
       <CheckCircle className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
       <span className="text-gray-700">Perfect 5-star rating on Google</span>

@@ -55,7 +55,7 @@ export default function HouseTypeSelector({ houseTypes }: Props) {
         <div className="flex gap-8">
           <div className="w-1/2">
             <div className="p-3 bg-white shadow-xl">
-              <div className="relative h-[350px] shadow-lg">
+              <div className="relative h-[300px] shadow-lg">
                 <Image
                   src={houseTypes.find(o => o.label === selectedHouseType)?.image || ''}
                   alt={selectedHouseType}
@@ -77,7 +77,7 @@ export default function HouseTypeSelector({ houseTypes }: Props) {
           <div key={type.label} className="space-y-[32px]">
             <h3 className="text-base font-semibold">{type.label}</h3>
             <div className="p-3  bg-white shadow-xl mb-8">
-              <div className="relative h-[250px] shadow-lg ">
+              <div className="relative h-[300px] shadow-lg ">
                 <Image
                   src={type.image}
                   alt={type.label}

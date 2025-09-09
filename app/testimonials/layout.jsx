@@ -1,20 +1,22 @@
+import { siteConfig, getSiteTitle, getServiceAreasText } from '@/config/site-config'
+
 export const metadata = {
-  title: 'Testimonials | Little Dog Decorating Queenstown',
-  description: 'Read what satisfied homeowners in Queenstown and Arrowtown say about Little Dog Decorating. High-quality painting services and exceptional customer care.',
+  title: getSiteTitle(`Testimonials | ${siteConfig.businessName}`),
+  description: `Read what satisfied homeowners in ${siteConfig.townName} and surrounding areas say about ${siteConfig.businessName}. High-quality painting services and exceptional customer care.`,
   keywords: [
-    'painter testimonials Queenstown',
-    'painting reviews Arrowtown',
+    `painter testimonials ${siteConfig.townName}`,
+    `painting reviews ${siteConfig.serviceAreas[1] || siteConfig.townName}`,
     'customer feedback painting NZ',
-    'Little Dog Decorating reviews',
-    'best painter Queenstown',
+    `${siteConfig.businessName} reviews`,
+    `best painter ${siteConfig.townName}`,
   ],
   openGraph: {
-    title: 'Client Testimonials | Little Dog Decorating',
-    description: 'See why homeowners trust Little Dog Decorating for their painting needs in Queenstown.',
+    title: `Client Testimonials | ${siteConfig.businessName}`,
+    description: `See why homeowners trust ${siteConfig.businessName} for their painting needs in ${siteConfig.townName}.`,
   },
   twitter: {
-    title: 'Client Testimonials | Little Dog Decorating',
-    description: 'Hear from our happy clients in Queenstown & Arrowtown.',
+    title: `Client Testimonials | ${siteConfig.businessName}`,
+    description: `Hear from our happy clients in ${siteConfig.townName} and surrounding areas.`,
   },
 }
 

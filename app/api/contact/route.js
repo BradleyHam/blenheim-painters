@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { siteConfig } from '@/config/site-config';
 
 export async function POST(request) {
   try {
-    const { name, email, phone, message, consent, service } = await request.json();
+    const { name, email, phone, message, service } = await request.json();
 
     // Validate required fields
-    if (!name || !email || !consent) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'Name, email, and consent are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       );
     }
@@ -49,7 +50,7 @@ export async function POST(request) {
 
     // Email to business owner
     const businessEmail = await transporter.sendMail({
-      from: `"Little Dog Decorating Contact" <${process.env.EMAIL_USER}>`,
+      from: `"${siteConfig.businessName} Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.CLIENT_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -59,17 +60,16 @@ export async function POST(request) {
         <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
         <p><strong>Service Needed:</strong> ${service || 'Not provided'}</p>
         <p><strong>Message:</strong> ${message || 'Not provided'}</p>
-        <p><strong>Consent Given:</strong> Yes</p>
       `,
     });
 
     // Confirmation email to client
     const clientEmail = await transporter.sendMail({
-      from: `"Little Dog Decorating" <${process.env.EMAIL_USER}>`,
+      from: `"${siteConfig.businessName}" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Thank you for contacting Little Dog Decorating',
+      subject: `Thank you for contacting ${siteConfig.businessName}`,
       html: `
-        <h1>Thank You for Contacting Little Dog Decorating</h1>
+        <h1>Thank You for Contacting ${siteConfig.businessName}</h1>
         <p>Dear ${name},</p>
         <p>Thank you for reaching out to us. We have received your inquiry and will get back to you as soon as possible.</p>
         <p>Here's a copy of the information you provided:</p>

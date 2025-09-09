@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site-config'
 export const testimonials = [
   {
     id: 1,
-    text: `${siteConfig.ownerName} and his team transformed our weatherboard home beautifully. They took extra care with the prep work, fixed some rot we didn't even know about, and the finish is flawless. They covered everything properly and left the site spotless every day. Couldn't be happier with the result.`,
+    text: `${siteConfig.ownerNameCasual} and his team transformed our weatherboard home beautifully. They took extra care with the prep work, fixed some rot we didn't even know about, and the finish is flawless. They covered everything properly and left the site spotless every day. Couldn't be happier with the result.`,
     author: "Sarah & James Mitchell",
     date: "2 weeks ago",
     initials: "SM",
@@ -15,7 +15,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    text: `We've used ${siteConfig.ownerName} for three properties now - our home, bach, and rental. Always punctual, fair pricing, and the quality speaks for itself. He's the only painter we trust in ${siteConfig.townName}. Just had him back to do our deck and fence too.`,
+    text: `We've used ${siteConfig.ownerNameCasual} for three properties now - our home, bach, and rental. Always punctual, fair pricing, and the quality speaks for itself. He's the only painter we trust in ${siteConfig.townName}. Just had him back to do our deck and fence too.`,
     author: "David Chen",
     date: "1 month ago", 
     initials: "DC",
@@ -27,7 +27,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    text: `Outstanding work on our 1960s home renovation. ${siteConfig.ownerName} helped us choose the perfect colour scheme and his attention to detail is incredible - perfect cutting in, smooth walls, no drips or marks anywhere. The whole house feels brand new. Professional, tidy, and a genuinely nice guy to deal with.`,
+    text: `Outstanding work on our 1960s home renovation. ${siteConfig.ownerNameCasual} helped us choose the perfect colour scheme and his attention to detail is incredible - perfect cutting in, smooth walls, no drips or marks anywhere. The whole house feels brand new. Professional, tidy, and a genuinely nice guy to deal with.`,
     author: "Emma Thompson",
     date: "2 months ago",
     initials: "ET", 
@@ -39,7 +39,7 @@ export const testimonials = [
   },
   {
     id: 4,
-    text: `After getting three quotes, ${siteConfig.ownerName} was competitive and the most thorough in explaining the process. They pressure washed, sanded, primed and used premium paint on our cedar cladding. Two years later and it still looks fresh off the brush. Highly recommend.`,
+    text: `After getting three quotes, ${siteConfig.ownerNameCasual} was competitive and the most thorough in explaining the process. They pressure washed, sanded, primed and used premium paint on our cedar cladding. Two years later and it still looks fresh off the brush. Highly recommend.`,
     author: "Mark Roberts",
     date: "3 months ago",
     initials: "MR",
@@ -51,7 +51,7 @@ export const testimonials = [
   },
   {
     id: 5,
-    text: `Perfect job on our commercial property. ${siteConfig.ownerName} worked around our business hours, finished ahead of schedule, and the place looks fantastic. Will definitely use again for our other properties.`,
+    text: `Perfect job on our commercial property. ${siteConfig.ownerNameCasual} worked around our business hours, finished ahead of schedule, and the place looks fantastic. Will definitely use again for our other properties.`,
     author: "Lisa Anderson",
     date: "4 months ago",
     initials: "LA",
@@ -63,7 +63,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    text: `${siteConfig.ownerName} rescued us when another painter left us hanging. He squeezed us in, matched the existing paint perfectly, and finished our ensuite and kitchen to an exceptional standard. Reliable, skilled, and honest - everything you want in a tradesperson.`,
+    text: `${siteConfig.ownerNameCasual} rescued us when another painter left us hanging. He squeezed us in, matched the existing paint perfectly, and finished our ensuite and kitchen to an exceptional standard. Reliable, skilled, and honest - everything you want in a tradesperson.`,
     author: "Paul & Rachel Kim",
     date: "6 months ago",
     initials: "PK",

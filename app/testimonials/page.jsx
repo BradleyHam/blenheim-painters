@@ -38,7 +38,7 @@ const TestimonialsPage = () => {
             alt="Exterior Painting" 
             fill 
             priority
-            className="object-cover rounded-lg" 
+            className="object-cover object-top rounded-lg" 
           />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#333]/90 to-transparent rounded-lg"></div>
           <h1 className="text-white text-2xl sm:text-4xl lg:text-4xl font-semibold tracking-tight absolute bottom-0 left-0 p-6 lg:p-12 lg:pb-10  ">Testimonials</h1>

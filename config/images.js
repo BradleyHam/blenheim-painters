@@ -47,7 +47,7 @@ export const imageConfig = {
       alt: "Local landscape showcasing service area"
     },
     townscape: {
-      path: "/queenstown.jpg",
+      path: "/blenheim.jpg",
       description: "Local town scenic view",
       dimensions: "1200x800px",
       usage: "About section, general marketing",
@@ -77,7 +77,7 @@ export const imageConfig = {
       alt: "Business team photo"
     },
     vehicle: {
-      path: "/lakeside-van.jpeg",
+      path: "/van.png",
       description: "Company vehicle with branding",
       dimensions: "800x600px",
       usage: "About section, contact page",
@@ -91,7 +91,7 @@ export const imageConfig = {
   // ===========================================
   services: {
     interior: {
-      path: "/interior-repaint.jpg",
+      path: "/interior-hero.jpeg",
       description: "Interior painting showcase",
       dimensions: "1200x800px",
       usage: "Interior service page hero",
@@ -181,18 +181,23 @@ export const imageConfig = {
   // ===========================================
   process: {
     // Interior Process
-    interiorPrep: "/services/interior/prep.png",
-    interiorProtection: "/services/interior/protection.png", 
-    interiorRolling: "/services/interior/rolling.png",
-    interiorSpray: "/services/interior/spray.png",
-    interiorCleaning: "/services/interior/cleaning.png",
+    interiorPrep: "/services/interior/interior-surface-prep.jpg",
+    interiorProtection: "/services/interior/interior-surrounding-prep.jpg", 
+    interiorRolling: "/services/interior/interior-rolling.jpeg",
+    interiorSpray: "/services/interior/interior-spraying.jpg",
+    interiorWallpaper: "/services/interior/bathroom-wallpaper.png",
+    interiorCleaning: "/services/interior/interior-clean.jpg",
 
     // Exterior Process
-    exteriorMasking: "/services/exterior/masking.png",
-    exteriorPrep: "/services/exterior/prep.png",
+    exteriorMasking: "/services/exterior/exterior-surrounding-prep.jpeg",
+    exteriorSurfacePrep: "/services/exterior/exterior-surface-prep.jpg",
     exteriorProtection: "/services/exterior/protection.png",
-    exteriorSweeping: "/services/exterior/sweeping.png",
+    exteriorSweeping: "/services/exterior/sweeping.jpg",
     
+    // Roof Process
+    roofSpraying: "/roof-painting/webp/spraying-roof.webp",
+    roofOne: '/roof-painting/roof.webp',
+    roofTwo: '/roof-painting/roof2.webp',
     // Material Types (Generic)
     weatherboard: "/services/exterior/weatherboard.jpg",
     cedar: "/services/exterior/cedar.jpg",
@@ -225,7 +230,8 @@ export const imageConfig = {
   decorative: {
     brushstroke: "/brushstroke.svg",
     dogIcon: "/dog-icon.png",
-    painterIllustration: "/painter-color-consultation-illustration.png"
+    painterIllustration: "/painter-color-consultation-illustration.png",
+    cartoonRoof: "/roof-painting/webp/cartoon-roof.webp"
   }
 }
 
