@@ -189,7 +189,7 @@ export const imageConfig = {
     interiorCleaning: "/services/interior/interior-clean.jpg",
 
     // Exterior Process
-    exteriorMasking: "/services/exterior/exterior-surrounding-prep.jpeg",
+    exteriorMasking: "/services/exterior/exterior-surrounding-prep.png",
     exteriorSurfacePrep: "/services/exterior/exterior-surface-prep.jpg",
     exteriorProtection: "/services/exterior/protection.png",
     exteriorSweeping: "/services/exterior/sweeping.jpg",
