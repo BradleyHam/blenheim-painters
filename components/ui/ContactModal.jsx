@@ -110,7 +110,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 <div className="h-10 w-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="h-5 w-5 text-gold" />
                 </div>
-                <div>
+                <div className='flex flex-col items-start justify-start'>
                   <h4 className="font-medium text-navy">Telephone</h4>
                   <p className="text-gray-700">+64{siteConfig.phoneDisplay}</p>
                 </div>
@@ -120,7 +120,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 <div className="h-10 w-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <Mail className="h-5 w-5 text-gold" />
                 </div>
-                <div>
+                <div className='flex flex-col items-start justify-start'>
                   <h4 className="font-medium text-navy">Email</h4>
                   <p className="text-gray-700">{siteConfig.email}</p>
                 </div>
@@ -130,7 +130,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 <div className="h-10 w-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-5 w-5 text-gold" />
                 </div>
-                <div>
+                <div className='flex flex-col items-start justify-start'>
                   <h4 className="font-medium text-navy">Service Area</h4>
                   <p className="text-gray-700">{siteConfig.townName} and surrounding areas</p>
                 </div>
