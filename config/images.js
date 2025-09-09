@@ -47,7 +47,7 @@ export const imageConfig = {
       alt: "Local landscape showcasing service area"
     },
     townscape: {
-      path: "/blenheim.jpg",
+      path: "/queenstown.jpg",
       description: "Local town scenic view",
       dimensions: "1200x800px",
       usage: "About section, general marketing",
@@ -91,7 +91,7 @@ export const imageConfig = {
   // ===========================================
   services: {
     interior: {
-      path: "/interior-hero.jpeg",
+      path: "/interiors/interior-hero.jpeg",
       description: "Interior painting showcase",
       dimensions: "1200x800px",
       usage: "Interior service page hero",
@@ -107,7 +107,7 @@ export const imageConfig = {
       alt: "Professional exterior painting work"
     },
     roof: {
-      path: "/roof-painting.jpg",
+      path: "/services/roof-painting/optimized/roof-painting.jpg",
       description: "Roof painting showcase",
       dimensions: "1200x800px", 
       usage: "Roof painting service page hero",
@@ -181,28 +181,28 @@ export const imageConfig = {
   // ===========================================
   process: {
     // Interior Process
-    interiorPrep: "/services/interior/interior-surface-prep.jpg",
-    interiorProtection: "/services/interior/interior-surrounding-prep.jpg", 
-    interiorRolling: "/services/interior/interior-rolling.png",
-    interiorSpray: "/services/interior/interior-spraying.jpg",
-    interiorWallpaper: "/services/interior/bathroom-wallpaper.png",
-    interiorCleaning: "/services/interior/interior-clean.jpg",
+    interiorPrep: "/services/interior/optimized/interior-surface-prep.webp",
+    interiorProtection: "/services/interior/optimized/interior-surrounding-prep.webp", 
+    interiorRolling: "/services/interior/optimized/interior-rolling.webp",
+    interiorSpray: "/services/interior/optimized/interior-spraying.webp",
+    interiorWallpaper: "/services/interior/optimized/bathroom-wallpaper.webp",
+    interiorCleaning: "/services/interior/optimized/interior-clean.webp",
 
     // Exterior Process
-    exteriorMasking: "/services/exterior/exterior-surrounding-prep.png",
-    exteriorSurfacePrep: "/services/exterior/exterior-surface-prep.jpg",
-    exteriorProtection: "/services/exterior/protection.png",
+    exteriorMasking: "/services/exterior/optimized/exterior-surrounding-prep.webp",
+    exteriorSurfacePrep: "/services/exterior/optimized/exterior-surface-prep.webp",
+    exteriorProtection: "/services/exterior/optimized/protection.webp",
     exteriorSweeping: "/services/exterior/sweeping.jpg",
     
     // Roof Process
-    roofSpraying: "/roof-painting/webp/spraying-roof.webp",
-    roofOne: '/roof-painting/roof.webp',
-    roofTwo: '/roof-painting/roof2.webp',
+    roofSpraying: "/services/roof-painting/optimized/spraying-roof.webp",
+    roofOne: '/services/roof-painting/optimized/roof.webp',
+    roofTwo: '/services/roof-painting/optimized/roof2.webp',
     // Material Types (Generic)
-    weatherboard: "/services/exterior/weatherboard.jpg",
-    cedar: "/services/exterior/cedar.jpg",
-    plaster: "/services/exterior/plaster.jpg",
-    axonPanel: "/services/exterior/axon-panel.jpg"
+    weatherboard: "/services/exterior/optimized/weatherboard.webp",
+    cedar: "/services/exterior/optimized/cedar.webp",
+    plaster: "/services/exterior/optimized/plaster.webp",
+    axonPanel: "/services/exterior/optimized/axon-panel.webp"
   },
 
   // ===========================================
@@ -310,5 +310,3 @@ export function getImageReplacementChecklist() {
 }
 
 export default imageConfig
-
-//

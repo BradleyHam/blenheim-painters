@@ -46,7 +46,7 @@ export default async function RoofPainting() {
         {/* Hero Section */}
         <div className="page-header h-[300px] lg:h-[500px] mx-5 rounded-lg relative">
           <Image 
-            src={`/roof-painting/roof-painting-in-${siteConfig.townNameLower}.jpg`} 
+            src={`/services/roof-painting/optimized/roof-painting.jpg`} 
             alt="Roof Painting" 
             fill
             priority
