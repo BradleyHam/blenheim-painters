@@ -183,7 +183,7 @@ export const imageConfig = {
     // Interior Process
     interiorPrep: "/services/interior/interior-surface-prep.jpg",
     interiorProtection: "/services/interior/interior-surrounding-prep.jpg", 
-    interiorRolling: "/services/interior/interior-rolling.jpeg",
+    interiorRolling: "/services/interior/interior-rolling.png",
     interiorSpray: "/services/interior/interior-spraying.jpg",
     interiorWallpaper: "/services/interior/bathroom-wallpaper.png",
     interiorCleaning: "/services/interior/interior-clean.jpg",
