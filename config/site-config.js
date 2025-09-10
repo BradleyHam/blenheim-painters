@@ -14,8 +14,8 @@ export const siteConfig = {
   country: "New Zealand",
   
   // Contact Information
-  phoneNumber: "0226132936", // Your CallHippo number
-  phoneDisplay: "022 613 2936",
+  phoneNumber: "+6436698829", // Your CallHippo number
+  phoneDisplay: "+6436698829",
   email: "info@rankhigher.co.nz",
   
   // Address

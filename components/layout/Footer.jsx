@@ -108,7 +108,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">+64{siteConfig.phoneNumber}</span>
+                <span className="text-gray-300">{siteConfig.phoneNumber}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />

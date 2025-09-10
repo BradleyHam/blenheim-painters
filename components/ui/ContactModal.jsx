@@ -112,7 +112,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 </div>
                 <div className='flex flex-col items-start justify-start'>
                   <h4 className="font-medium text-navy">Telephone</h4>
-                  <p className="text-gray-700">+64{siteConfig.phoneDisplay}</p>
+                  <p className="text-gray-700">{siteConfig.phoneDisplay}</p>
                 </div>
               </div>
               
