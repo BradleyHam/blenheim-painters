@@ -52,14 +52,19 @@ export async function POST(request) {
     const businessEmail = await transporter.sendMail({
       from: `"${siteConfig.businessName} Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.CLIENT_EMAIL,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `[Blenheim Painters] New Contact Form Submission from ${name}`,
       html: `
+        <div style="border: 2px solid #4CAF50; padding: 10px; background-color: #f0f8f0; margin-bottom: 20px;">
+          <p style="margin: 0; color: #2e7d32; font-weight: bold;">📧 Form submitted via Blenheim Painters website</p>
+        </div>
         <h1>New Contact Form Submission</h1>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
         <p><strong>Service Needed:</strong> ${service || 'Not provided'}</p>
         <p><strong>Message:</strong> ${message || 'Not provided'}</p>
+        <hr style="margin-top: 20px; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">Source: Blenheim Painters Contact Form</p>
       `,
     });
 
